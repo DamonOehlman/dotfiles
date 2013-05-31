@@ -39,7 +39,7 @@ import Data.Ratio ((%))
   simpler parts of xmonad's behavior and are straightforward to tweak.
 -}
 
-myModMask            = mod4Mask       -- changes the mod key to "super"
+myModMask            = mod1Mask       
 myFocusedBorderColor = "#ff0000"      -- color of focused border
 myNormalBorderColor  = "#cccccc"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
@@ -92,7 +92,7 @@ myWorkspaces =
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "2:Hub"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -165,11 +165,15 @@ chatLayout = avoidStruts(withIM (1%7) (Title myIMRosterTitle) Grid)
 -- can use single-window mode and avoid this issue.
 gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 
+-- init a dev layout
+devLayout = smartBorders(avoidStruts(Full))
+
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
 myLayouts =
   onWorkspace "7:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
+  $ onWorkspace "5:Dev" devLayout
   $ defaultLayouts
 
 
@@ -258,11 +262,12 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
-  , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
-  , (className =? "Empathy") --> doF (W.shift "7:Chat")
+  , (className =? "Sublime_text") --> doF (W.shift "5:Dev")
+  -- , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
+  -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
+  -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
+  -- , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
+  -- , (className =? "Empathy") --> doF (W.shift "7:Chat")
   , (className =? "Pidgin") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
   ]
