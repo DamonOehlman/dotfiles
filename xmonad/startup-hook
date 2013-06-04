@@ -13,8 +13,13 @@
 #
 
 # Empathy chat client (-h: start hidden, -n: don't connect on launch)
-if [ -z "$(pgrep empathy)" ] ; then
-    empathy -h -n &
+#if [ -z "$(pgrep empathy)" ] ; then
+#    empathy -h -n &
+#fi
+
+# start pidgin client
+if [ -z "$(pgrep pidgin)" ] ; then
+	pidgin &
 fi
 
 # Remmina remote desktop connection client (-i: start hidden)
@@ -32,6 +37,16 @@ if [ -z "$(pgrep system-config-printer-applet)" ] ; then
     system-config-printer-applet &
 fi
 
+# thunderbird mail
+if [ -z "$(pgrep thunderbird)" ] ; then
+	thunderbird &
+fi
+
+# chromium
+#if [ -z "$(pgrep chromium-browser)" ] ; then
+#	chromium-browser "https://trello.com/" &
+#fi
+
 #
 # APPLICATION LAUNCHER
 #
@@ -40,6 +55,25 @@ fi
 if [ -z "$(pgrep synapse)" ] ; then
     synapse -s &
 fi
+
+# TOUCHPAD PREFERENCES
+
+# two finger scrolling
+synclient EmulateTwoFingerMinW=20
+synclient EmulateTwoFingerMinZ=7
+synclient VertTwoFingerScroll=1 
+
+# disable border scrolling
+synclient VertEdgeScroll=0
+
+# disable tap to click
+synclient TapButton1=0 TapButton2=0 TapButton3=0
+
+# push the right click area over to 75% (rather than half)
+synclient RightButtonAreaLeft=1200
+
+# disable touchpad clicks when typing
+syndaemon -t -d
 
 # On login, we unlock the ssh keychain so we're not prompted for 
 # passphrases later. We pipe /dev/null to ssh-add to make it realize 

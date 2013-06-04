@@ -44,7 +44,7 @@ myFocusedBorderColor = "#ff0000"      -- color of focused border
 myNormalBorderColor  = "#cccccc"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
-myIMRosterTitle      = "Contact List" -- title of roster on IM workspace
+myIMRosterTitle      = "Buddy List" -- title of roster on IM workspace
 
 
 {-
@@ -263,6 +263,8 @@ myManagementHooks = [
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Sublime_text") --> doF (W.shift "5:Dev")
+  , (className =? "Thunderbird") --> doF (W.shift "3:Mail")
+  -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "6:Web")
   -- , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
   -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
   -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
