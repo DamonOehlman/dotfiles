@@ -44,8 +44,8 @@ myFocusedBorderColor = "#ff0000"      -- color of focused border
 myNormalBorderColor  = "#cccccc"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
-myIMRosterTitle      = "Buddy List" -- title of roster on IM workspace
-
+myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
+myAddressBookTitle   = "Address Book" -- address book window title 
 
 {-
   Xmobar configuration variables. These settings control the appearance
@@ -157,6 +157,9 @@ defaultLayouts = smartBorders(avoidStruts(
 -- will want to modify that variable.
 chatLayout = avoidStruts(withIM (1%7) (Title myIMRosterTitle) Grid)
 
+-- initialise the mail layout
+-- mailLayout = avoidStruts(withIM (1%7) (Title myAddressBookTitle) Grid)
+
 -- The GIMP layout uses the ThreeColMid layout. The traditional GIMP
 -- floating panels approach is a bit of a challenge to handle with xmonad;
 -- I find the best solution is to make the image you are working on the
@@ -174,6 +177,7 @@ myLayouts =
   onWorkspace "7:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
   $ onWorkspace "5:Dev" devLayout
+  -- $ onWorkspace "3:Mail" mailLayout
   $ defaultLayouts
 
 
