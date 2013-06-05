@@ -47,10 +47,10 @@ if [ -z "$(pgrep thunderbird)" ] ; then
 	thunderbird &
 fi
 
-# chromium
-#if [ -z "$(pgrep chromium-browser)" ] ; then
-#	chromium-browser "https://trello.com/" &
-#fi
+# chrome dev channel
+if [ -z "$(pgrep x-www-browser)" ] ; then
+	x-www-browser &
+fi
 
 #
 # APPLICATION LAUNCHER

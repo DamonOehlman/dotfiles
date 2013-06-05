@@ -268,6 +268,7 @@ myManagementHooks = [
   , className =? "rdesktop" --> doFloat
   , (className =? "Sublime_text") --> doF (W.shift "5:Dev")
   , (className =? "Thunderbird") --> doF (W.shift "3:Mail")
+  , (className =? "X-www-browser") --> doF (W.shift "6:Web")
   -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "6:Web")
   -- , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
   -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
