@@ -48,8 +48,13 @@ if [ -z "$(pgrep thunderbird)" ] ; then
 fi
 
 # chrome dev channel
-if [ -z "$(pgrep x-www-browser)" ] ; then
+if [ -z "$(pgrep chrome)" ] ; then
 	x-www-browser &
+fi
+
+# start a terminal
+if [ -z "$(pgrep term)" ] ; then
+	terminator &
 fi
 
 #
@@ -74,8 +79,14 @@ synclient VertEdgeScroll=0
 # disable tap to click
 synclient TapButton1=0 TapButton2=0 TapButton3=0
 
-# push the right click area over to 75% (rather than half)
-synclient RightButtonAreaLeft=1200
+# increase coasting speed
+synclient CoastingSpeed=40
+
+# minimize right click area
+synclient BottomEdge=1000
+synclient RightEdge=1600
+synclient RightButtonAreaLeft=1500 # right edge = 1536, 120r = right client
+synclient RightButtonAreaTop=900   # bottom edge = 852
 
 # disable touchpad clicks when typing
 syndaemon -t -d

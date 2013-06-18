@@ -86,13 +86,13 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:Chat",  "8:Dbg", "9:Pix",
-    "4:Docs",  "5:Dev", "6:Web",
-    "1:Term",  "2:Hub", "3:Mail",
+    "7:Docs",  "8:Dbg", "9:Pix",
+    "4:Mail",  "5:Chat", "6:Extra",
+    "1:Term",  "2:Dev", "3:Web",
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "2:Hub"  -- which workspace do you want to be on after launch?
+startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -174,9 +174,9 @@ devLayout = smartBorders(avoidStruts(Full))
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
 myLayouts =
-  onWorkspace "7:Chat" chatLayout
+  onWorkspace "5:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
-  $ onWorkspace "5:Dev" devLayout
+  $ onWorkspace "2:Dev" devLayout
   -- $ onWorkspace "3:Mail" mailLayout
   $ defaultLayouts
 
@@ -266,16 +266,11 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
-  , (className =? "Sublime_text") --> doF (W.shift "5:Dev")
-  , (className =? "Thunderbird") --> doF (W.shift "3:Mail")
-  , (className =? "X-www-browser") --> doF (W.shift "6:Web")
-  -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "6:Web")
-  -- , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
-  -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
-  -- , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
-  -- , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
-  -- , (className =? "Empathy") --> doF (W.shift "7:Chat")
-  , (className =? "Pidgin") --> doF (W.shift "7:Chat")
+  , (className =? "Sublime_text") --> doF (W.shift "2:Dev")
+  , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
+  , (className =? "X-www-browser") --> doF (W.shift "3:Web")
+  -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "3:Web")
+  , (className =? "Pidgin") --> doF (W.shift "5:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
   ]
 
