@@ -13,6 +13,8 @@ export CODE=$HOME/code
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -50,8 +52,7 @@ source $ZSH/oh-my-zsh.sh
 # load NVM
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 
-# use 0.8 by default
-nvm use 0.8
+nvm use default  # tell the world which version of node we are using
 
 # Customize to your needs...
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
