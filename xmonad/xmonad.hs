@@ -215,6 +215,13 @@ myKeyBindings =
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
+
+    --added screenshot keybindings: http://debianelectronics.blogspot.com.au/2012/09/xmonad-screenshot-hotkeys.html
+    --take a screenshot of entire display 
+    , ((myModMask , xK_Insert ), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1 -e 'mv $f ~/Pictures/screenshots/'")
+
+    --take a screenshot of focused window 
+    , ((myModMask .|. controlMask, xK_Insert ), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1 -u -e 'mv $f ~/Pictures/screenshots/'")    
   ]
 
 
