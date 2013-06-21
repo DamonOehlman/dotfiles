@@ -33,9 +33,9 @@ if [ -z "$(pgrep nm-applet)" ] ; then
 fi
 
 # Applet for managing print jobs from the tray.
-#if [ -z "$(pgrep system-config-printer-applet)" ] ; then
-#    system-config-printer-applet &
-#fi
+if [ -z "$(pgrep system-config-printer-applet)" ] ; then
+    system-config-printer-applet &
+fi
 
 # power management
 if [ -z "$(pgrep xfce4-power-manager)" ] ; then
@@ -55,6 +55,11 @@ fi
 # start a terminal
 if [ -z "$(pgrep term)" ] ; then
 	terminator &
+fi
+
+# weechat
+if [ -z "$(pgrep weechat-curses)" ] ; then
+	terminator -e weechat-curses &
 fi
 
 #
