@@ -55,8 +55,14 @@ source $ZSH/oh-my-zsh.sh
 nvm use default  # tell the world which version of node we are using
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin
 
 # CUSTOM CONFIGURATIONS
 
 ## BB10 Dev Environment
+
+## Android Dev Environment
+
+ADT_HOME=/opt/adt-bundle-linux-x86_64-20130522
+export ANDROID_HOME=$ADT_HOME/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
