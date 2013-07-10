@@ -1,0 +1,22 @@
+#---[ Includes ]--------------------------------------------------------
+ 
+[include]
+	# Load private information from a separate file, e.g. name, email, global
+	# ignores, tokens, etc.
+	path = ~/.gitconfig.local
+ 
+#---[ Settings ]--------------------------------------------------------	
+
+[core]
+	# Detect and warn about whitespace
+	whitespace = trailing-space,space-before-tab
+ 
+[apply]
+	# Fix whitespace changes when patching
+	whitespace = fix
+
+[push]
+	default = simple
+
+[branch]
+	autosetuprebase = always
