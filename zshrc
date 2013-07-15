@@ -7,9 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# initialise code home
-export CODE=$HOME/code
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -49,15 +46,24 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# load NVM
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-
-nvm use default  # tell the world which version of node we are using
-
 # Customize to your needs...
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/.local/bin
 
 # CUSTOM CONFIGURATIONS
+
+## initialise code home
+export CODE_HOME=$HOME/code
+
+## initialise google depot_tools
+export PATH=$PATH:$CODE_HOME/goog/depot_tools
+
+## load NVM
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+
+nvm use default  # tell the world which version of node we are using
+
+## load rvm
+source ~/.rvm/scripts/rvm
 
 ## BB10 Dev Environment
 
@@ -66,3 +72,5 @@ export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/s
 ADT_HOME=/opt/adt-bundle-linux-x86_64-20130522
 export ANDROID_HOME=$ADT_HOME/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
