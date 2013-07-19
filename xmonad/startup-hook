@@ -62,6 +62,16 @@ if [ -z "$(pgrep weechat-curses)" ] ; then
 	terminator -e weechat-curses &
 fi
 
+# sparkleshare
+if [ -z "$(pgrep sparkleshare)" ] ; then
+	/usr/local/bin/sparkleshare start &
+fi
+
+# start virtualbox
+if [ -z "$(pgrep VirtualBox)" ] ; then
+  /usr/bin/virtualbox &
+fi
+
 #
 # APPLICATION LAUNCHER
 #

@@ -46,7 +46,7 @@ myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
 myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
 myAddressBookTitle   = "Address Book" -- address book window title 
-
+myVMManagerTitle     = "Oracle VM VirtualBox Manager"
 {-
   Xmobar configuration variables. These settings control the appearance
   of text which xmonad is sending to xmobar via the DynamicLog hook.
@@ -157,6 +157,10 @@ defaultLayouts = smartBorders(avoidStruts(
 -- will want to modify that variable.
 chatLayout = avoidStruts(withIM (1%7) (Title myIMRosterTitle) Grid)
 
+
+-- initilaise the vm layout
+vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
+
 -- initialise the mail layout
 -- mailLayout = avoidStruts(withIM (1%7) (Title myAddressBookTitle) Grid)
 
@@ -177,6 +181,7 @@ myLayouts =
   onWorkspace "5:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
   $ onWorkspace "2:Dev" devLayout
+  $ onWorkspace "0:VM" vmLayout
   -- $ onWorkspace "3:Mail" mailLayout
   $ defaultLayouts
 
@@ -280,6 +285,7 @@ myManagementHooks = [
   , (className =? "rdesktop") --> doFloat
   , (className =? "Sublime_text") --> doF (W.shift "2:Dev")
   , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
+  , (className =? "VirtualBox") --> doF (W.shift "0:VM")
   -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "3:Web")
   , (className =? "Pidgin") --> doF (W.shift "5:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
