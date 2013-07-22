@@ -63,7 +63,7 @@ export PATH=$PATH:$CODE_HOME/goog/depot_tools
 nvm use default  # tell the world which version of node we are using
 
 ## load rvm
-source ~/.rvm/scripts/rvm
+[[ -d ~/.rvm ]] && source ~/.rvm/scripts/rvm
 
 ## BB10 Dev Environment
 
