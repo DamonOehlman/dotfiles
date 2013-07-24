@@ -300,7 +300,7 @@ myManagementHooks = [
   , (appName =? "chromium-browser") --> doF (W.shift "2:Dev")
   , (appName =? "hexchat") --> doF (W.shift "2:Dev")
   , (className =? "rdesktop") --> doFloat
-  , (className =? "Sublime_text") --> doF (W.shift "2:Dev")
+  , (className =? "Sublime_text" <||> className =? "Subl") --> doF (W.shift "2:Dev")
   , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
   , (className =? "VirtualBox") --> doF (W.shift "0:VM")
   -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "3:Web")
