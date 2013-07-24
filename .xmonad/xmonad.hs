@@ -21,6 +21,7 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.IM
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.NoBorders
+import XMonad.Layout.BoringWindows
 import XMonad.Layout.Circle
 import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.Fullscreen
@@ -175,7 +176,11 @@ gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 
 -- init a dev layout
 devLayout = reflectHoriz $ 
-  smartBorders(avoidStruts(withIM (1%3) (Resource "hexchat") Full))
+  boringWindows(
+    smartBorders(
+      avoidStruts(withIM (1%3) (Resource "hexchat") Full)
+    )
+  )
 
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
@@ -214,8 +219,7 @@ myLayouts =
 
 myKeyBindings =
   [
-    ((myModMask, xK_b), sendMessage ToggleStruts)
-    , ((myModMask, xK_a), sendMessage MirrorShrink)
+    ((myModMask, xK_a), sendMessage MirrorShrink)
     , ((myModMask, xK_z), sendMessage MirrorExpand)
     , ((myModMask, xK_p), spawn "synapse")
     , ((myModMask, xK_u), focusUrgent)
@@ -224,6 +228,16 @@ myKeyBindings =
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
+
+    -- , ((myModMask, xK_b), sendMessage ToggleStruts)
+
+    , ((myModMask, xK_Tab), focusUp)
+    , ((myModMask, xK_j), focusUp)
+    , ((myModMask, xK_k), focusDown)
+    -- boring helpers
+    , ((myModMask , xK_b ), markBoring )
+    , ((myModMask .|. shiftMask, xK_b ), clearBoring )
+
 
     --added screenshot keybindings: http://debianelectronics.blogspot.com.au/2012/09/xmonad-screenshot-hotkeys.html
     --take a screenshot of entire display 
