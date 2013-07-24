@@ -297,6 +297,7 @@ myManagementHooks = [
   , (appName =? "stalonetray") --> doIgnore
   , (appName =? "terminator" <&&> title =? "weechat 0.4.1") --> doF (W.shift "8:IRC")
   , (appName =? "x-www-browser") --> doF (W.shift "3:Web")
+  , (appName =? "chromium-browser") --> doF (W.shift "2:Dev")
   , (appName =? "hexchat") --> doF (W.shift "2:Dev")
   , (className =? "rdesktop") --> doFloat
   , (className =? "Sublime_text") --> doF (W.shift "2:Dev")

@@ -53,9 +53,7 @@ if [ -z "$(pgrep thunderbird)" ] ; then
 fi
 
 # chrome dev channel
-if [ -z "$(pgrep chrome)" ] ; then
-	x-www-browser &
-fi
+[[ -z "$(pgrep chrome)" ]] && [[ -z "$(pgrep chromium)" ]] && x-www-browser &
 
 # start a terminal
 if [ -z "$(pgrep term)" ] ; then
