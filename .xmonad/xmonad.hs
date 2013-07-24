@@ -24,6 +24,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Circle
 import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.Fullscreen
+import XMonad.Layout.Reflect
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog
@@ -87,7 +88,7 @@ myUrgentWSRight = "}"
 myWorkspaces =
   [
     "7:Docs",  "8:IRC", "9:Pix",
-    "4:Mail",  "5:Chat", "6:Extra",
+    "4:Mail",  "5:Chat", "6:IRC",
     "1:Term",  "2:Dev", "3:Web",
     "0:VM",    "Extr1", "Extr2"
   ]
@@ -173,7 +174,8 @@ vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
 gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 
 -- init a dev layout
-devLayout = smartBorders(avoidStruts(Full))
+devLayout = reflectHoriz $ 
+  smartBorders(avoidStruts(withIM (1%3) (Resource "hexchat") Full))
 
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
@@ -280,8 +282,8 @@ myManagementHooks = [
   appName =? "synapse" --> doIgnore
   , (appName =? "stalonetray") --> doIgnore
   , (appName =? "terminator" <&&> title =? "weechat 0.4.1") --> doF (W.shift "8:IRC")
-  , (appName =? "x-www-browser" <&&> title =? "IAS Keep-Alive - Google Chrome") --> doF (W.shift "Extra2")
   , (appName =? "x-www-browser") --> doF (W.shift "3:Web")
+  , (appName =? "hexchat") --> doF (W.shift "2:Dev")
   , (className =? "rdesktop") --> doFloat
   , (className =? "Sublime_text") --> doF (W.shift "2:Dev")
   , (className =? "Thunderbird") --> doF (W.shift "4:Mail")

@@ -8,6 +8,11 @@
 # Author: David Brewer
 # Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
 
+## stalonetray
+if [ -z "$(pgrep stalonetray)" ]; then
+  stalonetray &
+fi
+
 #
 # TRAY ICON SOFTWARE
 #
@@ -57,9 +62,9 @@ if [ -z "$(pgrep term)" ] ; then
 	terminator &
 fi
 
-# weechat
-if [ -z "$(pgrep weechat-curses)" ] ; then
-	terminator -e weechat-curses &
+# hexchat
+if [ -z "$(pgrep hexchat)" ] ; then
+	hexchat &
 fi
 
 # sparkleshare
