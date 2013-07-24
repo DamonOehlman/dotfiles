@@ -231,7 +231,7 @@ myKeyBindings =
 
     -- , ((myModMask, xK_b), sendMessage ToggleStruts)
 
-    , ((myModMask, xK_Tab), focusUp)
+    -- , ((myModMask, xK_Tab), focusUp)
     , ((myModMask, xK_j), focusUp)
     , ((myModMask, xK_k), focusDown)
     -- boring helpers
