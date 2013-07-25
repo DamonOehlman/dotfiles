@@ -31,6 +31,7 @@ import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog
 import XMonad.Actions.Plane
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
@@ -178,7 +179,7 @@ gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 devLayout = reflectHoriz $ 
   boringWindows(
     smartBorders(
-      avoidStruts(withIM (1%3) (Resource "hexchat") Full)
+      avoidStruts(withIM (1%3) (ClassName "Terminator") Full)
     )
   )
 
@@ -298,6 +299,7 @@ myManagementHooks = [
   , (appName =? "terminator" <&&> title =? "weechat 0.4.1") --> doF (W.shift "8:IRC")
   , (appName =? "x-www-browser" <||> appName =? "chromium-browser") --> doF (W.shift "3:Web")
   , (appName =? "hexchat") --> doF (W.shift "2:Dev")
+  , (className =? "weechat 0.4.1") --> doF (W.shift "2:Dev")
   , (className =? "rdesktop") --> doFloat
   , (className =? "Sublime_text" <||> className =? "Subl") --> doF (W.shift "2:Dev")
   , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
@@ -305,6 +307,7 @@ myManagementHooks = [
   -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "3:Web")
   , (className =? "Pidgin") --> doF (W.shift "5:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
+  , isDialog --> doCenterFloat
   ]
 
 
