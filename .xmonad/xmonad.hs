@@ -21,11 +21,11 @@ import XMonad.Layout.ResizableTile
 import XMonad.Layout.IM
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.NoBorders
-import XMonad.Layout.BoringWindows
 import XMonad.Layout.Circle
 import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.Reflect
+import XMonad.Layout.Master
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog
@@ -36,6 +36,7 @@ import XMonad.Hooks.UrgencyHook
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import Data.Ratio ((%))
+import Data.List (isPrefixOf)
 
 {-
   Xmonad configuration variables. These settings control some of the
@@ -176,12 +177,7 @@ vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
 gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 
 -- init a dev layout
-devLayout = reflectHoriz $ 
-  boringWindows(
-    smartBorders(
-      avoidStruts(withIM (1%3) (ClassName "Terminator") Full)
-    )
-  )
+devLayout = mastered (3/100) (3/5) $ Grid
 
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
@@ -229,16 +225,6 @@ myKeyBindings =
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
-
-    -- , ((myModMask, xK_b), sendMessage ToggleStruts)
-
-    -- , ((myModMask, xK_Tab), focusUp)
-    , ((myModMask, xK_j), focusUp)
-    , ((myModMask, xK_k), focusDown)
-    -- boring helpers
-    , ((myModMask , xK_b ), markBoring )
-    , ((myModMask .|. shiftMask, xK_b ), clearBoring )
-
 
     --added screenshot keybindings: http://debianelectronics.blogspot.com.au/2012/09/xmonad-screenshot-hotkeys.html
     --take a screenshot of entire display 
@@ -295,18 +281,17 @@ myKeyBindings =
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
   appName =? "synapse" --> doIgnore
-  , (appName =? "stalonetray") --> doIgnore
-  , (appName =? "terminator" <&&> title =? "weechat 0.4.1") --> doF (W.shift "8:IRC")
-  , (appName =? "x-www-browser" <||> appName =? "chromium-browser") --> doF (W.shift "3:Web")
-  , (appName =? "hexchat") --> doF (W.shift "2:Dev")
-  , (className =? "weechat 0.4.1") --> doF (W.shift "2:Dev")
-  , (className =? "rdesktop") --> doFloat
-  , (className =? "Sublime_text" <||> className =? "Subl") --> doF (W.shift "2:Dev")
-  , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
-  , (className =? "VirtualBox") --> doF (W.shift "0:VM")
-  -- , (className =? "Chromium-browser" <&&> resource =? "Loading... - Chromium") --> doF (W.shift "3:Web")
-  , (className =? "Pidgin") --> doF (W.shift "5:Chat")
-  , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
+  , appName =? "stalonetray" --> doIgnore
+  , appName =? "terminator" <&&> title =? "weechat 0.4.1" --> doF (W.shift "8:IRC")
+  , appName =? "x-www-browser" <||> appName =? "chromium-browser" --> doF (W.shift "3:Web")
+  , appName =? "hexchat" --> doF (W.shift "2:Dev")
+  , fmap ("weechat" `isPrefixOf`) (stringProperty "WM_NAME") --> doF (W.shift "2:Dev")
+  , className =? "rdesktop" --> doFloat
+  , className =? "Sublime_text" <||> className =? "Subl" --> doF (W.shift "2:Dev")
+  , className =? "Thunderbird" --> doF (W.shift "4:Mail")
+  , className =? "VirtualBox" --> doF (W.shift "0:VM")
+  , className =? "Pidgin" --> doF (W.shift "5:Chat")
+  , className =? "Gimp-2.8" --> doF (W.shift "9:Pix")
   , isDialog --> doCenterFloat
   ]
 
