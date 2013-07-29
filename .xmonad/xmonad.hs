@@ -91,7 +91,7 @@ myUrgentWSRight = "}"
 myWorkspaces =
   [
     "7:Docs",  "8:IRC", "9:Pix",
-    "4:Mail",  "5:Chat", "6:IRC",
+    "4:Mail",  "5:Chat", "6:Misc",
     "1:Term",  "2:Dev", "3:Web",
     "0:VM",    "Extr1", "Extr2"
   ]
@@ -286,6 +286,7 @@ myManagementHooks = [
   , appName =? "x-www-browser" <||> appName =? "chromium-browser" --> doF (W.shift "3:Web")
   , appName =? "hexchat" --> doF (W.shift "2:Dev")
   , fmap ("weechat" `isPrefixOf`) (stringProperty "WM_NAME") --> doF (W.shift "2:Dev")
+  , appName =? "thunar" --> doF (W.shift "6:Misc")
   , className =? "rdesktop" --> doFloat
   , className =? "Sublime_text" <||> className =? "Subl" --> doF (W.shift "2:Dev")
   , className =? "Thunderbird" --> doF (W.shift "4:Mail")

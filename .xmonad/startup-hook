@@ -60,9 +60,9 @@ if [ -z "$(pgrep term)" ] ; then
 	terminator &
 fi
 
-# hexchat
+# weechat
 if [ -z "$(pgrep weechat-curses)" ] ; then
-	terminator weechat-curses &
+	terminator -e weechat-curses &
 fi
 
 # sparkleshare
