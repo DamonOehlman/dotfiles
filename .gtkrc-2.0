@@ -1,0 +1,23 @@
+#sets the font
+gtk-font-name = "sans 8"
+
+#sets the theme
+gtk-theme-name = "MidnightOSX"
+
+#sets the icon theme
+gtk-icon-theme-name = "dlg-etiquette"
+
+#shows only icons in the toolbar
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
+
+#shows small icons in the toolbar
+gtk-toolbar-icon-size = GTK_ICON_SIZE_SMALL_TOOLBAR
+
+#sets the background color in Rox back to white because some GTK themes set it to light gray
+style "rox" = "default"
+{
+  bg[NORMAL] = "#ffffff"
+  bg[ACTIVE] = "#ffffff"
+}
+
+widget_class "*Collection*" style "rox"
