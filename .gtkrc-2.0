@@ -2,7 +2,7 @@
 gtk-font-name = "sans 8"
 
 #sets the theme
-gtk-theme-name = "MidnightOSX"
+gtk-theme-name = "Clearlooks-DarkNice"
 
 #sets the icon theme
 gtk-icon-theme-name = "dlg-etiquette"
