@@ -1,2 +1,11 @@
-*
+Cache/*
+Index/*
+Installed Packages/*
+Local/*
+Packages/Package\ Control/*
+Packages/Theme - Default/*
+Packages/User/*
+!Packages/User/Preferences.sublime-settings
 !Packages/User/JavaScript.sublime-settings
+!Packages/User/Default\ \(Linux\).sublime-keymap
+Packages/*
