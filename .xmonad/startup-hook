@@ -23,9 +23,9 @@ fi
 #fi
 
 # start pidgin client
-if [ -z "$(pgrep pidgin)" ] ; then
-	pidgin &
-fi
+# if [ -z "$(pgrep pidgin)" ] ; then
+# 	pidgin &
+# fi
 
 # Remmina remote desktap connection client (-i: start hidden)
 #if [ -z "$(pgrep remmina)" ] ; then
