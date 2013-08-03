@@ -177,7 +177,7 @@ vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
 gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 
 -- init a dev layout
-devLayout = mastered (3/100) (3/5) $ Grid
+devLayout = avoidStruts(mastered (3/100) (3/5) $ Grid)
 
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
