@@ -85,29 +85,7 @@ if [ -z "$(pgrep synapse)" ] ; then
 fi
 
 # TOUCHPAD PREFERENCES
-
-# two finger scrolling
-synclient EmulateTwoFingerMinW=20
-synclient EmulateTwoFingerMinZ=7
-synclient VertTwoFingerScroll=1 
-
-# disable border scrolling
-synclient VertEdgeScroll=0
-
-# disable tap to click
-synclient TapButton1=0 TapButton2=0 TapButton3=0
-
-# increase coasting speed
-synclient CoastingSpeed=40
-
-# minimize right click area
-synclient BottomEdge=1000
-synclient RightEdge=1600
-synclient RightButtonAreaLeft=1500 # right edge = 1536, 120r = right client
-synclient RightButtonAreaTop=900   # bottom edge = 852
-
-# disable touchpad clicks when typing
-syndaemon -t -d
+source ./synclient-config
 
 # On login, we unlock the ssh keychain so we're not prompted for 
 # passphrases later. We pipe /dev/null to ssh-add to make it realize 
