@@ -1,0 +1,25 @@
+[global_config]
+
+[keybindings]
+
+[profiles]
+
+[[default]]
+background_darkness = 0.82
+use_system_font = False
+font = Source Code Pro 13
+background_type = transparent
+
+[layouts]
+
+[[default]]
+
+[[[child1]]]
+type = Terminal
+parent = window0
+
+[[[window0]]]
+type = Window
+parent = ""
+
+[plugins]
