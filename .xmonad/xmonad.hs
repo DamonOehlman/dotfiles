@@ -14,9 +14,12 @@
   Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
 -}
 
+import System.IO
+import Control.Applicative
 import XMonad
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.Grid
+import Graphics.X11.Xinerama
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.IM
 import XMonad.Layout.ThreeColumns
@@ -296,6 +299,15 @@ myManagementHooks = [
   , isDialog --> doCenterFloat
   ]
 
+-- started implementing multimonitor xmobar support
+-- see: http://www.haskell.org/haskellwiki/Xmonad/Config_archive/adamvo%27s_xmonad.hs
+
+getScreens :: IO [Int]
+getScreens = openDisplay "" >>= liftA2 (<*) f closeDisplay
+    where f = fmap (zipWith const [0..]) . getScreenInfo
+
+xmobarScreen :: Int -> IO Handle
+xmobarScreen = spawnPipe . ("~/.cabal/bin/xmobar -x " ++) . show
 
 {-
   Workspace navigation keybindings. This is probably the part of the
