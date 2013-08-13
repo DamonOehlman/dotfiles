@@ -74,3 +74,6 @@ export ANDROID_HOME=$ADT_HOME/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# haskell
+export PATH=$HOME/.cabal/bin:$PATH

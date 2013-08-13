@@ -1,13 +1,4 @@
--- xmobar configuration file 
---
--- Mess with this file to change the appearance of the contents of the
--- status bar which are not directly controlled by xmonad. You can see your
--- changes immediately by recompiling xmonad using "super-q".
--- 
--- There's a lot you can do here. Refer to "man xmobar". 
--- 
--- Author: David Brewer
--- Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
+-- xmobar configuration
 
 
 Config { 
@@ -16,6 +7,15 @@ Config {
   font = "xft:Source Code Pro-12",
   bgColor = "black",
   fgColor = "grey",
+
+  border = NoBorder,
+  borderColor = "black",
+
+  allDesktops = True,
+  overrideRedirect = False,
+  hideOnStart = False,
+  persistent = False,
+  lowerOnStart = False,
 
   -- Position is top left, taking up 95% of screen.
   -- You are likely to have to tweak the width here based on the width
@@ -48,7 +48,6 @@ Config {
     Run Battery [
       "-t", "<acstatus>: <left>%", 
       "--", 
-      "-c", "charge_full",
       "-O", "AC",
       "-o", "Bat",
       "-h", "green",
