@@ -1,37 +1,37 @@
-[2013-08-04 14:07:28] WeeChat 0.4.1 (compiled on May 20 2013 14:33:19)
-[2013-08-04 14:07:28] Reading configuration file weechat.conf
-[2013-08-04 14:07:29] Reading configuration file plugins.conf
-[2013-08-04 14:07:29] Reading configuration file rmodifier.conf
-[2013-08-04 14:07:29] Reading configuration file charset.conf
-[2013-08-04 14:07:29] Reading configuration file irc.conf
-[2013-08-04 14:07:29] irc: connecting to server chat.freenode.net/6667...
-[2013-08-04 14:07:29] Reading configuration file alias.conf
-[2013-08-04 14:07:29] Reading configuration file xfer.conf
-[2013-08-04 14:07:29] Reading configuration file logger.conf
-[2013-08-04 14:07:29] Reading configuration file aspell.conf
-[2013-08-04 14:07:29] Reading configuration file relay.conf
-[2013-08-04 14:07:29] Reading configuration file script.conf
-[2013-08-04 14:07:30] Signal SIGHUP received, reloading configuration files
-[2013-08-04 14:07:30] Reloading configuration file weechat.conf
-[2013-08-04 14:07:30] Reloading configuration file plugins.conf
-[2013-08-04 14:07:30] Reloading configuration file rmodifier.conf
-[2013-08-04 14:07:30] Reloading configuration file charset.conf
-[2013-08-04 14:07:30] Reloading configuration file irc.conf
-[2013-08-04 14:07:30] Reloading configuration file alias.conf
-[2013-08-04 14:07:30] Reloading configuration file xfer.conf
-[2013-08-04 14:07:30] Reloading configuration file logger.conf
-[2013-08-04 14:07:30] Reloading configuration file aspell.conf
-[2013-08-04 14:07:30] Reloading configuration file relay.conf
-[2013-08-04 14:07:30] Reloading configuration file script.conf
-[2013-08-04 14:07:30] Terminal lost, exiting WeeChat...
-[2013-08-04 14:07:30] Writing configuration file plugins.conf 
-[2013-08-04 14:07:30] Writing configuration file script.conf 
-[2013-08-04 14:07:30] Writing configuration file relay.conf 
-[2013-08-04 14:07:30] Writing configuration file aspell.conf 
-[2013-08-04 14:07:30] Writing configuration file logger.conf 
-[2013-08-04 14:07:30] Writing configuration file xfer.conf 
-[2013-08-04 14:07:30] Writing configuration file alias.conf 
-[2013-08-04 14:07:30] Writing configuration file irc.conf 
-[2013-08-04 14:07:30] Writing configuration file charset.conf 
-[2013-08-04 14:07:30] Writing configuration file rmodifier.conf 
-[2013-08-04 14:07:30] Writing configuration file weechat.conf 
+[2013-08-13 11:26:54] WeeChat 0.4.1 (compiled on May 20 2013 14:33:19)
+[2013-08-13 11:26:54] Reading configuration file weechat.conf
+[2013-08-13 11:26:54] Reading configuration file plugins.conf
+[2013-08-13 11:26:54] Reading configuration file rmodifier.conf
+[2013-08-13 11:26:54] Reading configuration file charset.conf
+[2013-08-13 11:26:54] Reading configuration file irc.conf
+[2013-08-13 11:26:54] irc: connecting to server chat.freenode.net/6667...
+[2013-08-13 11:26:54] Reading configuration file alias.conf
+[2013-08-13 11:26:54] Reading configuration file xfer.conf
+[2013-08-13 11:26:54] Reading configuration file logger.conf
+[2013-08-13 11:26:54] Reading configuration file aspell.conf
+[2013-08-13 11:26:54] Reading configuration file relay.conf
+[2013-08-13 11:26:54] Reading configuration file script.conf
+[2013-08-13 12:51:33] Signal SIGHUP received, reloading configuration files
+[2013-08-13 12:51:33] Reloading configuration file weechat.conf
+[2013-08-13 12:51:33] Reloading configuration file plugins.conf
+[2013-08-13 12:51:33] Reloading configuration file rmodifier.conf
+[2013-08-13 12:51:33] Reloading configuration file charset.conf
+[2013-08-13 12:51:33] Reloading configuration file irc.conf
+[2013-08-13 12:51:33] Reloading configuration file alias.conf
+[2013-08-13 12:51:33] Reloading configuration file xfer.conf
+[2013-08-13 12:51:33] Reloading configuration file logger.conf
+[2013-08-13 12:51:33] Reloading configuration file aspell.conf
+[2013-08-13 12:51:33] Reloading configuration file relay.conf
+[2013-08-13 12:51:33] Reloading configuration file script.conf
+[2013-08-13 12:51:33] Terminal lost, exiting WeeChat...
+[2013-08-13 12:51:33] Writing configuration file plugins.conf 
+[2013-08-13 12:51:33] Writing configuration file script.conf 
+[2013-08-13 12:51:33] Writing configuration file relay.conf 
+[2013-08-13 12:51:33] Writing configuration file aspell.conf 
+[2013-08-13 12:51:33] Writing configuration file logger.conf 
+[2013-08-13 12:51:33] Writing configuration file xfer.conf 
+[2013-08-13 12:51:33] Writing configuration file alias.conf 
+[2013-08-13 12:51:33] Writing configuration file irc.conf 
+[2013-08-13 12:51:33] Writing configuration file charset.conf 
+[2013-08-13 12:51:33] Writing configuration file rmodifier.conf 
+[2013-08-13 12:51:33] Writing configuration file weechat.conf 
