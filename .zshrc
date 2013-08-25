@@ -68,9 +68,7 @@ nvm use default  # tell the world which version of node we are using
 ## BB10 Dev Environment
 
 ## Android Dev Environment
-
-ADT_HOME=/opt/adt-bundle-linux-x86_64-20130522
-export ANDROID_HOME=$ADT_HOME/sdk
+export ANDROID_HOME=/opt/android-sdk-linux
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
