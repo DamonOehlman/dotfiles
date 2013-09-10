@@ -67,6 +67,12 @@ nvm use default  # tell the world which version of node we are using
 
 ## BB10 Dev Environment
 
+BBNDK=~/bbndk
+BB_HOST_VERSION=10_2_0_15
+BB_HOST_ENV=$BBNDK/host_$BB_HOST_VERSION/linux/x86
+
+export CORDOVA_BBTOOLS=$BB_HOST_ENV/usr/bin
+
 ## Android Dev Environment
 
 ADT_HOME=/opt/adt-bundle-linux-x86_64-20130522
@@ -77,3 +83,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # haskell
 export PATH=$HOME/.cabal/bin:$PATH
+
+# emscripten
+export PATH=$PATH:~/code/github/emscripten
