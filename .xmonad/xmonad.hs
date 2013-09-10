@@ -47,8 +47,8 @@ import Data.List (isPrefixOf)
 -}
 
 myModMask            = mod1Mask       
-myFocusedBorderColor = "#ff0000"      -- color of focused border
-myNormalBorderColor  = "#cccccc"      -- color of inactive border
+myFocusedBorderColor = "#d8d8d8"      -- color of focused border
+myNormalBorderColor  = "#444444"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
 myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
