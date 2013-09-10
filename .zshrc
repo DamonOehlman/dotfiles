@@ -65,13 +65,22 @@ nvm use default  # tell the world which version of node we are using
 ## load rvm
 [[ -d ~/.rvm ]] && source ~/.rvm/scripts/rvm
 
-## BB10 Dev Environment
-
 ## Android Dev Environment
 export ANDROID_HOME=/opt/android-sdk-linux
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# bashinate
+PATH=$PATH:$HOME/.bashinate/bin
+
 # haskell
 export PATH=$HOME/.cabal/bin:$PATH
+
+## BB10 Dev Environment
+# source ~/bbndk/bbndk-env_10_2_0_1155.sh
+
+# cordova
+export CORDOVA_NODE=~/.nvm/v0.10.15/bin/
+export CORDOVA_BBTOOLS=$QNX_HOST/usr/bin/
+export PATH=$PATH:$CODE_HOME/github/cordova-blackberry/blackberry10/bin
