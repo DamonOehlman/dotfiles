@@ -74,12 +74,13 @@ BB_HOST_ENV=$BBNDK/host_$BB_HOST_VERSION/linux/x86
 export CORDOVA_BBTOOLS=$BB_HOST_ENV/usr/bin
 
 ## Android Dev Environment
-
-ADT_HOME=/opt/adt-bundle-linux-x86_64-20130522
-export ANDROID_HOME=$ADT_HOME/sdk
+export ANDROID_HOME=/opt/android-sdk-linux
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# bashinate
+PATH=$PATH:$HOME/.bashinate/bin
 
 # haskell
 export PATH=$HOME/.cabal/bin:$PATH

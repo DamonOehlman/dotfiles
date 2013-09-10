@@ -166,7 +166,7 @@ chatLayout = avoidStruts(withIM (1%7) (Title myIMRosterTitle) Grid)
 
 
 -- initilaise the vm layout
-vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
+-- vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
 
 -- initialise the mail layout
 -- mailLayout = avoidStruts(withIM (1%7) (Title myAddressBookTitle) Grid)
@@ -188,7 +188,7 @@ myLayouts =
   onWorkspace "5:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
   $ onWorkspace "2:Dev" devLayout
-  $ onWorkspace "0:VM" vmLayout
+  -- $ onWorkspace "0:VM" vmLayout
   -- $ onWorkspace "3:Mail" mailLayout
   $ defaultLayouts
 
@@ -231,10 +231,10 @@ myKeyBindings =
 
     --added screenshot keybindings: http://debianelectronics.blogspot.com.au/2012/09/xmonad-screenshot-hotkeys.html
     --take a screenshot of entire display 
-    , ((myModMask , xK_Insert ), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1 -e 'mv $f ~/Pictures/screenshots/'")
+    , ((myModMask , xK_backslash ), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1 -e 'mv $f ~/Pictures/screenshots/'")
 
     --take a screenshot of focused window 
-    , ((myModMask .|. controlMask, xK_Insert ), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1 -u -e 'mv $f ~/Pictures/screenshots/'")    
+    , ((myModMask .|. controlMask, xK_backslash ), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1 -u -e 'mv $f ~/Pictures/screenshots/'")    
   ]
 
 
