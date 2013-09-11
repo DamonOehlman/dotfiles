@@ -80,6 +80,9 @@ bashinate use node 0.10.18
 bashinate use rust 0.7
 bashinate use luvit 0.6.1
 
+# java
+JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
+
 # haskell
 export PATH=$HOME/.cabal/bin:$PATH
 
