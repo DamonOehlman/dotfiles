@@ -57,11 +57,6 @@ export CODE_HOME=$HOME/code
 ## initialise google depot_tools
 export PATH=$PATH:$CODE_HOME/goog/depot_tools
 
-## load NVM
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-
-nvm use default  # tell the world which version of node we are using
-
 ## load rvm
 [[ -d ~/.rvm ]] && source ~/.rvm/scripts/rvm
 
@@ -80,7 +75,8 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # bashinate
-PATH=$PATH:$HOME/.bashinate/bin
+PATH=$PATH:$HOME/.bashinate/bin:$CODE_HOME/DamonOehlman/bashinate
+bashinate use node 0.10.18
 
 # haskell
 export PATH=$HOME/.cabal/bin:$PATH
