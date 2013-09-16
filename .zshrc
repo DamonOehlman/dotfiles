@@ -76,9 +76,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # bashinate
 PATH=$PATH:$HOME/.bashinate/bin:$CODE_HOME/DamonOehlman/bashinate
-bashinate use node 0.10.18
+PATH=$PATH:`bashinate use node 0.10.18`
 bashinate use rust 0.7
 bashinate use luvit 0.6.1
+bashinate use phantomjs 1.9.2
 
 # java
 JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
