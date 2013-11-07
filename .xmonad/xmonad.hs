@@ -46,13 +46,13 @@ import Data.List (isPrefixOf)
   simpler parts of xmonad's behavior and are straightforward to tweak.
 -}
 
-myModMask            = mod1Mask       
+myModMask            = mod1Mask
 myFocusedBorderColor = "#d8d8d8"      -- color of focused border
 myNormalBorderColor  = "#444444"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
 myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
-myAddressBookTitle   = "Address Book" -- address book window title 
+myAddressBookTitle   = "Address Book" -- address book window title
 myVMManagerTitle     = "Oracle VM VirtualBox Manager"
 {-
   Xmobar configuration variables. These settings control the appearance
