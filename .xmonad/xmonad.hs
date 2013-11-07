@@ -286,7 +286,7 @@ myManagementHooks = [
   appName =? "synapse" --> doIgnore
   , appName =? "stalonetray" --> doIgnore
   , appName =? "terminator" <&&> title =? "weechat 0.4.1" --> doF (W.shift "8:IRC")
-  , appName =? "x-www-browser" <||> appName =? "chromium-browser" --> doF (W.shift "3:Web")
+  , className =? "X-www-browser" --> doF (W.shift "3:Web")
   , appName =? "hexchat" --> doF (W.shift "2:Dev")
   , fmap ("weechat" `isPrefixOf`) (stringProperty "WM_NAME") --> doF (W.shift "2:Dev")
   , appName =? "thunar" --> doF (W.shift "6:Misc")
