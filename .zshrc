@@ -76,7 +76,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # bashinate
 PATH=$PATH:$HOME/.bashinate/bin:$CODE_HOME/DamonOehlman/bashinate
-PATH=$PATH:`bashinate use node 0.10.18`
+PATH=$PATH:`bashinate use node 0.10.21`
 bashinate use rust 0.7
 bashinate use luvit 0.6.1
 bashinate use phantomjs 1.9.2
@@ -90,3 +90,8 @@ export PATH=$HOME/.cabal/bin:$PATH
 
 # emscripten
 export PATH=$PATH:~/code/github/emscripten
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# perlbrew
+# source ~/perl5/perlbrew/etc/bashrc
