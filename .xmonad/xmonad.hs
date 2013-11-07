@@ -165,9 +165,6 @@ defaultLayouts = smartBorders(avoidStruts(
 chatLayout = avoidStruts(withIM (1%7) (Title myIMRosterTitle) Grid)
 
 
--- initilaise the vm layout
--- vmLayout = avoidStruts(withIM (1%7) (Title myVMManagerTitle) Full)
-
 -- initialise the mail layout
 -- mailLayout = avoidStruts(withIM (1%7) (Title myAddressBookTitle) Grid)
 
@@ -182,13 +179,16 @@ gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 -- init a dev layout
 devLayout = avoidStruts(mastered (3/100) (3/5) $ Grid)
 
+-- initilaise the vm layout
+vmLayout = avoidStruts(mastered (3/100) (3/5) $ Grid)
+
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
 myLayouts =
   onWorkspace "5:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
   $ onWorkspace "2:Dev" devLayout
-  -- $ onWorkspace "0:VM" vmLayout
+  $ onWorkspace "0:VM" vmLayout
   -- $ onWorkspace "3:Mail" mailLayout
   $ defaultLayouts
 
@@ -230,10 +230,10 @@ myKeyBindings =
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
 
     --added screenshot keybindings: http://debianelectronics.blogspot.com.au/2012/09/xmonad-screenshot-hotkeys.html
-    --take a screenshot of entire display 
+    --take a screenshot of entire display
     , ((myModMask , xK_backslash ), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1 -e 'mv $f ~/Pictures/screenshots/'")
 
-    --take a screenshot of focused window 
+    --take a screenshot of focused window
     , ((myModMask .|. controlMask, xK_backslash ), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1 -u -e 'mv $f ~/Pictures/screenshots/'")    
   ]
 
