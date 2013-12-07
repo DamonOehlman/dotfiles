@@ -54,6 +54,9 @@ export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/s
 ## initialise code home
 export CODE_HOME=$HOME/code
 
+## node
+NODE_VERSION=0.10.22
+
 ## initialise google depot_tools
 export PATH=$PATH:$CODE_HOME/goog/depot_tools
 
@@ -76,11 +79,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # bashinate
 PATH=$PATH:$HOME/.bashinate/bin:$CODE_HOME/DamonOehlman/bashinate
-PATH=$PATH:`bashinate use node 0.10.21`
+PATH=$PATH:`bashinate use node $NODE_VERSION`
 bashinate use rust 0.7
 bashinate use luvit 0.6.1
 bashinate use phantomjs 1.9.2
 bashinate use appengine-go
+bashinate use couchdb 1.5.0
 
 # java
 export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
