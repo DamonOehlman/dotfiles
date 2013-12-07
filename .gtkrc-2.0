@@ -1,5 +1,5 @@
 #sets the font
-gtk-font-name = "sans 8"
+gtk-font-name = "Droid Sans 10"
 
 #sets the theme
 gtk-theme-name = "BSM Simple Dark"
@@ -15,12 +15,3 @@ gtk-toolbar-icon-size = GTK_ICON_SIZE_SMALL_TOOLBAR
 
 # set the key style to emacs
 gtk-key-theme-name = "Emacs"
-
-#sets the background color in Rox back to white because some GTK themes set it to light gray
-# style "rox" = "default"
-# {
-#   bg[NORMAL] = "#ffffff"
-#   bg[ACTIVE] = "#ffffff"
-# }
-#
-#widget_class "*Collection*" style "rox"
