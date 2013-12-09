@@ -12,6 +12,3 @@ gtk-toolbar-style = GTK_TOOLBAR_ICONS
 
 #shows small icons in the toolbar
 gtk-toolbar-icon-size = GTK_ICON_SIZE_SMALL_TOOLBAR
-
-# set the key style to emacs
-gtk-key-theme-name = "Emacs"
