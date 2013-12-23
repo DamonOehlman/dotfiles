@@ -99,3 +99,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # perlbrew
 # source ~/perl5/perlbrew/etc/bashrc
+# added by travis gem
+[ -f /home/doehlman/.travis/travis.sh ] && source /home/doehlman/.travis/travis.sh
+
+# load secrets
+source ~/.secrets.sh
