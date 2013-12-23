@@ -55,7 +55,7 @@ export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/s
 export CODE_HOME=$HOME/code
 
 ## node
-NODE_VERSION=0.10.22
+NODE_VERSION=0.10.24
 
 ## initialise google depot_tools
 export PATH=$PATH:$CODE_HOME/goog/depot_tools
