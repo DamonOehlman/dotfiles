@@ -352,11 +352,11 @@ awful.rules.rules = {
 
       -- sublime text to 2
     { rule = { class = "Sublime_text" },
-      properties = { tag = tags[1][2] } },
+      properties = { tag = tags[mouse.screen][2] } },
 
       -- chrome to 3
     { rule = { class = "Google-chrome-stable" },
-      propertoes = { tag = tags[1][3] } }
+      propertoes = { tag = tags[mouse.screen][3] } }
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
