@@ -31,6 +31,16 @@ do
 end
 -- }}}
 
+-- Override awesome.quit when we're using GNOME
+_awesome_quit = awesome.quit
+awesome.quit = function()
+  if os.getenv("DESKTOP_SESSION") == "awesome-gnome" then
+     os.execute("/usr/bin/gnome-session-quit --logout --no-prompt")
+  else
+    _awesome_quit()
+  end
+end
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
@@ -395,13 +405,3 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 -- awful.hooks.manage.register(move_sublime)
 -- }}}
-
--- Override awesome.quit when we're using GNOME
-_awesome_quit = awesome.quit
-awesome.quit = function()
-  if os.getenv("DESKTOP_SESSION") == "awesome-gnome" then
-     os.execute("/usr/bin/gnome-session-quit")
-  else
-    _awesome_quit()
-  end
-end
