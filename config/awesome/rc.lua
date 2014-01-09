@@ -359,7 +359,13 @@ awful.rules.rules = {
       properties = {
         tag = tags[mouse.screen][3],
         floating = false
-      } }
+      } },
+    { rule = { class = "Google-chrome-beta" },
+      properties = {
+        tag = tags[mouse.screen][3],
+        floating = false
+      } },
+    
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
