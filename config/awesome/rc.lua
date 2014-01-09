@@ -341,31 +341,35 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    { rule = { class = "Synapse" },
+
+    -- floating windows
+    { rule_any = { class = {
+        "MPlayer",
+        "pinentry",
+        "gimp",
+        "Synapse"
+      } },
       properties = { floating = true } },
 
-      -- sublime text to 2
+    -- sublime text to 2
     { rule = { class = "Sublime_text" },
       properties = { tag = tags[mouse.screen][2] } },
 
-      -- chrome to 3
-    { rule = { class = "Google-chrome-stable" },
+    -- chrome to 3
+    {
+      rule_any = {
+        class = {
+          "Google-chrome",
+          "Google-chrome-stable",
+          "Google-chrome-beta"
+        }
+      },
       properties = {
         tag = tags[mouse.screen][3],
         floating = false
-      } },
-    { rule = { class = "Google-chrome-beta" },
-      properties = {
-        tag = tags[mouse.screen][3],
-        floating = false
-      } },
-    
+      }
+    }
+
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
