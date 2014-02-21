@@ -4,7 +4,7 @@
 BASHINATE_HOME="~/.bashinate";
 
 # include bashinate path
-PATH="~/bin:$BASHINATE_HOME/bin:~/code/goog/depot_tools:$PATH";
+PATH="~/bin:$BASHINATE_HOME/bin:~/code/goog/depot_tools:~/.cabal/bin:$PATH";
 
 # include node in the path
 PATH="`bashinate use node 0.10.24`:$PATH";
