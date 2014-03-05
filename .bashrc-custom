@@ -4,7 +4,10 @@
 BASHINATE_HOME="~/.bashinate";
 
 # include bashinate path
-PATH="~/bin:$BASHINATE_HOME/bin:~/code/goog/depot_tools:~/.cabal/bin:$PATH";
+PATH="~/bin:$BASHINATE_HOME/bin:$PATH";
+
+PATH="$PATH:~/.cabal/bin"; #cabal
+PATH="$PATH:~/packer"; # packer
 
 # include node in the path
 PATH="`bashinate use node 0.10.24`:$PATH";
@@ -12,9 +15,12 @@ PATH="`bashinate use node 0.10.24`:$PATH";
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
 
+# chrome sandbox
+export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+
 # initialise the bashrc
-alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
-# alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
+# alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
+alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
 
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
