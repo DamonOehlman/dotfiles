@@ -10,7 +10,7 @@ PATH="$PATH:~/.cabal/bin"; #cabal
 PATH="$PATH:~/packer"; # packer
 
 # include node in the path
-PATH="`bashinate use node 0.10.24`:$PATH";
+PATH="`bashinate use node 0.10.26`:$PATH";
 
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
