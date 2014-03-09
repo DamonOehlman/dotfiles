@@ -4,7 +4,7 @@
 BASHINATE_HOME="~/.bashinate";
 
 # include bashinate path
-PATH="~/bin:$BASHINATE_HOME/bin:~/code/goog/depot_tools:$PATH";
+PATH="~/bin:$BASHINATE_HOME/bin:~/.cabal/bin:$PATH";
 
 # include node in the path
 PATH="`bashinate use node 0.10.24`:$PATH";
@@ -72,6 +72,9 @@ function report_status() {
 export _PS1="\[$NC\][\u@\h \W]"
 export PS2="\[$NC\]> "
 export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
+
+# rvm
+source ~/.rvm/scripts/rvm
 
 # include the bash secrets file
 . ~/.bashrc-secrets
