@@ -355,24 +355,30 @@ awful.rules.rules = {
     { rule = { class = "Sublime_text" },
       properties = { tag = tags[mouse.screen][2] } },
 
-    -- chrome to 3
+    -- browsers to 3
     {
       rule_any = {
         class = {
           "Google-chrome",
           "Google-chrome-stable",
-          "Google-chrome-beta"
+          "Google-chrome-beta",
+          "Firefox"
         }
       },
       properties = {
         tag = tags[mouse.screen][3],
         floating = false
       }
-    }
+    },
 
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    -- virtual box
+    {
+      rule_any = { class = {
+        "VirtualBox"
+      } },
+
+      properties = { tag = tags[mouse.screen][8] }
+    }
 }
 -- }}}
 
