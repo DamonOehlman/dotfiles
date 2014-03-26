@@ -84,7 +84,7 @@ export PS2="\[$NC\]> "
 export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
 
 # rvm
-source ~/.rvm/scripts/rvm
+[[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
 
 [[ -e ~/.tools-local ]] && . ~/.tools-local
 
