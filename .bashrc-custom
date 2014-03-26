@@ -18,6 +18,10 @@ export JAVA_HOME="/usr/lib/jvm/default-java";
 # chrome sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 
+# openni dev
+export OPENNI2_INCLUDE=~/code/misc/OpenNI-Linux-x64-2.2/Include
+export OPENNI2_REDIST=~/code/misc/OpenNI-Linux-x64-2.2/Redist
+
 # initialise the bashrc
 # alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
 alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
@@ -82,5 +86,7 @@ export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_sta
 # rvm
 source ~/.rvm/scripts/rvm
 
+[[ -e ~/.tools-local ]] && . ~/.tools-local
+
 # include the bash secrets file
-. ~/.bashrc-secrets
+[[ -e ~/.bashrc-secrets ]] && . ~/.bashrc-secrets
