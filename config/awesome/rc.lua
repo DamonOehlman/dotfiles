@@ -352,8 +352,14 @@ awful.rules.rules = {
       properties = { floating = true } },
 
     -- sublime text to 2
-    { rule = { class = "Sublime_text" },
-      properties = { tag = tags[mouse.screen][2] } },
+    { rule_any = { class = {
+        "Sublime_text",
+        "Ltbin"
+      } },
+      properties = {
+        tag = tags[mouse.screen][2] 
+      } 
+    },
 
     -- browsers to 3
     {
