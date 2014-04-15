@@ -8,6 +8,7 @@ PATH="~/bin:$BASHINATE_HOME/bin:$PATH";
 
 PATH="$PATH:~/.cabal/bin"; #cabal
 PATH="$PATH:~/packer"; # packer
+PATH="$PATH:/opt/LightTable"; #lighttable
 
 # include node in the path
 PATH="`bashinate use node 0.10.26`:$PATH";
