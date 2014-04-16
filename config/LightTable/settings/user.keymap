@@ -13,4 +13,11 @@
 {:+ {:app {}
 
      :editor {"alt-w" [:editor.watch.watch-selection]
+              "ctrl-shift-a" [:editor.select-all]
+              "ctrl-a" [:editor.line-start]
+              "ctrl-e" [:editor.line-end]
+              "ctrl-j" [:tabs.prev]
+              "ctrl-k" [:tabs.next]
+              "ctrl-f" [:find.show]
+              "ctrl-/" [:toggle-comment-selection]
               "alt-shift-w" [:editor.watch.unwatch]}}}

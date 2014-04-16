@@ -12,16 +12,21 @@
 {:+ {
      ;; The app tag is kind of like global scope. You assign behaviors that affect
      ;; all of Light Table here
-     :app [(:lt.objs.style/set-skin "dark")]
+     :app [(:lt.objs.style/set-skin "dark")
+           :lt.objs.intro/show-new-file
+           (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
      ;; The editor tag is applied to all editors
      :editor [:lt.objs.editor/no-wrap
-              (:lt.objs.style/set-theme "monokai")
-              (:lt.objs.style/font-settings "Source Code Pro" "12" "1.4")
-              (:lt.objs.style/set-theme "default")]
+              :lt.objs.editor/line-numbers
+              :lt.objs.editor/fold-gutter
+              (:lt.objs.style/set-theme "tomorrow-night-eighties")
+              (:lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4")]
 
      ;; wrap lines for markdown
      :editor.markdown [:lt.objs.editor/wrap 80]
+
+     :editor.javascript [(:lt.objs.files/file.ignore-pattern "\\.git$|node_modules*")]
 
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.plugins.clojure/print-length 1000)]}
