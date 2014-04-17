@@ -13,6 +13,9 @@ PATH="$PATH:/opt/LightTable"; #lighttable
 # include node in the path
 PATH="`bashinate use node 0.10.26`:$PATH";
 
+# install and use redis if not already available
+bashinate use redis 2.8.8
+
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
 
