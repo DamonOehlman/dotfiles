@@ -24,9 +24,7 @@
               (:lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4")]
 
      ;; wrap lines for markdown
-     :editor.markdown [:lt.objs.editor/wrap 80]
-
-     :editor.javascript [(:lt.objs.files/file.ignore-pattern "\\.git$|node_modules*")]
+     :editor.markdown [:lt.objs.editor/wrap]
 
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.plugins.clojure/print-length 1000)]}

@@ -10,12 +10,14 @@
 ;; of all the commands you can execute, start typing a word related to the thing you
 ;; want to do in between the square brackets (e.g. type "editor").
 
-{:+ {:app {}
+{:+ {:app {"ctrl-shift-n" [:workspace.new :workspace.add-folder :tabs.close-all]
+           "ctrl-shift-o" [:workspace.show-recents]}
 
      :editor {"alt-w" [:editor.watch.watch-selection]
               "ctrl-shift-a" [:editor.select-all]
               "ctrl-a" [:editor.line-start]
               "ctrl-e" [:editor.line-end]
+              "ctrl-d" [:editor.delete-char-right]
               "ctrl-j" [:tabs.prev]
               "ctrl-k" [:tabs.next]
               "ctrl-f" [:find.show]
