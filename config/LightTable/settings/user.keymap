@@ -18,8 +18,7 @@
               "ctrl-a" [:editor.line-start]
               "ctrl-e" [:editor.line-end]
               "ctrl-d" [:editor.delete-char-right]
-              "ctrl-j" [:tabs.prev]
-              "ctrl-k" [:tabs.next]
+              "ctrl-k" [:editor.delete-group-right]
               "ctrl-f" [:find.show]
               "ctrl-/" [:toggle-comment-selection]
               "alt-shift-w" [:editor.watch.unwatch]}}}
