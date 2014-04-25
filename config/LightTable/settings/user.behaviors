@@ -20,11 +20,15 @@
      :editor [:lt.objs.editor/no-wrap
               :lt.objs.editor/line-numbers
               :lt.objs.editor/fold-gutter
+              (:lt.objs.editor/tab-settings false 2 2)
               (:lt.objs.style/set-theme "tomorrow-night-eighties")
               (:lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4")]
 
      ;; wrap lines for markdown
      :editor.markdown [:lt.objs.editor/wrap]
+
+     ;; settings for :html
+     :editor.html [(:lt.objs.editor/set-codemirror-flags {:smartIndent false})]
 
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.plugins.clojure/print-length 1000)]}
