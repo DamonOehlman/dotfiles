@@ -16,16 +16,25 @@
            :lt.objs.intro/show-new-file
            (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
+     :files [(:lt.objs.files/file-types [{:exts [:purs]
+                                          :mime "text/x-haskell"
+                                          :name "Purescript"
+                                          :tags [:editor.haskell]}])]
+
+
      ;; The editor tag is applied to all editors
      :editor [:lt.objs.editor/no-wrap
               :lt.objs.editor/line-numbers
               :lt.objs.editor/fold-gutter
+              :lt.plugins.visible-whitespace/show-whitespace
               (:lt.objs.editor/tab-settings false 2 2)
               (:lt.objs.style/set-theme "tomorrow-night-eighties")
               (:lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4")]
 
      ;; wrap lines for markdown
      :editor.markdown [:lt.objs.editor/wrap]
+
+     :editor.go [(:lt.objs.editor/tab-settings true 2 2)]
 
      ;; settings for :html
      :editor.html [(:lt.objs.editor/set-codemirror-flags {:smartIndent false})]
