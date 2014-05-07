@@ -6,15 +6,18 @@ BASHINATE_HOME="~/.bashinate";
 # include bashinate path
 PATH="~/bin:$BASHINATE_HOME/bin:$PATH";
 
-PATH="$PATH:~/.cabal/bin"; #cabal
+PATH="~/.cabal/bin:$PATH"; #cabal
 PATH="$PATH:~/packer"; # packer
 PATH="$PATH:/opt/LightTable"; #lighttable
 
 # include node in the path
-PATH="`bashinate use node 0.10.26`:$PATH";
+export PATH="`bashinate use node 0.10.28`:$PATH";
 
 # install and use redis if not already available
 bashinate use redis 2.8.8
+
+# use rust
+bashinate use rust nightly
 
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
@@ -52,7 +55,7 @@ MAGENTA='\e[1;35m'
 cyan='\e[0;36m'
 CYAN='\e[1;36m'
 NC='\e[0m'              # No Color
- 
+
 # Taken from http://www.opinionatedprogrammer.com/2011/01/colorful-bash-prompt-reflecting-git-status/
 function _git_prompt() {
   local git_status="`git status -unormal 2>&1`"
@@ -75,14 +78,14 @@ function _git_prompt() {
     echo -n '[\['"$ansi"'\]'"$branch"'\[\e[0m\]]'
   fi
 }
- 
+
 function report_status() {
   RET_CODE=$?
   if [[ $RET_CODE -ne 0 ]] ; then
     echo -ne "[\[$RED\]$RET_CODE\[$NC\]]"
   fi
 }
- 
+
 export _PS1="\[$NC\][\u@\h \W]"
 export PS2="\[$NC\]> "
 export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
