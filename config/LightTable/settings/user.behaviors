@@ -19,7 +19,23 @@
      :files [(:lt.objs.files/file-types [{:exts [:purs]
                                           :mime "text/x-haskell"
                                           :name "Purescript"
-                                          :tags [:editor.haskell]}])]
+                                          :tags [:editor.haskell]}
+
+                                         {:exts [:Jakefile :sjs]
+                                          :mime "text/javascript"
+                                          :name "Jake Buildfile"
+                                          :tags [:editor.javascript]}
+
+                                         {:exts [:Makefile]
+                                          :mime "text/x-makefile"
+                                          :name "Makefile"
+                                          :tags [:editor.make]}
+
+                                         {:exts [:ejs :source]
+                                          :mime "htmlmixed"
+                                          :name "Other HTML"
+                                          :tags [:editor.html]}
+                                         ])]
 
 
      ;; The editor tag is applied to all editors
@@ -28,13 +44,17 @@
               :lt.objs.editor/fold-gutter
               :lt.plugins.visible-whitespace/show-whitespace
               (:lt.objs.editor/tab-settings false 2 2)
-              (:lt.objs.style/set-theme "tomorrow-night-eighties")
+              (:lt.objs.style/set-theme "monokai")
               (:lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4")]
 
      ;; wrap lines for markdown
      :editor.markdown [:lt.objs.editor/wrap]
 
      :editor.go [(:lt.objs.editor/tab-settings true 2 2)]
+
+     :editor.jade [(:lt.objs.editor/tab-settings true 2 2)]
+
+     :editor.make [(:lt.objs.editor/tab-settings true 2 2)]
 
      ;; settings for :html
      :editor.html [(:lt.objs.editor/set-codemirror-flags {:smartIndent false})]
