@@ -91,11 +91,11 @@ myWorkspaces =
   [
     "7:Chat",  "8:Dbg", "9:Pix",
     "4:Docs",  "5:Dev", "6:Web",
-    "1:Term",  "2:Hub", "3:Mail",
+    "1:Term",  "2:Dev", "3:Web",
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "2:Dev"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -261,11 +261,8 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
-  , (className =? "Komodo IDE") --> doF (W.shift "5:Dev")
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_find2") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
-  , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
   , (className =? "Synapse") --> doFloat
+  , (className =? "Ltbin") --> doF (W.shift "2:Dev")
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
   , (className =? "Pidgin") --> doF (W.shift "7:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
