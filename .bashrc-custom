@@ -6,7 +6,7 @@ BASHINATE_HOME="~/.bashinate";
 # include bashinate path
 PATH="~/bin:$BASHINATE_HOME/bin:$PATH";
 
-PATH="~/.cabal/bin:$PATH"; #cabal
+PATH="~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.2/bin:/opt/happy/1.19.3/bin:/opt/alex/3.1.3/bin:$PATH"; # haskell
 PATH="$PATH:~/packer"; # packer
 PATH="$PATH:/opt/LightTable"; #lighttable
 
@@ -35,6 +35,9 @@ alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-f
 
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
+
+export TIZENSDK_HOME=~/tizen-wearable-sdk
+export PATH="$PATH:$TIZENSDK_HOME/tools"
 
 # synaptic client changes
 synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
@@ -89,6 +92,12 @@ function report_status() {
 export _PS1="\[$NC\][\u@\h \W]"
 export PS2="\[$NC\]> "
 export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
+
+# ensure go is a go
+PATH="~/.go/bin:/opt/go/bin:$PATH";
+export GOROOT=/opt/go
+export GOPATH=~/.go
+mkdir -p $GOPATH
 
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
