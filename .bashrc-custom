@@ -11,7 +11,7 @@ PATH="$PATH:~/packer"; # packer
 PATH="$PATH:/opt/LightTable"; #lighttable
 
 # include node in the path
-export PATH="`bashinate use node 0.10.28`:$PATH";
+export PATH="`bashinate use node 0.10.29`:$PATH";
 
 # install and use redis if not already available
 bashinate use redis 2.8.8
@@ -32,6 +32,12 @@ export OPENNI2_REDIST=~/code/misc/OpenNI-Linux-x64-2.2/Redist
 # initialise the bashrc
 # alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
 alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --allow-http-screen-capture --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
+
+alias bsize="browserify . --standalone test | uglifyjs | wc -c"
+
+alias dockercleancontainers="docker ps -a --no-trunc| grep 'Exit' | awk '{print \$1}' | xargs -L 1 -r docker rm"
+alias dockercleanimages="docker images -a --no-trunc | grep none | awk '{print \$3}' | xargs -L 1 -r docker rmi"
+alias dockerclean="dockercleancontainers && dockercleanimages"
 
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
@@ -96,7 +102,7 @@ export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_sta
 # ensure go is a go
 PATH="~/.go/bin:/opt/go/bin:$PATH";
 export GOROOT=/opt/go
-export GOPATH=~/.go
+export GOPATH=~/code/go
 mkdir -p $GOPATH
 
 # rvm
