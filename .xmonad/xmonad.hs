@@ -23,7 +23,9 @@ import XMonad.Layout.ThreeColumns
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Circle
 import XMonad.Layout.PerWorkspace (onWorkspace)
+import XMonad.Layout.IndependentScreens
 import XMonad.Layout.Fullscreen
+import XMonad.Layout.StackTile
 import XMonad.Layout.Gaps
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
@@ -35,6 +37,9 @@ import XMonad.Hooks.ICCCMFocus
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import Data.Ratio ((%))
+
+import XMonad.Hooks.EwmhDesktops (ewmh)
+import System.Taffybar.Hooks.PagerHints (pagerHints)
 
 {-
   Xmonad configuration variables. These settings control some of the
@@ -50,12 +55,12 @@ myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
                                       -- use "Buddy List" for Pidgin, but
                                       -- "Contact List" for Empathy
 
-
 {-
   Xmobar configuration variables. These settings control the appearance
   of text which xmonad is sending to xmobar via the DynamicLog hook.
 -}
 
+{-
 myTitleColor     = "#eeeeee"  -- color of window title
 myTitleLength    = 80         -- truncate window title to this length
 myCurrentWSColor = "#e6744c"  -- color of active workspace
@@ -67,7 +72,7 @@ myVisibleWSLeft  = "("        -- wrap inactive workspace with these
 myVisibleWSRight = ")"
 myUrgentWSLeft  = "{"         -- wrap urgent workspace with these
 myUrgentWSRight = "}"
-
+-}
 
 {-
   Workspace configuration. Here you can change the names of your
@@ -99,7 +104,7 @@ myWorkspaces =
 startupWorkspace = "2:Dev"  -- which workspace do you want to be on after launch?
 
 -- define some gaps when working with vertical layout
-myGaps = gaps [(U, 200), (D, 200)]
+myGaps = gaps [(U, 200), (D, 400)]
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -120,7 +125,7 @@ myGaps = gaps [(U, 200), (D, 200)]
 -- appear if there is more than one visible window.
 -- "avoidStruts" modifier makes it so that the layout provides
 -- space for the status bar at the top of the screen.
-defaultLayouts = smartBorders(avoidStruts(
+defaultLayouts = myGaps(smartBorders(avoidStruts(
   -- ResizableTall layout has a large master window on the left,
   -- and remaining windows tile on the right. By default each area
   -- takes up half the screen, but you can resize using "super-h" and
@@ -136,6 +141,8 @@ defaultLayouts = smartBorders(avoidStruts(
   -- active window, it will bring the active window to the front.
   ||| noBorders Full
 
+  ||| StackTile 1 (3/100) (3/4)
+
   -- ThreeColMid layout puts the large master window in the center
   -- of the screen. As configured below, by default it takes of 3/4 of
   -- the available space. Remaining windows tile to both the left and
@@ -145,12 +152,12 @@ defaultLayouts = smartBorders(avoidStruts(
 
   -- Circle layout places the master window in the center of the screen.
   -- Remaining windows appear in a circle around it
-  -- ||| Circle
+  ||| Circle
 
   -- Grid layout tries to equally distribute windows in the available
   -- space, increasing the number of columns and rows as necessary.
   -- Master window is at top left.
-  ||| (myGaps $ Grid)))
+  ||| Grid)))
 
 
 -- Here we define some layouts which will be assigned to specific
@@ -263,7 +270,6 @@ myKeyBindings =
 myManagementHooks :: [ManageHook]
 myManagementHooks = [
   resource =? "synapse" --> doIgnore
-  , resource =? "stalonetray" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Synapse") --> doFloat
   , (className =? "Ltbin") --> doF (W.shift "2:Dev")
@@ -336,8 +342,12 @@ myKeys = myKeyBindings ++
 -}
 
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
-  xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig {
+  nScreens <- countScreens
+  -- xmproc <- spawnPipe "taffybar"
+  xmonad
+    $ ewmh $ pagerHints
+    $ withUrgencyHook NoUrgencyHook
+    $ defaultConfig {
     focusedBorderColor = myFocusedBorderColor
   , normalBorderColor = myNormalBorderColor
   , terminal = myTerminal
@@ -347,21 +357,22 @@ main = do
   , modMask = myModMask
   , handleEventHook = fullscreenEventHook
   , startupHook = do
+      spawn "$HOME/.cabal/bin/taffybar"
       --setWMName "LG3D" >> takeTopFocus
       windows $ W.greedyView startupWorkspace
       spawn "~/.xmonad/startup-hook"
   , manageHook = manageHook defaultConfig
       <+> composeAll myManagementHooks
       <+> manageDocks
-  , logHook = dynamicLogWithPP $ xmobarPP {
-      ppOutput = hPutStrLn xmproc
-      , ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength
-      , ppCurrent = xmobarColor myCurrentWSColor ""
-        . wrap myCurrentWSLeft myCurrentWSRight
-      , ppVisible = xmobarColor myVisibleWSColor ""
-        . wrap myVisibleWSLeft myVisibleWSRight
-      , ppUrgent = xmobarColor myUrgentWSColor ""
-        . wrap myUrgentWSLeft myUrgentWSRight
-    }
+--   , logHook = dynamicLogWithPP $ xmobarPP {
+--       ppOutput = hPutStrLn xmproc
+--       , ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength
+--       , ppCurrent = xmobarColor myCurrentWSColor ""
+--         . wrap myCurrentWSLeft myCurrentWSRight
+--       , ppVisible = xmobarColor myVisibleWSColor ""
+--         . wrap myVisibleWSLeft myVisibleWSRight
+--       , ppUrgent = xmobarColor myUrgentWSColor ""
+--         . wrap myUrgentWSLeft myUrgentWSRight
+--     }
   }
     `additionalKeys` myKeys
