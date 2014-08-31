@@ -7,7 +7,7 @@ AWS_HOME="/opt/aws";
 # include bashinate path
 PATH="~/bin:$BASHINATE_HOME/bin:$PATH";
 
-PATH="~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.2/bin:/opt/happy/1.19.3/bin:/opt/alex/3.1.3/bin:$PATH"; # haskell
+PATH="$HOME/.cabal/bin:$PATH"; # haskell
 PATH="$PATH:~/packer"; # packer
 PATH="$PATH:/opt/LightTable"; #lighttable
 PATH="$PATH:$AWS_HOME/beanstalk/eb/linux/python2.7/"; # aws cli tools
@@ -31,6 +31,10 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 export OPENNI2_INCLUDE=~/code/misc/OpenNI-Linux-x64-2.2/Include
 export OPENNI2_REDIST=~/code/misc/OpenNI-Linux-x64-2.2/Redist
 
+# google dev
+export GDEV_HOME=~/code/goog
+export PATH="$PATH:$GDEV_HOME/depot_tools"
+
 # video modes
 VM_DELL_U2713HM="U2713HM 220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync"
 
@@ -45,7 +49,7 @@ alias dockercleanimages="docker images -a --no-trunc | grep none | awk '{print \
 alias dockerclean="dockercleancontainers && dockercleanimages"
 
 # screen customization options
-alias layout_work="xrandr --addmode HDMI1 U2713HM && xrandr --output HDMI1 --mode U2713HM --rotate left --left-of eDP1 && xrandr --output eDP1 --primary"
+# alias layout_work="xrandr --addmode HDMI1 U2713HM && xrandr --output HDMI1 --mode U2713HM --rotate left --left-of eDP1 && xrandr --output eDP1 --primary"
 
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
