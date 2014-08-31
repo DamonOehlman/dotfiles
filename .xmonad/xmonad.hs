@@ -26,7 +26,6 @@ import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.IndependentScreens
 import XMonad.Layout.Fullscreen
 import XMonad.Layout.StackTile
-import XMonad.Layout.Gaps
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog
@@ -103,9 +102,6 @@ myWorkspaces =
 
 startupWorkspace = "2:Dev"  -- which workspace do you want to be on after launch?
 
--- define some gaps when working with vertical layout
-myGaps = gaps [(U, 200), (D, 400)]
-
 {-
   Layout configuration. In this section we identify which xmonad
   layouts we want to use. I have defined a list of default
@@ -125,7 +121,7 @@ myGaps = gaps [(U, 200), (D, 400)]
 -- appear if there is more than one visible window.
 -- "avoidStruts" modifier makes it so that the layout provides
 -- space for the status bar at the top of the screen.
-defaultLayouts = myGaps(smartBorders(avoidStruts(
+defaultLayouts = smartBorders(avoidStruts(
   -- ResizableTall layout has a large master window on the left,
   -- and remaining windows tile on the right. By default each area
   -- takes up half the screen, but you can resize using "super-h" and
@@ -157,7 +153,7 @@ defaultLayouts = myGaps(smartBorders(avoidStruts(
   -- Grid layout tries to equally distribute windows in the available
   -- space, increasing the number of columns and rows as necessary.
   -- Master window is at top left.
-  ||| Grid)))
+  ||| Grid))
 
 
 -- Here we define some layouts which will be assigned to specific
@@ -221,7 +217,6 @@ myKeyBindings =
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
-    , ((myModMask .|. controlMask, xK_g), sendMessage $ ToggleGaps)
   ]
 
 {-
