@@ -267,6 +267,7 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Synapse") --> doFloat
+  , (className =? "Atom") --> doF (W.shift "2:Dev")
   , (className =? "Ltbin") --> doF (W.shift "2:Dev")
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
   , (className =? "Pidgin") --> doF (W.shift "7:Chat")
