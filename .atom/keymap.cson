@@ -1,0 +1,7 @@
+'.platform-win32 .editor, .platform-linux .editor':
+  'ctrl-e': 'editor:move-to-end-of-screen-line'
+
+'atom-workspace atom-text-editor':
+  'ctrl-a': 'editor:move-to-first-character-of-line'
+  'ctrl-e': 'editor:move-to-end-of-screen-line'
+  'ctrl-shift-a': 'core:select-all'
