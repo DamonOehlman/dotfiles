@@ -13,13 +13,10 @@ PATH="$PATH:/opt/LightTable"; #lighttable
 PATH="$PATH:$AWS_HOME/beanstalk/eb/linux/python2.7/"; # aws cli tools
 
 # include node in the path
-export PATH="`bashinate use node 0.10.29`:$PATH";
+export PATH="`bashinate use node 0.10.33`:$PATH";
 
 # install and use redis if not already available
 bashinate use redis 2.8.8
-
-# use rust
-bashinate use rust nightly
 
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
@@ -43,13 +40,18 @@ VM_DELL_U2713HM="U2713HM 220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync 
 alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --allow-http-screen-capture --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
 
 alias bsize="browserify . --standalone test | uglifyjs | wc -c"
+alias bcheck="browserify . | uglifyjs index.js --screw-ie8 --mangle --compress > /dev/null"
 
 alias dockercleancontainers="docker ps -a --no-trunc| grep 'Exit' | awk '{print \$1}' | xargs -L 1 -r docker rm"
 alias dockercleanimages="docker images -a --no-trunc | grep none | awk '{print \$3}' | xargs -L 1 -r docker rmi"
 alias dockerclean="dockercleancontainers && dockercleanimages"
 
 # screen customization options
-# alias layout_work="xrandr --addmode HDMI1 U2713HM && xrandr --output HDMI1 --mode U2713HM --rotate left --left-of eDP1 && xrandr --output eDP1 --primary"
+alias layout_work="xrandr --addmode HDMI1 U2713HM && xrandr --output HDMI1 --mode U2713HM --left-of eDP1 && xrandr --output eDP1 --primary"
+
+# my helpful readme command
+alias lynxme="pandoc -f markdown_github - | lynx -stdin"
+alias readme="echo &1 && cat ~/code/$1/README.md > /dev/null 2> /dev/null && pandoc -f markdown_github - | lynx -stdin"
 
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
