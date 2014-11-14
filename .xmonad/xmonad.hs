@@ -94,13 +94,13 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "1:Term",  "2:Dev", "3:Web",
-    "4:Mail",  "5:Dev", "6:Web",
-    "7:Chat",  "8:Dbg", "9:Pix",
-    "0:VM",    "Extr1", "Extr2"
+    "term",   "dev",    "web",
+    "mail",   "mon",    "files",
+    "debug",  "chat",   "pix",
+    "vm",     "ext-1",  "ext-2"
   ]
 
-startupWorkspace = "2:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "dev"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -178,8 +178,8 @@ gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
 myLayouts =
-  onWorkspace "7:Chat" chatLayout
-  $ onWorkspace "9:Pix" gimpLayout
+  onWorkspace "chat" chatLayout
+  $ onWorkspace "pix" gimpLayout
   $ defaultLayouts
 
 
@@ -267,12 +267,10 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Synapse") --> doFloat
-  , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
-  , (className =? "Atom") --> doF (W.shift "2:Dev")
-  , (className =? "Ltbin") --> doF (W.shift "2:Dev")
-  , (className =? "Empathy") --> doF (W.shift "7:Chat")
-  , (className =? "Pidgin") --> doF (W.shift "7:Chat")
-  , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
+  , (className =? "Thunderbird") --> doF (W.shift "mail")
+  , (className =? "Atom") --> doF (W.shift "dev")
+  , (className =? "Ltbin") --> doF (W.shift "dev")
+  , (className =? "Gimp-2.8") --> doF (W.shift "pix")
   ]
 
 
