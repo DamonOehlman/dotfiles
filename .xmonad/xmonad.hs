@@ -94,9 +94,9 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:Chat",  "8:Dbg", "9:Pix",
-    "4:Docs",  "5:Dev", "6:Web",
     "1:Term",  "2:Dev", "3:Web",
+    "4:Mail",  "5:Dev", "6:Web",
+    "7:Chat",  "8:Dbg", "9:Pix",
     "0:VM",    "Extr1", "Extr2"
   ]
 
@@ -267,6 +267,7 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Synapse") --> doFloat
+  , (className =? "Thunderbird") --> doF (W.shift "4:Mail")
   , (className =? "Atom") --> doF (W.shift "2:Dev")
   , (className =? "Ltbin") --> doF (W.shift "2:Dev")
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
@@ -281,28 +282,11 @@ myManagementHooks = [
   the least. Be very careful if messing with this section.
 -}
 
--- We define two lists of keycodes for use in the rest of the
--- keyboard configuration. The first is the list of numpad keys,
--- in the order they occur on the keyboard (left to right and
--- top to bottom). The second is the list of number keys, in an
--- order corresponding to the numpad. We will use these to
--- make workspace navigation commands work the same whether you
--- use the numpad or the top-row number keys. And, we also
--- use them to figure out where to go when the user
--- uses the arrow keys.
-numPadKeys =
-  [
-    xK_KP_Home, xK_KP_Up, xK_KP_Page_Up
-    , xK_KP_Left, xK_KP_Begin,xK_KP_Right
-    , xK_KP_End, xK_KP_Down, xK_KP_Page_Down
-    , xK_KP_Insert, xK_KP_Delete, xK_KP_Enter
-  ]
-
 numKeys =
   [
-    xK_7, xK_8, xK_9
+    xK_1, xK_2, xK_3
     , xK_4, xK_5, xK_6
-    , xK_1, xK_2, xK_3
+    , xK_7, xK_8, xK_9
     , xK_0, xK_minus, xK_equal
   ]
 
@@ -312,11 +296,6 @@ numKeys =
 -- how to send windows to different workspaces,
 -- and what keys to use to change which monitor is focused.
 myKeys = myKeyBindings ++
-  [
-    ((m .|. myModMask, k), windows $ f i)
-       | (i, k) <- zip myWorkspaces numPadKeys
-       , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
-  ] ++
   [
     ((m .|. myModMask, k), windows $ f i)
        | (i, k) <- zip myWorkspaces numKeys
