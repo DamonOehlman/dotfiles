@@ -13,8 +13,6 @@ import System.Taffybar.Pager
 import System.Taffybar.TaffyPager
 import System.Taffybar.SimpleClock
 import System.Taffybar.FreedesktopNotifications
-import System.Taffybar.Weather
-import System.Taffybar.MPRIS
 import System.Taffybar.Battery
 
 import System.Taffybar.Widgets.PollingBar
@@ -34,12 +32,6 @@ cpuCallback = do
   (userLoad, systemLoad, totalLoad) <- cpuLoad
   return [totalLoad, systemLoad]
 
-mailCallback = do
-  n <- readProcess "notmuch" ["count", "tag:inbox", "and", "tag:unseen"] ""
-  if n /= "0"
-    then return $ "✉ " ++ colorize "blue" "" n
-    else return ""
-
 main = do
   let memCfg = defaultGraphConfig { graphDataColors = [(1, 0, 0, 1)]
                                   , graphLabel = Nothing
@@ -49,19 +41,14 @@ main = do
                                                       ]
                                   , graphLabel = Nothing
                                   }
-  let clock = textClockNew Nothing "<span fgcolor='orange'>%a %b %_d %H:%M</span>" 60
+  let clock = textClockNew Nothing "<span fgcolor='orange'>%a %b %_d %H:%M </span>" 60
       log = taffyPagerNew pagerConfig
       note = notifyAreaNew defaultNotificationConfig { notificationFormatter = formatter }
-      wea = weatherNew (defaultWeatherConfig "KCEF") 10
-      mpris = mprisNew
       battery = batteryBarNew defaultBatteryConfig 120
       mem = pollingGraphNew memCfg 10 memCallback
       cpu = pollingGraphNew cpuCfg 10 cpuCallback
-      tray = systrayNew
-  mail <- pollingLabelNew "mail" 30 mailCallback
-  widgetShow mail
   defaultTaffybar defaultTaffybarConfig { startWidgets = [ log, note ]
-                                        , endWidgets = [ wea, clock, mpris, battery, return mail, tray ]
+                                        , endWidgets = [ battery, cpu, mem, systrayNew, clock ]
                                         }
 
 formatter :: Notification -> String

@@ -95,12 +95,12 @@ myUrgentWSRight = "}"
 myWorkspaces =
   [
     "term",   "dev",    "web",
-    "mail",   "mon",    "files",
+    "docs",   "mail",    "files",
     "debug",  "chat",   "pix",
     "vm",     "ext-1",  "ext-2"
   ]
 
-startupWorkspace = "dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "term"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -267,6 +267,7 @@ myManagementHooks = [
   resource =? "synapse" --> doIgnore
   , className =? "rdesktop" --> doFloat
   , (className =? "Synapse") --> doFloat
+  , (className =? "zeal") --> doF (W.shift "docs")
   , (className =? "Thunderbird") --> doF (W.shift "mail")
   , (className =? "Atom") --> doF (W.shift "dev")
   , (className =? "Ltbin") --> doF (W.shift "dev")
@@ -316,36 +317,24 @@ myKeys = myKeyBindings ++
 
 main = do
   nScreens <- countScreens
-  -- xmproc <- spawnPipe "taffybar"
+--   xmproc <- spawnPipe "~/.cabal/bin/taffybar"
   xmonad
     $ ewmh $ pagerHints
     $ withUrgencyHook NoUrgencyHook
     $ defaultConfig {
-    focusedBorderColor = myFocusedBorderColor
-  , normalBorderColor = myNormalBorderColor
-  , terminal = myTerminal
-  , borderWidth = myBorderWidth
-  , layoutHook = myLayouts
-  , workspaces = myWorkspaces
-  , modMask = myModMask
-  , handleEventHook = fullscreenEventHook
-  , startupHook = do
-      spawn "$HOME/.cabal/bin/taffybar"
-      --setWMName "LG3D" >> takeTopFocus
-      windows $ W.greedyView startupWorkspace
-      spawn "~/.xmonad/startup-hook"
-  , manageHook = manageHook defaultConfig
-      <+> composeAll myManagementHooks
-      <+> manageDocks
---   , logHook = dynamicLogWithPP $ xmobarPP {
---       ppOutput = hPutStrLn xmproc
---       , ppTitle = xmobarColor myTitleColor "" . shorten myTitleLength
---       , ppCurrent = xmobarColor myCurrentWSColor ""
---         . wrap myCurrentWSLeft myCurrentWSRight
---       , ppVisible = xmobarColor myVisibleWSColor ""
---         . wrap myVisibleWSLeft myVisibleWSRight
---       , ppUrgent = xmobarColor myUrgentWSColor ""
---         . wrap myUrgentWSLeft myUrgentWSRight
---     }
-  }
+        focusedBorderColor = myFocusedBorderColor
+      , normalBorderColor = myNormalBorderColor
+      , terminal = myTerminal
+      , borderWidth = myBorderWidth
+      , layoutHook = myLayouts
+      , workspaces = myWorkspaces
+      , modMask = myModMask
+      , handleEventHook = fullscreenEventHook
+      , startupHook = do
+          spawn "~/.xmonad/startup-hook"
+          windows $ W.greedyView startupWorkspace
+      , manageHook = manageHook defaultConfig
+          <+> composeAll myManagementHooks
+          <+> manageDocks
+    }
     `additionalKeys` myKeys

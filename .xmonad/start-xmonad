@@ -23,7 +23,6 @@ xrdb -merge .Xresources
 # transparency support.
 xcompmgr -n &
 
-
 #
 # SCREEN CONFIGURATION
 #
@@ -55,14 +54,6 @@ xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS
 # To set your backgrouds, run nitrogren /path/to/images
 nitrogen --restore &
 
-# run taffybar
-taffybar &
-
-
-#
-# STARTUP ICON TRAY
-#
-
 # Run the gnome-keyring-daemon to avoid issues you otherwise may encounter
 # when using gnome applications which expect access to the keyring, such
 # as Empathy. This prevents prompts you may otherwise get for invalid
@@ -93,4 +84,3 @@ export SSH_AGENT_PID
 
 # Now, finally, start xmonad
 exec xmonad
-
