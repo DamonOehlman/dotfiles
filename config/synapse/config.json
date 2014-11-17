@@ -1,7 +1,7 @@
 {
   "ui" : {
     "shortcuts" : {
-      "activate" : "<Control>grave",
+      "activate" : "<Control>apostrophe",
       "execute" : "Return",
       "execute-without-hide" : "<Shift>Return",
       "delete-char" : "BackSpace",
@@ -22,7 +22,7 @@
       "exit" : "<Control>q"
     },
     "global" : {
-      "ui-type" : "doish"
+      "ui-type" : "virgilio"
     }
   }
 }
