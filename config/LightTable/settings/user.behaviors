@@ -16,7 +16,7 @@
            (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
      :files [(:lt.objs.files/file-types [{:name "Purescript" :exts [:purs] :mime "text/x-haskell" :tags [:editor.haskell]}
-                                         {:name "Other Shell" :exts [:bashrc-custom] :mime "text/x-sh" :tags [:editor.shell]}
+                                         {:name "Other Shell" :exts [:bashrc-custom :startup-hook :start-xmonad] :mime "text/x-sh" :tags [:editor.shell]}
                                          {:name "Jake Buildfile" :exts [:Jakefile :sjs] :mime "text/javascript" :tags [:editor.javascript]}
                                          {:name "Makefile" :exts [:Makefile] :mime "text/x-makefile" :tags [:editor.make]}
                                          {:name "Other HTML" :exts [:ejs :source] :mime "htmlmixed" :tags [:editor.html]}])]
