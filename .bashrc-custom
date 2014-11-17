@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # initialise bashinate home location
-BASHINATE_HOME="~/.bashinate";
 AWS_HOME="/opt/aws";
 
 # include bashinate path
@@ -11,12 +10,7 @@ PATH="$HOME/.cabal/bin:$PATH"; # haskell
 PATH="$PATH:~/packer"; # packer
 PATH="$PATH:/opt/LightTable"; #lighttable
 PATH="$PATH:$AWS_HOME/beanstalk/eb/linux/python2.7/"; # aws cli tools
-
-# include node in the path
-export PATH="`bashinate use node 0.10.33`:$PATH";
-
-# install and use redis if not already available
-bashinate use redis 2.8.8
+PATH="$PATH:~/.linuxbrew/bin";
 
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
@@ -119,10 +113,11 @@ export GOROOT=/opt/go
 export GOPATH=~/code/go
 mkdir -p $GOPATH
 
+# nvm
+[[ -e ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
+
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
-
-[[ -e ~/.tools-local ]] && . ~/.tools-local
 
 # include the bash secrets file
 [[ -e ~/.bashrc-secrets ]] && . ~/.bashrc-secrets
