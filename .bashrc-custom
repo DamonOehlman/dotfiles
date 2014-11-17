@@ -2,15 +2,9 @@
 
 # initialise bashinate home location
 AWS_HOME="/opt/aws";
-
-# include bashinate path
-PATH="~/bin:$BASHINATE_HOME/bin:$PATH";
-
 PATH="$HOME/.cabal/bin:$PATH"; # haskell
 PATH="$PATH:~/packer"; # packer
-PATH="$PATH:/opt/LightTable"; #lighttable
 PATH="$PATH:$AWS_HOME/beanstalk/eb/linux/python2.7/"; # aws cli tools
-PATH="$PATH:~/.linuxbrew/bin";
 
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
