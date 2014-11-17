@@ -95,7 +95,7 @@ myUrgentWSRight = "}"
 myWorkspaces =
   [
     "term",   "dev",    "web",
-    "docs",   "mail",    "files",
+    "mail",   "docs",    "files",
     "debug",  "chat",   "pix",
     "vm",     "ext-1",  "ext-2"
   ]
