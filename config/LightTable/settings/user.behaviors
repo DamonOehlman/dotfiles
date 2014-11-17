@@ -13,7 +13,6 @@
      ;; The app tag is kind of like global scope. You assign behaviors that affect
      ;; all of Light Table here
      :app [(:lt.objs.style/set-skin "dark")
-           :lt.objs.intro/show-new-file
            (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
      :files [(:lt.objs.files/file-types [{:exts [:purs]
@@ -39,10 +38,11 @@
 
 
      ;; The editor tag is applied to all editors
-     :editor [:lt.objs.editor/no-wrap
-              :lt.objs.editor/line-numbers
-              :lt.objs.editor/fold-gutter
-              :lt.plugins.visible-whitespace/show-whitespace
+     :editor [(:lt.objs.editor/no-wrap)
+              (:lt.objs.editor/line-numbers)
+              (:lt.plugins.rainbow/rainbow-parens)
+              (:lt.objs.editor/fold-gutter)
+              (:lt.plugins.visible-whitespace/show-whitespace)
               (:lt.objs.editor/tab-settings false 2 2)
               (:lt.objs.style/set-theme "monokai")
               (:lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4")]
@@ -62,6 +62,14 @@
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.plugins.clojure/print-length 1000)]}
 
+;;  {:+ {
+;;       :tern.config [(:lt.plugins.tern/libs :ecma5)
+;;                    (:lt.plugins.tern/plugin :node true)]}
+;;  :- {:tern.config [:lt.plugins.tern/libs]}}
+
  ;; You can use the subtract key to remove behavior that may get added by
  ;; another diff
- :- {:app []}}
+ :- {
+     :app []
+     :editor [(:lt.objs.editor.file/last-char-newline)]}
+ }
