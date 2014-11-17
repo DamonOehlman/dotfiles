@@ -73,6 +73,24 @@ gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 # xmonad related, but it's handy if you're a vim user.
 setxkbmap -option 'ctrl:nocaps'
 
+# unset gnome keyring daemon variables
+unset GNOME_KEYRING_CONTROL
+unset GNOME_KEYRING_PID
+
+# Start gnupg or ssh agent
+rm -f ~/.ssh/control:*
+agent_file="$HOME/.gnupg/gpg-agent-info-$(hostname)"
+unset GPG_AGENT_INFO; unset SSH_AUTH_SOCK; unset SSH_AGENT_PID
+rm -f "${agent_file}"
+if [ $(which gpg-agent) ]; then
+  eval $(gpg-agent --daemon --sh --enable-ssh-support --write-env-file=${agent_file})
+elif [ $(which ssh-agent) ]; then
+  eval $(ssh-agent -s)
+fi
+export GPG_AGENT_INFO
+export SSH_AUTH_SOCK
+export SSH_AGENT_PID
+
 # Now, finally, start xmonad
 exec xmonad
 
