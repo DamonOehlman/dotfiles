@@ -12,29 +12,14 @@
 {:+ {
      ;; The app tag is kind of like global scope. You assign behaviors that affect
      ;; all of Light Table here
-     :app [(:lt.objs.style/set-skin "dark")
+     :app [(:lt.objs.style/set-skin "new-dark")
            (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
-     :files [(:lt.objs.files/file-types [{:exts [:purs]
-                                          :mime "text/x-haskell"
-                                          :name "Purescript"
-                                          :tags [:editor.haskell]}
-
-                                         {:exts [:Jakefile :sjs]
-                                          :mime "text/javascript"
-                                          :name "Jake Buildfile"
-                                          :tags [:editor.javascript]}
-
-                                         {:exts [:Makefile]
-                                          :mime "text/x-makefile"
-                                          :name "Makefile"
-                                          :tags [:editor.make]}
-
-                                         {:exts [:ejs :source]
-                                          :mime "htmlmixed"
-                                          :name "Other HTML"
-                                          :tags [:editor.html]}
-                                         ])]
+     :files [(:lt.objs.files/file-types [{:name "Purescript" :exts [:purs] :mime "text/x-haskell" :tags [:editor.haskell]}
+                                         {:name "Other Shell" :exts [:bashrc-custom] :mime "text/x-sh" :tags [:editor.shell]}
+                                         {:name "Jake Buildfile" :exts [:Jakefile :sjs] :mime "text/javascript" :tags [:editor.javascript]}
+                                         {:name "Makefile" :exts [:Makefile] :mime "text/x-makefile" :tags [:editor.make]}
+                                         {:name "Other HTML" :exts [:ejs :source] :mime "htmlmixed" :tags [:editor.html]}])]
 
 
      ;; The editor tag is applied to all editors
@@ -69,7 +54,4 @@
 
  ;; You can use the subtract key to remove behavior that may get added by
  ;; another diff
- :- {
-     :app []
-     :editor [(:lt.objs.editor.file/last-char-newline)]}
- }
+ :- {:app []}}
