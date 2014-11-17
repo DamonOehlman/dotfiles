@@ -51,9 +51,6 @@ xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS
 # LOAD SCREEN BACKGROUNDS
 #
 
-# To set your backgrouds, run nitrogren /path/to/images
-nitrogen --restore &
-
 # Run the gnome-keyring-daemon to avoid issues you otherwise may encounter
 # when using gnome applications which expect access to the keyring, such
 # as Empathy. This prevents prompts you may otherwise get for invalid

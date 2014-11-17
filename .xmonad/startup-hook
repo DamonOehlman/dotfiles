@@ -22,5 +22,7 @@ if [ -z "$(pgrep synapse)" ] ; then
   synapse -s &
 fi
 
+nitrogen --set-zoom-fill ~/Pictures/wallpaper/$(ls ~/Pictures/wallpaper/ |sort -R |tail -1)
+
 TOUCHPAD_ID=`xinput | grep 'Synaptics TouchPad' | cut -f 2 | cut -f 2 -d =`
 xinput set-prop $TOUCHPAD_ID "Device Enabled" 0
