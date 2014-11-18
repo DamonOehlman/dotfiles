@@ -12,6 +12,7 @@
 
 {:+ {:app {"ctrl-shift-n" [:workspace.new :workspace.add-folder :tabs.close-all]
            "ctrl-shift-o" [:workspace.show-recents]
+           "ctrl-0" [:console.hide :console.show :console-tab :tabs.goto :tabs.move-next-tabset]
            "ctrl-b" [:tabset.next :add-browser-tab :browser.url-bar.focus]
            "ctrl-[" [:tabs.prev]
            "ctrl-]" [:tabs.next]}
