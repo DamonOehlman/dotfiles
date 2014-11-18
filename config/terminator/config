@@ -12,7 +12,7 @@ show_titlebar = False
 cursor_shape = ibeam
 use_theme_colors = False
 scrollbar_position = disabled
-background_darkness = 0.80
+background_darkness = 0.90
 use_system_font = False
 font = "Source Code Pro 11"
 
