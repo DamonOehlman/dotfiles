@@ -12,7 +12,9 @@
 {:+ {
      ;; The app tag is kind of like global scope. You assign behaviors that affect
      ;; all of Light Table here
-     :app [(:lt.objs.style/set-skin "new-dark")
+     :app [(:lt.objs.style/set-skin "light")
+           (:lt.objs.sidebar.workspace/workspace.open-on-start)
+           ((:lt.objs.app/run-post-init [(:lt.obs.console.console.show) (:lt.objs.console.console-tab)]))
            (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
      :files [(:lt.objs.files/file-types [{:name "Purescript" :exts [:purs] :mime "text/x-haskell" :tags [:editor.haskell]}
@@ -54,4 +56,5 @@
 
  ;; You can use the subtract key to remove behavior that may get added by
  ;; another diff
- :- {:app []}}
+ :- {:app [(:lt.objs.editor.file/remove-trailing-whitespace)
+           (:lt.objs.intro/show-intro)]}}
