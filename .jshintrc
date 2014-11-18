@@ -4,8 +4,9 @@
   "undef": true,
   "unused": true,
   "quotmark": "single",
-  "maxlen": 80,
+  "maxlen": 100,
   "trailing": true,
   "curly": true,
-  "strict": true
+  "strict": true,
+  "boss": true
 }
