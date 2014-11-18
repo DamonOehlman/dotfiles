@@ -13,7 +13,8 @@
      ;; The app tag is kind of like global scope. You assign behaviors that affect
      ;; all of Light Table here
      :app [(:lt.objs.style/set-skin "light")
-           (:lt.objs.app/run-post-init [:tabset.new :console.show :console-tab :tabs.goto :tabs.move-next-tabset])
+           (:lt.objs.app/run-post-init [:tabset.new :console.show :console-tab :tabs.goto :tabs.move-next-tabset
+                                        (:add-browser-tab "https://coviu.hipchat.com/chat") :tabs.move-next-tabset])
            (:lt.objs.files/file.ignore-pattern "node_modules|\\.git")]
 
      :files [(:lt.objs.files/file-types [{:name "Purescript" :exts [:purs] :mime "text/x-haskell" :tags [:editor.haskell]}
@@ -43,6 +44,8 @@
 
      ;; settings for :html
      :editor.html [(:lt.objs.editor/set-codemirror-flags {:smartIndent false})]
+
+     :console []
 
      ;; Here we can add behaviors to just clojure editors
      :editor.clojure [(:lt.plugins.clojure/print-length 1000)]}
