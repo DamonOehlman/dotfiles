@@ -11,7 +11,10 @@
 ;; want to do in between the square brackets (e.g. type "editor").
 
 {:+ {:app {"ctrl-shift-n" [:workspace.new :workspace.add-folder :tabs.close-all]
-           "ctrl-shift-o" [:workspace.show-recents]}
+           "ctrl-shift-o" [:workspace.show-recents]
+           "ctrl-b" [:tabset.next :add-browser-tab :browser.url-bar.focus]
+           "ctrl-[" [:tabs.prev]
+           "ctrl-]" [:tabs.next]}
 
      :editor {"alt-w" [:editor.watch.watch-selection]
               "ctrl-shift-a" [:editor.select-all]
