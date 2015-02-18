@@ -21,7 +21,9 @@ export GDEV_HOME=~/code/goog
 export PATH="$PATH:$GDEV_HOME/depot_tools"
 
 # video modes
-VM_DELL_U2713HM="U2713HM 220.812 2560 2608 2640 2720 1440 1443 1448 1478 -hsync -vsync"
+VM_U2713HM="U2713HM"
+VM_U2713HM_MODELINE="172.80 1920 2040 2248 2576  1080 1081 1084 1118 -hsync +vsync"
+VM_WORK=$VM_U2713HM
 
 # initialise the bashrc
 # alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
@@ -35,7 +37,8 @@ alias dockercleanimages="docker images -a --no-trunc | grep none | awk '{print \
 alias dockerclean="dockercleancontainers && dockercleanimages"
 
 # screen customization options
-alias layout_work="xrandr --addmode HDMI1 U2713HM && xrandr --output HDMI1 --mode U2713HM --left-of eDP1 && xrandr --output eDP1 --primary"
+alias layout_work="xrandr --addmode HDMI1 $VM_WORK && xrandr --output HDMI1 --primary --mode $VM_WORK --output eDP1 --off" #--left-of eDP1 && xrandr --output eDP1 --primary"
+alias layout_laptop="xrandr --output eDP1 --mode 1920x1080 --primary --output HDMI1 --off"
 
 # my helpful readme command
 alias lynxme="pandoc -f markdown_github - | lynx -stdin"
@@ -109,6 +112,7 @@ mkdir -p $GOPATH
 
 # nvm
 [[ -e ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
+hash nvm && nvm use stable
 
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
@@ -117,4 +121,4 @@ mkdir -p $GOPATH
 [[ -e ~/.bashrc-secrets ]] && . ~/.bashrc-secrets
 
 # define some video modes for different monitor configurations
-xrandr --newmode $VM_DELL_U2713HM &> /dev/null
+xrandr --newmode "$VM_U2713HM" $VM_U2713HM_MODELINE &> /dev/null
