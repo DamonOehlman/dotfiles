@@ -1,0 +1,30 @@
+;; Your file has been converted to the new flat format.
+;; Conversion does not preserve comments or indentation.
+;; File is backed up at /home/doehlman/.config/LightTable/User/user.behaviors.bak
+[
+ [:app :lt.objs.style/set-skin "new-dark"]
+ [:app :lt.objs.files/file.ignore-pattern "node_modules|\\.git"]
+
+ [:editor :lt.objs.editor/no-wrap]
+ [:editor :lt.objs.editor/line-numbers]
+ [:editor :lt.plugins.rainbow/rainbow-parens]
+ [:editor :lt.objs.editor/fold-gutter]
+ [:editor :lt.plugins.visible-whitespace/show-whitespace]
+ [:editor :lt.objs.style/set-theme "monokai"]
+ [:editor :lt.objs.style/font-settings "Source Code Pro" "11.5" "1.4"]
+
+ [:editor.clojure :lt.plugins.clojure/print-length 1000]
+
+ [:editor.html :lt.objs.editor/set-codemirror-flags {:smartIndent false}]
+ [:editor.markdown :lt.objs.editor/wrap]
+
+ ;; one day lighttable will support .editorconfig
+;;  [:editor :lt.objs.editor/tab-settings true 2 2]
+
+ [:files :lt.objs.files/file-types [{:exts [:purs], :mime "text/x-haskell", :tags [:editor.haskell], :name "Purescript"}
+                                    {:exts [:bashrc-custom], :mime "text/x-sh", :tags [:editor.shell], :name "Other Shell"}
+                                    {:exts [:conf], :mime "text/x-ini", :tags [:editor.ini], :name "Other INI"}
+                                    {:exts [:Jakefile :sjs], :mime "text/javascript", :tags [:editor.javascript], :name "Jake Buildfile"}
+                                    {:exts [:Makefile], :mime "text/x-makefile", :tags [:editor.make], :name "Makefile"}
+                                    {:exts [:ejs :source], :mime "htmlmixed", :tags [:editor.html], :name "Other HTML"}]]
+]
