@@ -33,6 +33,7 @@ import XMonad.Actions.Plane
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.ICCCMFocus
+import XMonad.Hooks.FadeInactive
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import Data.Ratio ((%))
@@ -45,33 +46,15 @@ import System.Taffybar.Hooks.PagerHints (pagerHints)
   simpler parts of xmonad's behavior and are straightforward to tweak.
 -}
 
+myFadeAmount         = 0.90
 myModMask            = mod1Mask       -- changes the mod key to "super"
-myFocusedBorderColor = "#ff0000"      -- color of focused border
-myNormalBorderColor  = "#cccccc"      -- color of inactive border
+myFocusedBorderColor = "#141414"      -- color of focused border
+myNormalBorderColor  = "#000000"      -- color of inactive border
 myBorderWidth        = 0              -- width of border around windows
 myTerminal           = "terminator"   -- which terminal software to use
 myIMRosterTitle      = "Buddy List"   -- title of roster on IM workspace
                                       -- use "Buddy List" for Pidgin, but
                                       -- "Contact List" for Empathy
-
-{-
-  Xmobar configuration variables. These settings control the appearance
-  of text which xmonad is sending to xmobar via the DynamicLog hook.
--}
-
-{-
-myTitleColor     = "#eeeeee"  -- color of window title
-myTitleLength    = 80         -- truncate window title to this length
-myCurrentWSColor = "#e6744c"  -- color of active workspace
-myVisibleWSColor = "#c185a7"  -- color of inactive workspace
-myUrgentWSColor  = "#cc0000"  -- color of workspace with 'urgent' window
-myCurrentWSLeft  = "["        -- wrap active workspace with these
-myCurrentWSRight = "]"
-myVisibleWSLeft  = "("        -- wrap inactive workspace with these
-myVisibleWSRight = ")"
-myUrgentWSLeft  = "{"         -- wrap urgent workspace with these
-myUrgentWSRight = "}"
--}
 
 {-
   Workspace configuration. Here you can change the names of your
@@ -269,11 +252,13 @@ myManagementHooks = [
   , (className =? "Synapse") --> doFloat
   , (className =? "zeal") --> doF (W.shift "docs")
   , (className =? "Thunderbird") --> doF (W.shift "mail")
-  , (className =? "Atom") --> doF (W.shift "dev")
+--   , (className =? "Atom") --> doF (W.shift "dev")
   , (className =? "Ltbin") --> doF (W.shift "dev")
   , (className =? "Gimp-2.8") --> doF (W.shift "pix")
   ]
 
+myLogHook :: X ()
+myLogHook = fadeInactiveCurrentWSLogHook myFadeAmount
 
 {-
   Workspace navigation keybindings. This is probably the part of the
@@ -328,6 +313,7 @@ main = do
       , borderWidth = myBorderWidth
       , layoutHook = myLayouts
       , workspaces = myWorkspaces
+      , logHook = myLogHook
       , modMask = myModMask
       , handleEventHook = fullscreenEventHook
       , startupHook = do
