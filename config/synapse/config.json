@@ -1,5 +1,16 @@
 {
+  "plugins": {
+    "opensearch": {
+      "search-engines": [
+        "~/.config/synapse/search/devdocs.xml"
+      ]
+    }
+  },
+
   "ui" : {
+    "widgets" : {
+      "extended-info-enabled" : false
+    },
     "shortcuts" : {
       "activate" : "<Control>apostrophe",
       "execute" : "Return",
@@ -22,7 +33,26 @@
       "exit" : "<Control>q"
     },
     "global" : {
-      "ui-type" : "virgilio"
+      "ui-type" : "essential",
+      "show-indicator" : false
+    }
+  },
+
+  "data-sink" : {
+    "global" : {
+      "disabled-plugins" : [
+        "SynapseBansheeActions",
+        "SynapseRhythmboxActions",
+        "SynapseDevhelpPlugin",
+        "SynapseDictionaryPlugin",
+        "SynapseDirectoryPlugin",
+        "SynapseFileOpPlugin",
+        "SynapseGnomeSessionPlugin",
+        "SynapseLaunchpadPlugin",
+        "SynapsePurplePlugin",
+        "SynapseLocatePlugin",
+        "SynapseChatActions"
+      ]
     }
   }
 }
