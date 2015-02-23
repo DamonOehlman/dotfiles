@@ -112,7 +112,7 @@ mkdir -p $GOPATH
 
 # nvm
 [[ -e ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-hash nvm && nvm use stable
+hash nvm && nvm use iojs
 
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
