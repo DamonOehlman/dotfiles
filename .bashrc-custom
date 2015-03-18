@@ -44,6 +44,9 @@ alias layout_laptop="xrandr --output eDP1 --mode 1920x1080 --primary --output HD
 alias lynxme="pandoc -f markdown_github - | lynx -stdin"
 alias readme="echo &1 && cat ~/code/$1/README.md > /dev/null 2> /dev/null && pandoc -f markdown_github - | lynx -stdin"
 
+# update .bithoundrc to match my default
+alias bithound="curl -s https://gist.githubusercontent.com/DamonOehlman/df7dfcf648fd91268ec0/raw/8ea910d278dc3aee3c8e69d5800b0fbb731c936e/.bithoundrc > .bithoundrc"
+
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
 
@@ -112,7 +115,7 @@ mkdir -p $GOPATH
 
 # nvm
 [[ -e ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-hash nvm && nvm use iojs
+hash nvm && nvm use stable
 
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
