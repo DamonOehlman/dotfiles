@@ -1,12 +1,11 @@
 {
-  "plugins": {
-    "opensearch": {
-      "search-engines": [
+  "plugins" : {
+    "opensearch" : {
+      "search-engines" : [
         "~/.config/synapse/search/devdocs.xml"
       ]
     }
   },
-
   "ui" : {
     "widgets" : {
       "extended-info-enabled" : false
@@ -33,11 +32,10 @@
       "exit" : "<Control>q"
     },
     "global" : {
-      "ui-type" : "essential",
+      "ui-type" : "doish",
       "show-indicator" : false
     }
   },
-
   "data-sink" : {
     "global" : {
       "disabled-plugins" : [
