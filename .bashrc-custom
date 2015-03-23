@@ -2,9 +2,10 @@
 
 # initialise bashinate home location
 AWS_HOME="/opt/aws";
-PATH="$HOME/.cabal/bin:$PATH"; # haskell
+PATH="~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:/opt/happy/1.19.4/bin:/opt/alex/3.1.3/bin:$PATH"; # haskell
 PATH="$PATH:~/packer"; # packer
 PATH="$PATH:$AWS_HOME/beanstalk/eb/linux/python2.7/"; # aws cli tools
+PATH="$PATH:~/bin"; # local bin
 
 # init JAVA_HOME
 export JAVA_HOME="/usr/lib/jvm/default-java";
@@ -112,7 +113,7 @@ mkdir -p $GOPATH
 
 # nvm
 [[ -e ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-hash nvm && nvm use iojs
+hash nvm && nvm use 0.10
 
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
