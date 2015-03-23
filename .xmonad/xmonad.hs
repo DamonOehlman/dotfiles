@@ -252,7 +252,7 @@ myManagementHooks = [
   , (className =? "Synapse") --> doFloat
   , (className =? "zeal") --> doF (W.shift "docs")
   , (className =? "Thunderbird") --> doF (W.shift "mail")
---   , (className =? "Atom") --> doF (W.shift "dev")
+  , (className =? "Atom") --> doF (W.shift "dev")
   , (className =? "Ltbin") --> doF (W.shift "dev")
   , (className =? "Gimp-2.8") --> doF (W.shift "pix")
   ]
