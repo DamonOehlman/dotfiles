@@ -13,6 +13,11 @@ if [ -z "$(pgrep system-config-printer-applet)" ] ; then
   system-config-printer-applet &
 fi
 
+# compmgr
+if [ -z "$(pgrep xcompmgr)" ] ; then
+  xcompmgr -n &
+fi
+
 # zeal
 killall -q zeal
 zeal &
