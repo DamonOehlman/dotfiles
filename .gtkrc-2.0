@@ -1,5 +1,5 @@
 #sets the font
-gtk-font-name = "Droid Sans 10"
+gtk-font-name = "Source Code Pro 8"
 
 #sets the theme
 gtk-theme-name = "BSM Simple Dark"

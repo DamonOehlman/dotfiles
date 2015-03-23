@@ -19,12 +19,16 @@
  [:editor.markdown :lt.objs.editor/wrap]
 
  ;; one day lighttable will support .editorconfig
-;;  [:editor :lt.objs.editor/tab-settings true 2 2]
+ [:editor :lt.objs.editor/tab-settings false 2 2]
+ [:editor :lt.objs.editor/tab-settings true 2 2]
+
+ ;; disable autocomplete in js
+ [:editor.javascript :-lt.plugins.auto-complete/auto-show-on-input]
 
  [:files :lt.objs.files/file-types [{:exts [:purs], :mime "text/x-haskell", :tags [:editor.haskell], :name "Purescript"}
                                     {:exts [:bashrc-custom], :mime "text/x-sh", :tags [:editor.shell], :name "Other Shell"}
                                     {:exts [:conf], :mime "text/x-ini", :tags [:editor.ini], :name "Other INI"}
                                     {:exts [:Jakefile :sjs], :mime "text/javascript", :tags [:editor.javascript], :name "Jake Buildfile"}
                                     {:exts [:Makefile], :mime "text/x-makefile", :tags [:editor.make], :name "Makefile"}
-                                    {:exts [:ejs :source], :mime "htmlmixed", :tags [:editor.html], :name "Other HTML"}]]
+                                    {:exts [:ejs :source :hbs], :mime "htmlmixed", :tags [:editor.html], :name "Other HTML"}]]
 ]
