@@ -25,6 +25,7 @@ export PATH="$PATH:$GDEV_HOME/depot_tools"
 VM_U2713HM="U2713HM"
 VM_U2713HM_MODELINE="172.80 1920 2040 2248 2576  1080 1081 1084 1118 -hsync +vsync"
 VM_WORK=$VM_U2713HM
+DISPLAY_INTERNAL=`xrandr | sed -n 2p | cut -f1 -d$' '`
 
 # initialise the bashrc
 # alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
@@ -38,8 +39,8 @@ alias dockercleanimages="docker images -a --no-trunc | grep none | awk '{print \
 alias dockerclean="dockercleancontainers && dockercleanimages"
 
 # screen customization options
-alias layout_work="xrandr --addmode HDMI1 $VM_WORK && xrandr --output HDMI1 --primary --mode $VM_WORK --output eDP1 --off" #--left-of eDP1 && xrandr --output eDP1 --primary"
-alias layout_laptop="xrandr --output eDP1 --mode 1920x1080 --primary --output HDMI1 --off"
+alias layout_work="xrandr --addmode HDMI1 $VM_WORK && xrandr --output HDMI1 --primary --mode $VM_WORK --output $DISPLAY_INTERNAL --off" #--left-of eDP1 && xrandr --output eDP1 --primary"
+alias layout_laptop="xrandr --output $DISPLAY_INTERNAL --mode 1920x1080 --primary --output HDMI1 --off"
 
 # my helpful readme command
 alias lynxme="pandoc -f markdown_github - | lynx -stdin"
