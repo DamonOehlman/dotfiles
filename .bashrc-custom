@@ -30,7 +30,7 @@ DISPLAY_INTERNAL=`xrandr | sed -n 2p | cut -f1 -d$' '`
 
 # initialise the bashrc
 # alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
-alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --allow-http-screen-capture --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
+alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --enable-usermedia-screen-capturing --allow-http-screen-capture --use-fake-device-for-media-stream --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
 
 alias bsize="browserify . --standalone test | uglifyjs | wc -c"
 alias bcheck="browserify . | uglifyjs index.js --screw-ie8 --mangle --compress > /dev/null"
@@ -119,7 +119,7 @@ mkdir -p $GOPATH
 
 # nvm
 [[ -e ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
-hash nvm && nvm use stable
+hash nvm && nvm use iojs
 
 # rvm
 [[ -e ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
