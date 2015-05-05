@@ -43,6 +43,7 @@ alias dockerclean="dockercleancontainers && dockercleanimages"
 alias layout_work="xrandr --addmode HDMI1 $VM_WORK && xrandr --output HDMI1 --primary --mode $VM_WORK --output $DISPLAY_INTERNAL --off" #--left-of eDP1 && xrandr --output eDP1 --primary"
 alias layout_laptop="xrandr --output $DISPLAY_INTERNAL --mode 1920x1080 --primary --output HDMI1 --off"
 alias layout_scaled="xrandr --addmode $DISPLAY_INTERNAL INTERNAL_SCALED && xrandr --output $DISPLAY_INTERNAL --mode INTERNAL_SCALED --primary --output HDMI1 --off"
+alias layout_canva="xrandr --addmode HDMI1 1920x1200 && xrandr --output HDMI1 --primary --mode 1920x1200 --output $DISPLAY_INTERNAL --off"
 
 # my helpful readme command
 alias lynxme="pandoc -f markdown_github - | lynx -stdin"
