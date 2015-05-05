@@ -255,6 +255,7 @@ myManagementHooks = [
   , (className =? "Atom") --> doF (W.shift "dev")
   , (className =? "Ltbin") --> doF (W.shift "dev")
   , (className =? "Gimp-2.8") --> doF (W.shift "pix")
+  , (className =? "HipChat") --> doF (W.shift "chat")
   ]
 
 myLogHook :: X ()
