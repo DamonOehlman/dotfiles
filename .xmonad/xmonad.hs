@@ -37,6 +37,7 @@ import XMonad.Hooks.FadeInactive
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import Data.Ratio ((%))
+import Data.List (isPrefixOf)
 
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import System.Taffybar.Hooks.PagerHints (pagerHints)
@@ -79,7 +80,7 @@ myWorkspaces =
   [
     "term",   "dev",    "web",
     "mail",   "docs",    "files",
-    "debug",  "chat",   "pix",
+    "srv",    "chat",   "pix",
     "vm",     "ext-1",  "ext-2"
   ]
 
@@ -256,6 +257,7 @@ myManagementHooks = [
   , (className =? "Ltbin") --> doF (W.shift "dev")
   , (className =? "Gimp-2.8") --> doF (W.shift "pix")
   , (className =? "HipChat") --> doF (W.shift "chat")
+  , (fmap ("srv:" `isPrefixOf`) title) --> doF (W.shift "srv")
   ]
 
 myLogHook :: X ()
