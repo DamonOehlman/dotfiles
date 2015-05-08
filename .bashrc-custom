@@ -58,6 +58,9 @@ alias readme="echo &1 && cat ~/code/$1/README.md > /dev/null 2> /dev/null && pan
 # update .bithoundrc to match my default
 alias bithound="curl -s https://gist.githubusercontent.com/DamonOehlman/df7dfcf648fd91268ec0/raw/8ea910d278dc3aee3c8e69d5800b0fbb731c936e/.bithoundrc > .bithoundrc"
 
+# an alias to change the colorscheme of the current roxterm terminal
+alias scheme="roxterm_tweak SetColourScheme"
+
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
 
@@ -113,6 +116,12 @@ function report_status() {
   if [[ $RET_CODE -ne 0 ]] ; then
     echo -ne "[\[$RED\]$RET_CODE\[$NC\]]"
   fi
+}
+
+function roxterm_tweak() {
+  dbus-send --session /net/sf/roxterm/Options \
+    net.sf.roxterm.Options.$1 \
+    string:$ROXTERM_ID string:${2:-Default}
 }
 
 export _PS1="\[$NC\][\u@\h \W]"
