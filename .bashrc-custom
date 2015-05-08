@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+EDITOR=vim
 
 # DOTFILES HOME
 DOTFILES_HOME=$HOME/code/dotfiles
