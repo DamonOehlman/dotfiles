@@ -11,3 +11,6 @@ disable_tab_menu_shortcuts=1
 disable_menu_shortcuts=1
 disable_menu_access=1
 scrollbar_pos=0
+saturation=0.000000
+scroll_on_output=0
+scroll_on_keystroke=1
