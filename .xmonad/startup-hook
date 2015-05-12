@@ -14,8 +14,8 @@ if [ -z "$(pgrep system-config-printer-applet)" ] ; then
 fi
 
 # compmgr
-if [ -z "$(pgrep xcompmgr)" ] ; then
-  xcompmgr -n &
+if [ -z "$(pgrep compton)" ] ; then
+  compton &
 fi
 
 # zeal
