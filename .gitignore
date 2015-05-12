@@ -1,2 +1,5 @@
+.atom/.apm/
+.xmonad/.xmonad
+config/taffybar/taffybar
 npm-debug.log
 *~
