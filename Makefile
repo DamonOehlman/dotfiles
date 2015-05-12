@@ -19,7 +19,7 @@ roxterm:
 	@ln -s $(DOTFILES_HOME)/config/roxterm.sourceforge.net ~/.config/roxterm.sourceforge.net
 
 atom:
-	@rm -rf ~/.atom/
+	@rm -rf ~/.atom
 	@ln -s $(DOTFILES_HOME)/.atom ~/.atom
 
 /usr/share/xsessions:
