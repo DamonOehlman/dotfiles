@@ -70,7 +70,7 @@ eval $(ssh-agent) > /dev/null
 ssh-add 2> /dev/null
 
 # synaptic client changes
-synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
+synclient > /dev/null 2>&1 && synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
 
 #
 # Define some colors first: Capitals denote bold
