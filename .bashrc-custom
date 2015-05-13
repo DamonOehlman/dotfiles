@@ -56,6 +56,9 @@ alias layout_canva="xrandr --addmode HDMI1 1920x1200 && xrandr --output HDMI1 --
 alias lynxme="pandoc -f markdown_github - | lynx -stdin"
 alias readme="echo &1 && cat ~/code/$1/README.md > /dev/null 2> /dev/null && pandoc -f markdown_github - | lynx -stdin"
 
+# wallpaper switcher
+alias wallpaper_next="nitrogen --set-zoom-fill ~/Pictures/wallpaper/\$(ls ~/Pictures/wallpaper/ |sort -R |tail -1)"
+
 # update .bithoundrc to match my default
 alias bithound="curl -s https://gist.githubusercontent.com/DamonOehlman/df7dfcf648fd91268ec0/raw/8ea910d278dc3aee3c8e69d5800b0fbb731c936e/.bithoundrc > .bithoundrc"
 
