@@ -1,6 +1,6 @@
 DOTFILES_HOME=~/code/dotfiles
 
-sync: deps fonts synapse roxterm atom /usr/share/xsessions
+sync: deps fonts synapse roxterm atom sublime /usr/share/xsessions
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
 	@ln -sf $(DOTFILES_HOME)/.gtkrc-2.0 ~/.gtkrc2.0
 	@ln -sf $(DOTFILES_HOME)/.xmonad ~/.xmonad
@@ -21,6 +21,11 @@ roxterm:
 atom:
 	@rm -rf ~/.atom
 	@ln -s $(DOTFILES_HOME)/.atom ~/.atom
+
+sublime:
+	@rm -rf ~/.config/sublime-text-3/Packages/User
+	@mkdir -p ~/.config/sublime-text-3/Packages
+	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
 
 /usr/share/xsessions:
 	sudo cp $(DOTFILES_HOME)/.xmonad/xmonad.desktop /usr/share/xsessions
