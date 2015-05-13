@@ -252,12 +252,22 @@ myManagementHooks = [
   , className =? "rdesktop" --> doFloat
   , (className =? "Synapse") --> doFloat
   , (className =? "Zeal") --> doF (W.shift "docs")
-  , (className =? "Thunderbird") --> doF (W.shift "mail")
+
+  -- editors
   , (className =? "Atom") --> doF (W.shift "dev")
   , (className =? "Sublime_text") --> doF (W.shift "dev")
   , (className =? "Ltbin") --> doF (W.shift "dev")
+
+  -- mail apps
+  , (className =? "Thunderbird") --> doF (W.shift "mail")
+  , (appName =? "mail.google.com__mail_u_0") --> doF (W.shift "mail")
+
   , (className =? "Gimp-2.8") --> doF (W.shift "pix")
-  , (className =? "HipChat") --> doF (W.shift "chat")
+
+  -- chat
+  , (appName =? "canva.hipchat.com__chat_room_714913") --> doF (W.shift "chat")
+
+  -- misc
   , (fmap ("srv:" `isPrefixOf`) title) --> doF (W.shift "srv")
   ]
 
