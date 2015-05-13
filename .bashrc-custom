@@ -132,12 +132,7 @@ export _PS1="\[$NC\][\u@\h \W]"
 export PS2="\[$NC\]> "
 export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
 
-# ensure go is a go
-PATH="~/.go/bin:/opt/go/bin:$PATH";
-export GOROOT=/opt/go
-export GOPATH=~/code/go
-mkdir -p $GOPATH
-
+. $DOTFILES_HOME/scripts/go.sh
 . $DOTFILES_HOME/scripts/node.sh
 . $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/python.sh
