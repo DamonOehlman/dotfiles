@@ -1,8 +1,10 @@
 {
-    "theme": "predawn.sublime-theme",
-    "color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"font_face": "Source Code Pro",
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"Vintage"
-	]
+	],
+	"theme": "predawn.sublime-theme"
 }
