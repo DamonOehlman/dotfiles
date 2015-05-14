@@ -81,7 +81,7 @@ myWorkspaces =
     "term",   "dev",    "web",
     "mail",   "docs",    "files",
     "srv",    "chat",   "pix",
-    "vm",     "ext-1",  "ext-2"
+    "issues", "ext-1",  "ext-2"
   ]
 
 startupWorkspace = "term"  -- which workspace do you want to be on after launch?
