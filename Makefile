@@ -4,6 +4,7 @@ sync: deps fonts synapse roxterm atom sublime /usr/share/xsessions
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
 	@ln -sf $(DOTFILES_HOME)/.gtkrc-2.0 ~/.gtkrc2.0
 	@ln -sf $(DOTFILES_HOME)/.xmonad ~/
+	@ln -sf $(DOTFILES_HOME)/.i3 ~/
 	@ln -sf $(DOTFILES_HOME)/config/taffybar ~/.config/
 	@echo "sync complete"
 
