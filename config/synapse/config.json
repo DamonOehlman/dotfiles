@@ -10,10 +10,6 @@
     "widgets" : {
       "extended-info-enabled" : false
     },
-    "global" : {
-      "ui-type" : "doish",
-      "show-indicator" : false
-    },
     "shortcuts" : {
       "activate" : "<Alt>grave",
       "execute" : "Return",
@@ -34,6 +30,10 @@
       "paste" : "<Control>v",
       "alt-paste" : "<Shift>Insert",
       "exit" : "<Control>q"
+    },
+    "global" : {
+      "ui-type" : "virgilio",
+      "show-indicator" : false
     }
   },
   "data-sink" : {
