@@ -1,0 +1,94 @@
+{
+	"layout": "splith",
+	"percent": 0.4,
+	"type": "con",
+	"swallows": [
+		{ "class": "^X-terminal-emulator" }
+	]
+}
+
+{
+	"layout": "stacked",
+	"percent": 0.6,
+	"type": "con",
+	"nodes": [
+		{
+			"name": "chrome",
+			"type": "con",
+			"swallows": [
+				{ "class": "^Google-chrome" }
+			]
+		}
+	]
+}
+
+{
+//             "name": "chrome",
+//             "type": "con",
+//             "swallows": [
+//                 {
+//                     "class": "^Google-chrome$"
+//                 }
+//             ]
+//         }
+//     // splitv split container with 2 children
+//     "layout": "splitv",
+//     "percent": 0.4,
+//     "type": "con",
+//     "nodes": [
+//         {
+//             "border": "none",
+//             "name": "irssi",
+//             "percent": 0.5,
+//             "type": "con",
+//             "swallows": [
+//                 {
+//                     "class": "^URxvt$",
+//                     "instance": "^irssi$"
+//                 }
+//             ]
+//         },
+//         {
+//             // stacked split container with 2 children
+//             "layout": "stacked",
+//             "percent": 0.5,
+//             "type": "con",
+//             "nodes": [
+//                 {
+//                     "name": "notmuch",
+//                     "percent": 0.5,
+//                     "type": "con",
+//                     "swallows": [
+//                         {
+//                             "class": "^Emacs$",
+//                             "instance": "^notmuch$"
+//                         }
+//                     ]
+//                 },
+//                 {
+//                     "name": "midna: ~",
+//                     "percent": 0.5,
+//                     "type": "con"
+//                 }
+//             ]
+//         }
+//     ]
+// }
+
+// {
+//     // stacked split container with 1 children
+//     "layout": "stacked",
+//     "percent": 0.6,
+//     "type": "con",
+//     "nodes": [
+//         {
+//             "name": "chrome",
+//             "type": "con",
+//             "swallows": [
+//                 {
+//                     "class": "^Google-chrome$"
+//                 }
+//             ]
+//         }
+//     ]
+// }
