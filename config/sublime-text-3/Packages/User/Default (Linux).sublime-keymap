@@ -3,4 +3,5 @@
 	{ "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
 	{ "keys": ["ctrl+shift+a"], "command": "select_all" },
 	{ "keys": ["ctrl+d"], "command": "right_delete" },
+	{ "keys": ["ctrl+shift+d"], "command": "find_under_expand" },
 ]

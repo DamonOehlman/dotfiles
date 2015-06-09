@@ -1,7 +1,8 @@
 {
 	"color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"draw_white_space": "all",
 	"font_face": "Source Code Pro",
-	"font_size": 11,
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"Vintage"
