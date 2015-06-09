@@ -1,0 +1,5 @@
+inspection/*
+plugins/*
+tasks/*
+*.key
+port
