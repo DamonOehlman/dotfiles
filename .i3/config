@@ -16,15 +16,15 @@ set $launcher_terminal roxterm
 
 # named workspaces
 set $term 1term
-set $dev  2dev
+set $ed1  2ed1
 set $web  3web
-set $WS4  4
+set $ed2  4ed2
 set $WS5  5
 set $WS6  6
 set $WS7  7srv
 set $chat 8chat
-set $vm   9vm
-set $WS0  10
+set $pics 9pics
+set $vm   10vm
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -57,23 +57,11 @@ bindsym $mod+Shift+c kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# lets FPS this sucker
-bindsym $mod+a focus left
-bindsym $mod+w focus up
-bindsym $mod+s focus down
-bindsym $mod+d focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+a move left
-bindsym $mod+Shift+w move up
-bindsym $mod+Shift+s move down
-bindsym $mod+Shift+d move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -115,27 +103,27 @@ bindsym $mod+p exec "synapse"
 
 # switch to workspace
 bindsym $mod+1 workspace $term
-bindsym $mod+2 workspace $dev
+bindsym $mod+2 workspace $ed1
 bindsym $mod+3 workspace $web
-bindsym $mod+4 workspace $WS4
+bindsym $mod+4 workspace $ed2
 bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $chat
-bindsym $mod+9 workspace $vm
-bindsym $mod+0 workspace $WS0
+bindsym $mod+9 workspace $pics
+bindsym $mod+0 workspace $vm
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $term
-bindsym $mod+Shift+2 move container to workspace $dev
+bindsym $mod+Shift+2 move container to workspace $ed1
 bindsym $mod+Shift+3 move container to workspace $web
-bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+4 move container to workspace $ed2
 bindsym $mod+Shift+5 move container to workspace $WS5
 bindsym $mod+Shift+6 move container to workspace $WS6
 bindsym $mod+Shift+7 move container to workspace $WS7
 bindsym $mod+Shift+8 move container to workspace $chat
-bindsym $mod+Shift+9 move container to workspace $vm
-bindsym $mod+Shift+0 move container to workspace $WS0
+bindsym $mod+Shift+9 move container to workspace $pics
+bindsym $mod+Shift+0 move container to workspace $vm
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -144,6 +132,9 @@ bindsym $mod+q reload
 bindsym $mod+Shift+q exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+bindsym $mod+s mode "server"
+
 mode "resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -156,7 +147,14 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+mode "server" {
+        # start a terminal
+        bindsym $mod+Shift+Return exec "$launcher_terminal --color-scheme=solarized-dark"
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -171,7 +169,9 @@ bar {
 
 # specific window rules
 for_window [class="^VirtualBox$"], move container to workspace $vm
-for_window [class="^jetbrains-idea$"], move container to workspace $dev
+for_window [class="^jetbrains-idea$"], move container to workspace $ed1
+for_window [class="^Gimp-2.8$"], move container to workspace $pics
+for_window [class="^Sublime_text"], move container to workspace $ed2
 
 # start initialization
 exec --no-startup-id ./apply-layouts.sh
