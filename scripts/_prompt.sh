@@ -43,12 +43,6 @@ function report_status() {
   fi
 }
 
-function roxterm_tweak() {
-  dbus-send --session /net/sf/roxterm/Options \
-    net.sf.roxterm.Options.$1 \
-    string:$ROXTERM_ID string:${2:-Default}
-}
-
 export _PS1="\[$NC\][\u@\h \W]"
 export PS2="\[$NC\]> "
 export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
