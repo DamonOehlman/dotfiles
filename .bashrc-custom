@@ -81,8 +81,9 @@ synclient > /dev/null 2>&1 && synclient TapButton1=0 TapButton2=0 RTCornerButton
 # general prompt configuration
 . $DOTFILES_HOME/scripts/_prompt.sh
 
-# helpers for roxterm
+# bash scripting helpers
 . $DOTFILES_HOME/scripts/roxterm.sh
+. $DOTFILES_HOME/scripts/screencasting.sh
 
 # language configuration
 . $DOTFILES_HOME/scripts/go.sh
