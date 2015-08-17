@@ -173,5 +173,7 @@ for_window [class="^jetbrains-idea$"], move container to workspace $ed1
 for_window [class="^Gimp-2.8$"], move container to workspace $pics
 for_window [class="^Sublime_text"], move container to workspace $ed2
 
+append_layout ~/.i3/workspace-web.json
+
 # start initialization
 exec --no-startup-id ./apply-layouts.sh

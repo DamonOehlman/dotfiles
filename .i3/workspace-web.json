@@ -1,0 +1,82 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1150,
+       "width": 1916,
+       "x": 2,
+       "y": 48
+    },
+    "name": "i3: Layout saving in i3 - Google Chrome",
+    "percent": 0.6,
+    "swallows": [
+       {
+       // "class": "^Google\\-chrome\\-stable$",
+       // "instance": "^Google\\-chrome\\-stable$",
+       // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\-\\ Google\\ Chrome$",
+       // "transient_for": "^$",
+       // "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1150,
+               "width": 956,
+               "x": 962,
+               "y": 48
+            },
+            "name": "Developer Tools - http://localhost:8080/design/DABZ1o0GkL4/fExX8LquEvpO8mSzSaPOXA/edit",
+            "percent": 0.7,
+            "swallows": [
+               {
+               // "class": "^Google\\-chrome\\-stable$",
+               // "instance": "^Google\\-chrome\\-stable$",
+               // "title": "^Developer\\ Tools\\ \\-\\ http\\:\\/\\/localhost\\:8080\\/design\\/DABZ1o0GkL4\\/fExX8LquEvpO8mSzSaPOXA\\/edit$",
+               // "transient_for": "^$",
+               // "window_role": "^pop\\-up$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 482,
+               "width": 722,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ROXTerm",
+            "percent": 0.3,
+            "swallows": [
+               {
+               // "class": "^Roxterm$",
+               // "instance": "^roxterm$",
+               // "title": "^ROXTerm$",
+               // "transient_for": "^$",
+               // "window_role": "^roxterm\\-4448\\-f301e0b7\\-16$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
