@@ -1,18 +1,8 @@
 DOTFILES_HOME=~/code/dotfiles
 
-sync: deps fonts synapse roxterm atom sublime intellij /usr/share/xsessions
+sync:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
-	@ln -sf $(DOTFILES_HOME)/.gtkrc-2.0 ~/.gtkrc2.0
-	@ln -sf $(DOTFILES_HOME)/.xmonad ~/
-	@ln -sf $(DOTFILES_HOME)/.i3 ~/
-	@mkdir -p ~/.config/
-	@ln -sf $(DOTFILES_HOME)/config/taffybar ~/.config/
-	@ln -sf $(DOTFILES_HOME)/config/bspwmrc ~/.config/
-	@ln -sf $(DOTFILES_HOME)/config/sxhkdrc ~/.config/
 	@echo "sync complete"
-
-deps:
-	@hash compton 2> /dev/null || (echo "please install compton"; exit 1)
 
 synapse:
 	@rm -rf ~/.config/synapse

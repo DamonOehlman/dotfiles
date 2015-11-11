@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 export EDITOR=vim
+UNAME=$(uname)
 
 # DOTFILES HOME
 DOTFILES_HOME=$HOME/code/dotfiles
@@ -11,7 +12,7 @@ NODE_VERSION=stable
 
 ## LANGUAGE PATHS
 PATH="~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:/opt/happy/1.19.4/bin:/opt/alex/3.1.3/bin:$PATH";
-PATH="$HOME/.pyenv/bin:$PATH"
+PATH="$HOME/.pyenv/shims:$PATH"
 
 ## TOOL PATHS
 PATH="$PATH:~/packer"; # packer
@@ -25,13 +26,15 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 export GDEV_HOME=~/code/goog
 export PATH="$PATH:$GDEV_HOME/depot_tools"
 
-# video modes
-VM_U2713HM="U2713HM"
-VM_U2713HM_MODELINE="172.80 1920 2040 2248 2576  1080 1081 1084 1118 -hsync +vsync"
-VM_WORK=$VM_U2713HM
-VM_SURFACE_SCALED="109.50  1368 1448 1592 1816  768 771 781 805 -hsync +vsync"
-VM_B2440="172.80  1920 2040 2248 2576  1080 1081 1084 1118  -hsync +vsync"
-DISPLAY_INTERNAL=`xrandr | sed -n 2p | cut -f1 -d$' '`
+if [[ $UNAME -ne 'Darwin' ]]; then
+	# video modes
+	VM_U2713HM="U2713HM"
+	VM_U2713HM_MODELINE="172.80 1920 2040 2248 2576  1080 1081 1084 1118 -hsync +vsync"
+	VM_WORK=$VM_U2713HM
+	VM_SURFACE_SCALED="109.50  1368 1448 1592 1816  768 771 781 805 -hsync +vsync"
+	VM_B2440="172.80  1920 2040 2248 2576  1080 1081 1084 1118  -hsync +vsync"
+	DISPLAY_INTERNAL=`xrandr | sed -n 2p | cut -f1 -d$' '`
+fi
 
 # initialise the bashrc
 # alias chrome="rm -rf $HOME/.config/chrome-test && google-chrome --console --no-first-run --user-data-dir=$HOME/.config/chrome-test --use-fake-device-for-media-stream --use-file-for-fake-video-capture=/home/doehlman/testvideo.y4m --enable-logging --v=1 --vmodule=*third_party/libjingle/*=3,*=0"
@@ -73,21 +76,23 @@ eval $(ssh-agent) > /dev/null
 ssh-add 2> /dev/null
 
 # synaptic client changes
-synclient > /dev/null 2>&1 && synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
+hash synclient 2> /dev/null && synclient > /dev/null 2>&1 && synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
 
 # general prompt configuration
 . $DOTFILES_HOME/scripts/_prompt.sh
 
 # bash scripting helpers
-. $DOTFILES_HOME/scripts/roxterm.sh
-. $DOTFILES_HOME/scripts/screencasting.sh
+if [[ $UNAME -ne 'Darwin' ]]; then
+	. $DOTFILES_HOME/scripts/roxterm.sh
+	. $DOTFILES_HOME/scripts/screencasting.sh
+fi
 
 # language configuration
 . $DOTFILES_HOME/scripts/go.sh
 . $DOTFILES_HOME/scripts/node.sh
 . $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/python.sh
-. $DOTFILES_HOME/scripts/elm.sh
+# . $DOTFILES_HOME/scripts/elm.sh
 . $DOTFILES_HOME/scripts/haxe.sh
 
 # bring in local configuration settings
