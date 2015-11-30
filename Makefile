@@ -24,6 +24,11 @@ sublime:
 /usr/share/xsessions:
 	sudo cp $(DOTFILES_HOME)/.xmonad/xmonad.desktop /usr/share/xsessions
 
+tmux:
+	@ln -sf $(DOTFILES_HOME)/.tmux/.tmux.conf ~/.tmux.conf
+	@mkdir -p $(DOTFILES_HOME)/.tmux/plugins
+	@rm -rf $(DOTFILES_HOME)/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm $(DOTFILES_HOME)/.tmux/plugins/tpm
+
 intellij:
 	@mkdir -p ~/.IntelliJIdea14
 	@ln -sf $(DOTFILES_HOME)/.IntelliJIdea14/config ~/.IntelliJIdea14/
