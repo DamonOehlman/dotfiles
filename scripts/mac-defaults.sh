@@ -4,6 +4,7 @@ DOMAIN_TOTALSPACES="com.binaryage.TotalSpaces2"
 
 # my preferred interface style
 defaults write $DOMAIN_GLOBAL AppleInterfaceStyle -string "Dark"
+defaults write $DOMAIN_GLOBAL _HIHideMenuBar -bool true
 
 # tap to click (see: https://github.com/mathiasbynens/dotfiles/blob/master/.osx#L153)
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
