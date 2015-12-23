@@ -1,6 +1,6 @@
 DOTFILES_HOME=~/code/dotfiles
 
-default: macapps bashrc
+default: macapps bashrc vscode
 	@echo "sync complete"
 
 bashrc:
@@ -9,6 +9,11 @@ bashrc:
 synapse:
 	@rm -rf ~/.config/synapse
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse
+	
+vscode:
+	@mkdir -p ~/Library/Application\ Support/Code
+	@rm -rf ~/Library/Application\ Support/Code/User
+	@ln -sf $(DOTFILES_HOME)/Library/Application\ Support/Code/User ~/Library/Application\ Support/Code 
 
 roxterm:
 	@rm -rf ~/.config/roxterm.sourceforge.net
@@ -27,7 +32,7 @@ sublime:
 	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
 
 macapps:
-	@ln -sf ~/code/dotfiles/Library/Preferences/*.plist ~/Library/Preferences
+	@ln -sf $(DOTFILES_HOME)/Library/Preferences/*.plist ~/Library/Preferences
 
 /usr/share/xsessions:
 	sudo cp $(DOTFILES_HOME)/.xmonad/xmonad.desktop /usr/share/xsessions
