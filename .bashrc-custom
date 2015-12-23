@@ -88,7 +88,7 @@ if [[ $UNAME -ne 'Darwin' ]]; then
 fi
 
 # git completion
-source $(DOTFILES_HOME)/bin/git-completion.bash
+source $DOTFILES_HOME/bin/git-completion.bash
 
 # language configuration
 . $DOTFILES_HOME/scripts/go.sh
