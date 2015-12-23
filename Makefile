@@ -1,6 +1,7 @@
 DOTFILES_HOME=~/code/dotfiles
+PRIVATE_SETTINGS_GIST=2e5e9e154b4ac8820f83
 
-default: macapps bashrc vscode localbin
+default: macapps bashrc vscode localbin private_settings
 	@echo "sync complete"
 
 bashrc:
@@ -54,3 +55,12 @@ fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf
 	tar xf /tmp/sourcecodepro.tar.gz --directory /tmp
 	mkdir -p ~/.local/share/fonts
 	cp /tmp/source-code-pro*/OTF/* ~/.local/share/fonts
+
+private:
+	@git clone git@gist.github.com:$(PRIVATE_SETTINGS_GIST).git private
+
+private_settings: private
+	@$(DOTFILES_HOME)/private/mac-defaults.sh
+
+clean:
+	@rm -rf private/
