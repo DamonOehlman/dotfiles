@@ -36,6 +36,7 @@ sublime:
 	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
 
 macapps:
+	@ln -sf $(DOTFILES_HOME)/Library/Preferences/.GlobalPreferences.plist ~/Library/Preferences
 	@ln -sf $(DOTFILES_HOME)/Library/Preferences/*.plist ~/Library/Preferences
 
 /usr/share/xsessions:
