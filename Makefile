@@ -1,6 +1,6 @@
 DOTFILES_HOME=~/code/dotfiles
 
-default: macapps bashrc vscode
+default: macapps bashrc vscode localbin
 	@echo "sync complete"
 
 bashrc:
@@ -13,7 +13,11 @@ synapse:
 vscode:
 	@mkdir -p ~/Library/Application\ Support/Code
 	@rm -rf ~/Library/Application\ Support/Code/User
-	@ln -sf $(DOTFILES_HOME)/Library/Application\ Support/Code/User ~/Library/Application\ Support/Code 
+	@ln -sf $(DOTFILES_HOME)/Library/Application\ Support/Code/User ~/Library/Application\ Support/Code
+
+localbin:
+	@mkdir -p ~/bin
+	@ln -sf $(DOTFILES_HOME)/bin/* ~/bin/ 
 
 roxterm:
 	@rm -rf ~/.config/roxterm.sourceforge.net

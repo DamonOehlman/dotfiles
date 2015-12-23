@@ -87,6 +87,9 @@ if [[ $UNAME -ne 'Darwin' ]]; then
 	. $DOTFILES_HOME/scripts/screencasting.sh
 fi
 
+# git completion
+source $(DOTFILES_HOME)/bin/git-completion.bash
+
 # language configuration
 . $DOTFILES_HOME/scripts/go.sh
 . $DOTFILES_HOME/scripts/node.sh
