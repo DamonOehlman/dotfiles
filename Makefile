@@ -27,7 +27,7 @@ sublime:
 	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
 
 macapps:
-	@ln -s ~/code/dotfiles/Library/Preferences/*.plist ~/Library/Preferences
+	@ln -sf ~/code/dotfiles/Library/Preferences/*.plist ~/Library/Preferences
 
 /usr/share/xsessions:
 	sudo cp $(DOTFILES_HOME)/.xmonad/xmonad.desktop /usr/share/xsessions
