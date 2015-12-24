@@ -4,7 +4,7 @@ for dir in *; do
     pushd "$dir" > /dev/null
 
     if [ -e package.json ]; then
-      echo "reinstalling packages with npm for: ${dir}"
+      echo -ne "\033]0;reinstalling packages with npm for: ${dir}\007"
       rm -rf node_modules
       npm install
 
