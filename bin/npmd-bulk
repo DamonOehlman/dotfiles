@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+for dir in *; do
+  if [ -d "${dir}" ]; then
+    pushd "$dir" > /dev/null
+
+    if [ -e package.json ]; then
+      echo -ne "\033]0;npmd reinstalling: ${dir}\007"
+      rm -rf node_modules
+      npmd install
+
+      # if npm failed, then abort
+      if [ $? -ne 0 ]; then
+        exit $?
+      fi
+    fi
+
+    popd > /dev/null
+  fi
+done
