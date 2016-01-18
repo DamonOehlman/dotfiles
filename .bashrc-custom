@@ -95,7 +95,7 @@ source $DOTFILES_HOME/bin/git-completion.bash
 . $DOTFILES_HOME/scripts/node.sh
 . $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/python.sh
-# . $DOTFILES_HOME/scripts/elm.sh
+. $DOTFILES_HOME/scripts/elm.sh
 . $DOTFILES_HOME/scripts/haxe.sh
 
 # bring in local configuration settings
