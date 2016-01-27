@@ -1,3 +1,5 @@
 // Place your key bindings in this file to overwrite the defaults
 [
+  { "key": "cmd+right",            "command": "workbench.files.action.openNextWorkingFile" },
+  { "key": "cmd+left",            "command": "workbench.files.action.openPreviousWorkingFile" }
 ]
