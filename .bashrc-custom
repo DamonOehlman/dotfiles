@@ -99,6 +99,9 @@ source $DOTFILES_HOME/bin/git-completion.bash
 . $DOTFILES_HOME/scripts/haxe.sh
 . $DOTFILES_HOME/scripts/tools.sh
 
+# tune editors
+. $DOTFILES_HOME/scripts/editors/intellij.sh
+
 # bring in local configuration settings
 [[ -e ~/.bashrc-local ]] && . ~/.bashrc-local
 
