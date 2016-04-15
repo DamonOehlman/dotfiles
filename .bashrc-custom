@@ -7,7 +7,7 @@ DOTFILES_HOME=$HOME/code/dotfiles
 
 # LANGUAGE VERSIONS
 PYTHON_VERSION=2.7.10
-RUBY_VERSION=2.2.2
+RUBY_VERSION=2.3.0
 NODE_VERSION=stable
 
 ## LANGUAGE PATHS
@@ -93,11 +93,11 @@ source $DOTFILES_HOME/bin/git-completion.bash
 # language configuration
 . $DOTFILES_HOME/scripts/go.sh
 . $DOTFILES_HOME/scripts/node.sh
-. $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/python.sh
 . $DOTFILES_HOME/scripts/elm.sh
 . $DOTFILES_HOME/scripts/haxe.sh
 . $DOTFILES_HOME/scripts/tools.sh
+. $DOTFILES_HOME/scripts/ruby.sh
 
 # tune editors
 . $DOTFILES_HOME/scripts/editors/intellij.sh
