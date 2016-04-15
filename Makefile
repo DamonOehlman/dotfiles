@@ -12,9 +12,9 @@ synapse:
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse
 	
 vscode:
-	@mkdir -p ~/Library/Application\ Support/Code
 	@rm -rf ~/Library/Application\ Support/Code/User
-	@ln -sf $(DOTFILES_HOME)/Library/Application\ Support/Code/User ~/Library/Application\ Support/Code
+	@mkdir -p ~/Library/Application\ Support/Code/User
+	@ln -sf $(DOTFILES_HOME)/config/code/* ~/Library/Application\ Support/Code/User
 
 localbin:
 	@mkdir -p ~/bin
