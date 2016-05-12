@@ -1,6 +1,5 @@
 .DS_Store
 private/
-.atom/.apm/
 .xmonad/.xmonad
 config/taffybar/taffybar
 npm-debug.log

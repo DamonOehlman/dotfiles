@@ -27,10 +27,6 @@ roxterm:
 editors:
 	./scripts/editors/intellij.sh
 
-atom:
-	@rm -rf ~/.atom
-	@ln -s $(DOTFILES_HOME)/.atom ~/.atom
-
 sublime:
 	@rm -rf ~/.config/sublime-text-3/Packages/User
 	@mkdir -p ~/.config/sublime-text-3/Packages
