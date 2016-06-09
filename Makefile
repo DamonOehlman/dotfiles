@@ -26,6 +26,7 @@ roxterm:
 
 editors:
 	./scripts/editors/intellij.sh
+	./scripts/editors/atom.sh
 
 sublime:
 	@rm -rf ~/.config/sublime-text-3/Packages/User
