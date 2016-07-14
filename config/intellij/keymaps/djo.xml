@@ -48,6 +48,10 @@
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta right" />
   </action>
+  <action id="OpenFile">
+    <keyboard-shortcut first-keystroke="meta o" />
+  </action>
+  <action id="OverrideMethods" />
   <action id="PreviousEditorTab" />
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="meta left" />

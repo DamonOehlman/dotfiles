@@ -1,7 +1,7 @@
 DOTFILES_HOME=~/code/dotfiles
 PRIVATE_SETTINGS_GIST=2e5e9e154b4ac8820f83
 
-default: macapps bashrc vscode localbin private_settings
+default: macapps bashrc editors localbin private_settings
 	@echo "sync complete"
 
 bashrc:
@@ -10,7 +10,7 @@ bashrc:
 synapse:
 	@rm -rf ~/.config/synapse
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse
-	
+
 vscode:
 	@rm -rf ~/Library/Application\ Support/Code/User
 	@mkdir -p ~/Library/Application\ Support/Code/User
@@ -18,15 +18,15 @@ vscode:
 
 localbin:
 	@mkdir -p ~/bin
-	@ln -sf $(DOTFILES_HOME)/bin/* ~/bin/ 
+	@ln -sf $(DOTFILES_HOME)/bin/* ~/bin/
 
 roxterm:
 	@rm -rf ~/.config/roxterm.sourceforge.net
 	@ln -s $(DOTFILES_HOME)/config/roxterm.sourceforge.net ~/.config/roxterm.sourceforge.net
 
 editors:
-	./scripts/editors/intellij.sh
-	./scripts/editors/atom.sh
+	@./scripts/editors/intellij.sh
+	@./scripts/editors/atom.sh
 
 sublime:
 	@rm -rf ~/.config/sublime-text-3/Packages/User
