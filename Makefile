@@ -25,8 +25,8 @@ roxterm:
 	@ln -s $(DOTFILES_HOME)/config/roxterm.sourceforge.net ~/.config/roxterm.sourceforge.net
 
 editors:
-	@./scripts/editors/intellij.sh
-	@./scripts/editors/atom.sh
+	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
+	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/atom.sh
 
 sublime:
 	@rm -rf ~/.config/sublime-text-3/Packages/User
