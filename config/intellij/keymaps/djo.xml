@@ -38,6 +38,7 @@
   </action>
   <action id="EditorPreviousWordWithSelection">
     <keyboard-shortcut first-keystroke="shift ctrl left" />
+    <keyboard-shortcut first-keystroke="shift alt left" />
   </action>
   <action id="EditorSelectWord" />
   <action id="Forward">
