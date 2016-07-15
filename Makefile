@@ -1,4 +1,5 @@
 DOTFILES_HOME=~/code/dotfiles
+GITHUB_USERNAME=DamonOehlman
 
 default: macapps bashrc editors localbin private_settings
 	@echo "sync complete"
@@ -53,10 +54,16 @@ fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf
 	cp /tmp/source-code-pro*/OTF/* ~/.local/share/fonts
 
 private:
-	@echo "need to clone the private settings repo into the $(DOTFILES_HOME)/private directory"
+	@echo "cloning private configuration repo"
+	@git clone -q git@github.com:$(GITHUB_USERNAME)/dotfiles.private.git private
 
-private_settings: private
-	@$(DOTFILES_HOME)/private/mac-defaults.sh
+pull_private:
+	@echo "fetching latest private configuration"
+	@pushd private > /dev/null && git pull -q origin master
+
+private_settings: private pull_private
+	@echo "running private configuration tasks"
+	@private/mac_defaults.sh
 
 clean:
 	@rm -rf private/
