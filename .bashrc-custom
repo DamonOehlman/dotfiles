@@ -4,6 +4,7 @@ UNAME=$(uname)
 
 # DOTFILES HOME
 DOTFILES_HOME=$HOME/code/dotfiles
+SECRETS_FILE="${DOTFILES_HOME}/private/.bashrc_secrets"
 
 # LANGUAGE VERSIONS
 PYTHON_VERSION=2.7.10
@@ -108,7 +109,7 @@ source $DOTFILES_HOME/bin/git-completion.bash
 [[ -e ~/.bashrc-local ]] && . ~/.bashrc-local
 
 # include the bash secrets file
-[[ -e ~/.bashrc-secrets ]] && . ~/.bashrc-secrets
+[[ -e "${SECRETS_FILE}" ]] && "${SECRETS_FILE}"
 
 # define some video modes for different monitor configurations
 xrandr --newmode "$VM_U2713HM" $VM_U2713HM_MODELINE &> /dev/null
