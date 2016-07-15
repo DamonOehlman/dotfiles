@@ -109,7 +109,7 @@ source $DOTFILES_HOME/bin/git-completion.bash
 [[ -e ~/.bashrc-local ]] && . ~/.bashrc-local
 
 # include the bash secrets file
-[[ -e "${SECRETS_FILE}" ]] && "${SECRETS_FILE}"
+[[ -e "${SECRETS_FILE}" ]] && source "${SECRETS_FILE}"
 
 # define some video modes for different monitor configurations
 xrandr --newmode "$VM_U2713HM" $VM_U2713HM_MODELINE &> /dev/null
