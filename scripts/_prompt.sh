@@ -15,14 +15,17 @@ NC='\e[0m'              # No Color
 
 # Taken from http://www.opinionatedprogrammer.com/2011/01/colorful-bash-prompt-reflecting-git-status/
 function _git_prompt() {
-  local git_status="`git status -unormal 2>&1`"
+  local git_status
+  local ansi
+
+  git_status="`git status -unormal 2>&1`"
   if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
     if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-      local ansi=$GREEN
+      ansi=$GREEN
     elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-      local ansi=$RED
+      ansi=$RED
     else
-      local ansi=$YELLOW
+      ansi=$YELLOW
     fi
     if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
       branch=${BASH_REMATCH[1]}
@@ -32,7 +35,7 @@ function _git_prompt() {
       branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
       echo HEAD`)"
     fi
-    echo -n '[\['"$ansi"'\]'"$branch"'\[\e[0m\]]'
+    echo -n ' ⇾ '"$ansi"'\]'"$branch""$NC"'\]'
   fi
 }
 
@@ -43,6 +46,14 @@ function report_status() {
   fi
 }
 
-export _PS1="\[$NC\][\u@\h \W]"
+function prompt_head() {
+  echo -ne "\w\[$NC\]"
+}
+
+function prompt_tail() {
+  echo -ne "\\n\u "
+}
+
+export _PS1="\[$NC\] \w"
 export PS2="\[$NC\]> "
-export PROMPT_COMMAND='_status=$(report_status);export PS1="$(_git_prompt)${_status}${_PS1}\$ ";unset _status;'
+export PROMPT_COMMAND='_status=$(report_status);export PS1="$(prompt_head)$(_git_prompt)${_status}$(prompt_tail)\$ ";unset _status;'
