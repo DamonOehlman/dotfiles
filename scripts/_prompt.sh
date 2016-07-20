@@ -47,11 +47,11 @@ function report_status() {
 }
 
 function prompt_head() {
-  echo -ne "\w\[$NC\]"
+  echo -ne "\n➡️  \w\[$NC\]"
 }
 
 function prompt_tail() {
-  echo -ne "\\n\u "
+  echo -ne "\\n👤  \u \[$NC\]"
 }
 
 export _PS1="\[$NC\] \w"
