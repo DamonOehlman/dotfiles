@@ -21,11 +21,11 @@ function _git_prompt() {
   git_status="`git status -unormal 2>&1`"
   if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
     if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-      ansi=$GREEN
+      ansi=$green
     elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-      ansi=$RED
+      ansi=$magenta
     else
-      ansi=$YELLOW
+      ansi=$yellow
     fi
     if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
       branch=${BASH_REMATCH[1]}
@@ -35,14 +35,14 @@ function _git_prompt() {
       branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
       echo HEAD`)"
     fi
-    echo -n ' ⇾ '"$ansi"'\]'"$branch""$NC"'\]'
+    echo -n ' 🌱  '"$ansi"'\]'"$branch""$NC"'\]'
   fi
 }
 
 function report_status() {
   RET_CODE=$?
   if [[ $RET_CODE -ne 0 ]] ; then
-    echo -ne " [\[$RED\]$RET_CODE\[$NC\]]"
+    echo -ne " 🔥  \[$RED\]$RET_CODE\[$NC\]"
   fi
 }
 
