@@ -47,7 +47,7 @@ function report_status() {
 }
 
 function prompt_head() {
-  echo -ne "\n➡️  \w\[$NC\]"
+  echo -ne "\n🚤  \w\[$NC\]"
 }
 
 function prompt_tail() {
