@@ -42,7 +42,11 @@ function _git_prompt() {
 function report_status() {
   RET_CODE=$?
   if [[ $RET_CODE -ne 0 ]] ; then
-    echo -ne " 🙈  \[$RED\]$RET_CODE\[$NC\]"
+    if [[ $RET_CODE -eq 130 ]]; then
+      echo -ne " 🌀  ";
+    else
+      echo -ne " 🙈  \[$RED\]$RET_CODE\[$NC\]";
+    fi
   fi
 }
 
