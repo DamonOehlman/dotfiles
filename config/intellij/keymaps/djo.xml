@@ -1,4 +1,8 @@
 <keymap version="1" name="djo" parent="Mac OS X">
+  <action id="ActivateFavoritesToolWindow" />
+  <action id="ActivateUnicodeBrowserToolWindow">
+    <keyboard-shortcut first-keystroke="ctrl w" second-keystroke="ctrl e" />
+  </action>
   <action id="Back">
     <mouse-shortcut keystroke="button4" />
     <keyboard-shortcut first-keystroke="ctrl meta left" />
@@ -6,9 +10,17 @@
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="meta w" />
   </action>
+  <action id="EditSource">
+    <keyboard-shortcut first-keystroke="meta 2" />
+  </action>
+  <action id="EditorDelete">
+    <keyboard-shortcut first-keystroke="delete" />
+    <keyboard-shortcut first-keystroke="ctrl d" />
+  </action>
   <action id="EditorDeleteToLineEnd">
     <keyboard-shortcut first-keystroke="ctrl k" />
   </action>
+  <action id="EditorDuplicate" />
   <action id="EditorLineEnd">
     <keyboard-shortcut first-keystroke="ctrl e" />
     <keyboard-shortcut first-keystroke="end" />
@@ -76,6 +88,9 @@
     <mouse-shortcut keystroke="button5" />
     <keyboard-shortcut first-keystroke="ctrl meta right" />
   </action>
+  <action id="Git.CompareWithBranch">
+    <keyboard-shortcut first-keystroke="shift meta back_slash" />
+  </action>
   <action id="NextEditorTab" />
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta right" />
@@ -91,6 +106,10 @@
   <action id="RecentFiles" />
   <action id="SearchEverywhere">
     <keyboard-shortcut first-keystroke="meta e" />
+  </action>
+  <action id="SelectNextOccurrence">
+    <keyboard-shortcut first-keystroke="ctrl g" />
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
   </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="ctrl alt enter" />
