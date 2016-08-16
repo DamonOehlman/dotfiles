@@ -4,7 +4,8 @@ UNAME=$(uname)
 
 # DOTFILES HOME
 DOTFILES_HOME=$HOME/code/dotfiles
-SECRETS_FILE="${DOTFILES_HOME}/private/.bashrc_secrets"
+DOTFILES_LOCAL="${DOTFILES_HOME}"/private/.bashrc_local
+SECRETS_FILE="${DOTFILES_HOME}"/private/.bashrc_secrets
 
 # LANGUAGE VERSIONS
 PYTHON_VERSION=2.7.10
@@ -98,15 +99,15 @@ source $DOTFILES_HOME/bin/git-completion.bash
 . $DOTFILES_HOME/scripts/python.sh
 . $DOTFILES_HOME/scripts/elm.sh
 . $DOTFILES_HOME/scripts/haxe.sh
-. $DOTFILES_HOME/scripts/tools.sh
 . $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/ocaml.sh
+. $DOTFILES_HOME/scripts/tools.sh
 
 # tune editors
 . $DOTFILES_HOME/scripts/editors/intellij.sh
 
 # bring in local configuration settings
-[[ -e ~/.bashrc-local ]] && . ~/.bashrc-local
+[[ -e "${DOTFILES_LOCAL}" ]] && source "${DOTFILES_LOCAL}"
 
 # include the bash secrets file
 [[ -e "${SECRETS_FILE}" ]] && source "${SECRETS_FILE}"
