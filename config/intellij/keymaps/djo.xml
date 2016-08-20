@@ -7,6 +7,7 @@
     <mouse-shortcut keystroke="button4" />
     <keyboard-shortcut first-keystroke="ctrl meta left" />
   </action>
+  <action id="CheckinProject" />
   <action id="CloseContent">
     <keyboard-shortcut first-keystroke="meta w" />
   </action>
@@ -130,6 +131,9 @@
   </action>
   <action id="SwitchUp">
     <keyboard-shortcut first-keystroke="ctrl alt up" />
+  </action>
+  <action id="UML.ShowChanges">
+    <keyboard-shortcut first-keystroke="meta k" />
   </action>
   <action id="UsageView.ShowRecentFindUsages" />
   <action id="Vcs.ShowMessageHistory">
