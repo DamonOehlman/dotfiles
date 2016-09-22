@@ -25,6 +25,7 @@ roxterm:
 	@ln -s $(DOTFILES_HOME)/config/roxterm.sourceforge.net ~/.config/roxterm.sourceforge.net
 
 editors:
+	@ln -sf $(DOTFILES_HOME)/.vimrc ~/.vimrc
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/atom.sh
 
