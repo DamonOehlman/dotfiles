@@ -29,6 +29,9 @@ export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 export GDEV_HOME=~/code/goog
 export PATH="$PATH:$GDEV_HOME/depot_tools"
 
+. $DOTFILES_HOME/includes/color.sh
+. $DOTFILES_HOME/includes/logging.sh
+
 if [[ $UNAME -ne 'Darwin' ]]; then
 	# video modes
 	VM_U2713HM="U2713HM"
@@ -101,6 +104,7 @@ source $DOTFILES_HOME/bin/git-completion.bash
 . $DOTFILES_HOME/scripts/haxe.sh
 . $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/ocaml.sh
+. $DOTFILES_HOME/scripts/typed-javascript.sh
 . $DOTFILES_HOME/scripts/tools.sh
 
 # tune editors
