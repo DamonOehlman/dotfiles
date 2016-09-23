@@ -6,6 +6,6 @@ tool_available() {
     hash "${tool}" 2> /dev/null
     if [[ "$?" = 0 ]]; then
         version="$(eval "${version_command}")"
-        echo -ne "${GREEN}${tool}${green}[${version}]${NC} "
+        echo -ne "${GREEN}${3:-${tool}}${green}[${version}]${NC} "
     fi
 }

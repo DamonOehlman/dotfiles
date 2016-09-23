@@ -1,12 +1,11 @@
-'global':
-  'exception-reporting':
-    'userId': 'af233340-5c15-c53f-4f8b-e7aa03977dcf'
-  'welcome':
-    'showOnStartup': false
-  'metrics':
-    'userId': '5afe01d925f56ca54ea8945b2cce677f8755be3a'
-  'editor':
-    'fontFamily': 'Source Code Pro'
-    'showInvisibles': true
-    'showIndentGuide': true
-    'fontSize': 17
+"*":
+  editor:
+    fontFamily: "Source Code Pro"
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "af233340-5c15-c53f-4f8b-e7aa03977dcf"
+  metrics:
+    userId: "5afe01d925f56ca54ea8945b2cce677f8755be3a"
+  welcome:
+    showOnStartup: false

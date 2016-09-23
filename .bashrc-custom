@@ -97,14 +97,13 @@ fi
 source $DOTFILES_HOME/bin/git-completion.bash
 
 # language configuration
+echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/go.sh
 . $DOTFILES_HOME/scripts/node.sh
 . $DOTFILES_HOME/scripts/python.sh
-. $DOTFILES_HOME/scripts/elm.sh
-. $DOTFILES_HOME/scripts/haxe.sh
 . $DOTFILES_HOME/scripts/ruby.sh
 . $DOTFILES_HOME/scripts/ocaml.sh
-. $DOTFILES_HOME/scripts/typed-javascript.sh
+. $DOTFILES_HOME/scripts/altjs.sh
 . $DOTFILES_HOME/scripts/tools.sh
 
 # tune editors
