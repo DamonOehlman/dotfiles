@@ -97,6 +97,7 @@
     <keyboard-shortcut first-keystroke="shift meta back_slash" />
   </action>
   <action id="GuiDesigner.ShrinkSelection" />
+  <action id="Images.Editor.ToggleGrid" />
   <action id="NextEditorTab" />
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta right" />
@@ -117,13 +118,16 @@
   </action>
   <action id="SelectIn">
     <keyboard-shortcut first-keystroke="alt f1" />
-    <keyboard-shortcut first-keystroke="meta back_slash" />
+    <keyboard-shortcut first-keystroke="meta quote" />
   </action>
   <action id="SelectNextOccurrence">
     <keyboard-shortcut first-keystroke="ctrl g" />
     <keyboard-shortcut first-keystroke="shift ctrl d" />
   </action>
   <action id="ShowNavBar" />
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="meta back_slash" />
+  </action>
   <action id="SwitchApply">
     <keyboard-shortcut first-keystroke="ctrl alt enter" />
   </action>

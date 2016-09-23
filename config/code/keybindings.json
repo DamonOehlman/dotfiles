@@ -1,5 +1,6 @@
 [
-  { "key": "cmd+right",            "command": "workbench.files.action.openNextWorkingFile" },
-  { "key": "cmd+left",             "command": "workbench.files.action.openPreviousWorkingFile"},
+  { "key": "cmd+right", "command": "workbench.action.nextEditor" },
+  { "key": "cmd+left", "command": "workbench.action.previousEditor"},
+  { "key": "cmd+|", "command": "workbench.action.splitEditor"}
   { "key": "shift+cmd+m" }
 ]
