@@ -1,9 +1,9 @@
 {
 	"editor.fontFamily": "Fira Code",
-	"editor.fontSize": 12,
+	"editor.fontSize": 13,
 	"editor.fontLigatures": true,
-	"editor.lineHeight": 18,
-	"editor.tabSize": 2,
+	"editor.lineHeight": 20,
+	"editor.tabSize": 4,
 	"editor.renderWhitespace": true,
 	"files.exclude": {
 		"**/.git": true,
@@ -18,4 +18,8 @@
 
 	// extensions
 	"extensions.autoUpdate": true,
+
+	"docthis.includeMemberOfOnClassMembers": false,
+	"docthis.includeMemberOfOnInterfaceMembers": false,
+	"docthis.includeDescriptionTag": false
 }
