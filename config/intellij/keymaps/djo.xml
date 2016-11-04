@@ -14,8 +14,15 @@
   <action id="CloseProject">
     <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="shift meta subtract" />
+  </action>
+  <action id="Diff.ShowSettingsPopup" />
   <action id="EditSource">
     <keyboard-shortcut first-keystroke="meta 2" />
+  </action>
+  <action id="EditorDecreaseFontSize">
+    <keyboard-shortcut first-keystroke="shift meta minus" />
   </action>
   <action id="EditorDelete">
     <keyboard-shortcut first-keystroke="delete" />
@@ -24,7 +31,12 @@
   <action id="EditorDeleteToLineEnd">
     <keyboard-shortcut first-keystroke="ctrl k" />
   </action>
-  <action id="EditorDuplicate" />
+  <action id="EditorDuplicate">
+    <keyboard-shortcut first-keystroke="shift meta d" />
+  </action>
+  <action id="EditorIncreaseFontSize">
+    <keyboard-shortcut first-keystroke="shift meta equals" />
+  </action>
   <action id="EditorLineEnd">
     <keyboard-shortcut first-keystroke="ctrl e" />
     <keyboard-shortcut first-keystroke="end" />
@@ -89,6 +101,9 @@
   </action>
   <action id="EditorSelectWord" />
   <action id="EditorUnSelectWord" />
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="shift meta add" />
+  </action>
   <action id="Forward">
     <mouse-shortcut keystroke="button5" />
     <keyboard-shortcut first-keystroke="ctrl meta right" />
@@ -98,6 +113,7 @@
   </action>
   <action id="GuiDesigner.ShrinkSelection" />
   <action id="Images.Editor.ToggleGrid" />
+  <action id="IpnbAddCellAboveAction" />
   <action id="NextEditorTab" />
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="meta right" />
