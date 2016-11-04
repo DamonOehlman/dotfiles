@@ -16,7 +16,7 @@ installElm() {
 
     if [[ -z "${elm_version}" ]] || [[ "${elm_version}" != "${ELM_TARGET_VERSION}" ]]; then
         echo -e "\nInstalling / Updating elm\n"
-        # npm install -g elm@"${ELM_TARGET_VERSION}"
+        npm install -g elm@"${ELM_TARGET_VERSION}"
     fi
 
     tool_available elm "elm make -h | head -n1 | cut -f2 -d' '"
@@ -31,7 +31,7 @@ installFlow() {
 
     if [[ -z "${flow_version}" ]] || [[ "${flow_version}" != "${FLOW_TARGET_VERSION}" ]]; then
         echo -e "\nInstalling / Updating flow\n"
-        # npm install -g flow-bin@"${FLOW_TARGET_VERSION}"
+        npm install -g flow-bin@"${FLOW_TARGET_VERSION}"
     fi
 
     tool_available flow "flow version | sed s/[^0-9.]//g"
