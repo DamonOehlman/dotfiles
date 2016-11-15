@@ -36,6 +36,8 @@ sublime:
 
 macapps:
 	@ln -sf $(DOTFILES_HOME)/Library/Preferences/*.plist ~/Library/Preferences
+	@ln -sf $(DOTFILES_HOME)/config/.kwm ~/.kwm
+	@ln -sf $(DOTFILES_HOME)/config/.khdrc ~/.khdrc
 	@$(DOTFILES_HOME)/scripts/mac-defaults.sh
 
 /usr/share/xsessions:
