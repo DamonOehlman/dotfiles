@@ -1,17 +1,26 @@
 # Enable kwm compatibility mode
 khd kwm on
 
-# set border color for different modes
+# mode defintions
+
+# default
 khd mode default color 0xddd5c4a1
+
+# switcher
+khd mode switcher prefix on
 khd mode switcher color 0xffff0000
+khd mode switcher timeout 2
+khd mode switcher restore default
+
+# resizer
 khd mode resizer color 0xff0000ff
+
+# common commands
+ctrl - 0x2a : kwmc window -z parent
 
 # mode selectors
 ctrl - up : khd -e "mode activate switcher"
 ctrl - s : khd -e "mode activate resizer"
-
-# Launch iTerm2
-# cmd - return : open -na /Applications/Utilities/Terminal.app
 
 # switcher mode
 switcher + ctrl - r : khd -e "reload"
@@ -33,7 +42,9 @@ resizer + ctrl - s : khd -e "mode activate default"
 resizer - escape : khd -e "mode activate default"
 resizer + ctrl - up : khd -e "mode activate switcher"
 
-resizer - up : kwmc window -c reduce 0.1 south
-resizer - down : kwmc window -c expand 0.1 south
-resizer - left : kwmc window -c reduce 0.1 east
-resizer - right : kwmc window -c expand 0.1 east
+resizer - up : kwmc window -c reduce 0.05 south
+resizer - down : kwmc window -c reduce 0.05 north
+resizer - left : kwmc window -c reduce 0.05 east
+resizer + ctrl - left : kwmc window -c expand 0.05 west
+resizer - right : kwmc window -c reduce 0.05 west
+resizer + ctrl - right : kwmc window -c expand 0.05 east
