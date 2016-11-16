@@ -1,22 +1,28 @@
 # Enable kwm compatibility mode
 khd kwm on
 
-# set color of default mode
-khd mode default color 0xFFD5C4A1
+# set border color for different modes
+khd mode default color 0xddd5c4a1
+khd mode switcher color 0xffff0000
 
-khd mode default prefix on
+# switcher modes
+ctrl - up : khd -e "mode activate switcher"
 
 # Launch iTerm2
-cmd - return : open -na /Applications/iTerm.app
+cmd - return : open -na /Applications/Utilities/Terminal.app
 
-# space navigation
-cmd + shift - left : /usr/local/bin/kwmc space -fExperimental left
-cmd + shift - right : /usr/local/bin/kwmc space -fExperimental right
+# switcher mode
+switcher - r : khd -e "reload"
+switcher + ctrl - up : khd -e "mode activate default"
+switcher - down : kwmc window -fm next
+switcher - escape : khd -e "mode activate default"
+switcher - left : kwmc space -fExperimental left
+switcher - right : kwmc space -fExperimental right
 
 # move windows between spaces
-# cmd + ctrl - left: /usr/local/bin/kwmc window -m space left
-# cmd + ctrl - right: /usr/local/bin/kwmc window -m space right
+cmd + ctrl - left: kwmc window -m space left
+cmd + ctrl - right: kwmc window -m space right
 
 # window navigation
-cmd + alt - n : kwmc window -fm prev
-cmd + alt - m : kwmc window -fm next
+navigate - left : kwmc window -fm prev
+navigate - right : kwmc window -fm next
