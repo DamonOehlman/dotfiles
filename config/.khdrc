@@ -4,25 +4,36 @@ khd kwm on
 # set border color for different modes
 khd mode default color 0xddd5c4a1
 khd mode switcher color 0xffff0000
+khd mode resizer color 0xff0000ff
 
-# switcher modes
+# mode selectors
 ctrl - up : khd -e "mode activate switcher"
+ctrl - s : khd -e "mode activate resizer"
 
 # Launch iTerm2
-cmd - return : open -na /Applications/Utilities/Terminal.app
+# cmd - return : open -na /Applications/Utilities/Terminal.app
 
 # switcher mode
-switcher - r : khd -e "reload"
+switcher + ctrl - r : khd -e "reload"
+
 switcher + ctrl - up : khd -e "mode activate default"
-switcher - down : kwmc window -fm next
 switcher - escape : khd -e "mode activate default"
-switcher - left : kwmc space -fExperimental left
-switcher - right : kwmc space -fExperimental right
+switcher + ctrl - s : khd -e "mode activate resizer"
 
-# move windows between spaces
-cmd + ctrl - left: kwmc window -m space left
-cmd + ctrl - right: kwmc window -m space right
+switcher - right : kwmc window -f next
+switcher - left : kwmc window -f prev
 
-# window navigation
-navigate - left : kwmc window -fm prev
-navigate - right : kwmc window -fm next
+switcher - up : kwmc space -fExperimental left
+switcher - down : kwmc space -fExperimental right
+switcher + ctrl + shift - up : kwmc window -m space left
+switcher + ctrl + shift - down : kwmc window -m space right
+
+# resizer mode
+resizer + ctrl - s : khd -e "mode activate default"
+resizer - escape : khd -e "mode activate default"
+resizer + ctrl - up : khd -e "mode activate switcher"
+
+resizer - up : kwmc window -c reduce 0.1 south
+resizer - down : kwmc window -c expand 0.1 south
+resizer - left : kwmc window -c reduce 0.1 east
+resizer - right : kwmc window -c expand 0.1 east

@@ -3,7 +3,8 @@
 	"editor.fontSize": 13,
 	"editor.fontLigatures": true,
 	"editor.lineHeight": 20,
-	"editor.tabSize": 4,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": false,
 	"editor.renderWhitespace": true,
 	"files.exclude": {
 		"**/.git": true,

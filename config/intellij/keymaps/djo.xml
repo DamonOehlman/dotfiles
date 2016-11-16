@@ -100,6 +100,7 @@
     <keyboard-shortcut first-keystroke="shift alt left" />
   </action>
   <action id="EditorSelectWord" />
+  <action id="EditorToggleCase" />
   <action id="EditorUnSelectWord" />
   <action id="ExpandAllRegions">
     <keyboard-shortcut first-keystroke="shift meta add" />
@@ -140,6 +141,7 @@
     <keyboard-shortcut first-keystroke="ctrl g" />
     <keyboard-shortcut first-keystroke="shift ctrl d" />
   </action>
+  <action id="ShelveChanges.UnshelveWithDialog" />
   <action id="ShowNavBar" />
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="meta back_slash" />
@@ -165,5 +167,8 @@
   <action id="UsageView.ShowRecentFindUsages" />
   <action id="Vcs.ShowMessageHistory">
     <keyboard-shortcut first-keystroke="ctrl m" />
+  </action>
+  <action id="de.netnexus.CamelCasePlugin.ToggleCamelCase">
+    <keyboard-shortcut first-keystroke="shift meta u" />
   </action>
 </keymap>
