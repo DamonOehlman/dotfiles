@@ -18,18 +18,23 @@ khd mode resizer color 0xff0000ff
 khd mode resizer timeout 1
 khd mode resizer restore default
 
+# config
+khd mode config prefix on
+khd mode config color 0xff00ff00
+khd mode config timeout 1
+khd mode config restore default
+
 # common commands
 ctrl - 0x2a : kwmc window -z parent
 
 # mode selectors
 ctrl - up : khd -e "mode activate switcher"
-ctrl - down : khd -e "mode activate switcher"
-cmd + alt - left : khd -e "mode activate switcher"
-cmd + alt - right : khd -e "mode activate switcher"
+cmd + shift - left : khd -e "mode activate switcher"
+cmd + shift - right : khd -e "mode activate switcher"
 ctrl - s : khd -e "mode activate resizer"
+ctrl - 0x1d : khd -e "mode activate config"
 
 # switcher mode
-switcher + ctrl - r : khd -e "reload"
 
 switcher + ctrl - up : khd -e "mode activate default"
 switcher - escape : khd -e "mode activate default"
@@ -38,16 +43,15 @@ switcher + ctrl - s : khd -e "mode activate resizer"
 switcher - right : kwmc window -f next
 switcher - left : kwmc window -f prev
 
-switcher - up : kwmc space -fExperimental left
-switcher - down : kwmc space -fExperimental right
-switcher + cmd + alt - left : kwmc space -fExperimental left
-switcher + cmd + alt - right : kwmc space -fExperimental right
+switcher + cmd + shift - left : kwmc space -fExperimental left
+switcher + cmd + shift - right : kwmc space -fExperimental right
 switcher + ctrl + shift - up : kwmc window -m space left
 switcher + ctrl + shift - down : kwmc window -m space right
 
 switcher + ctrl - f : kwmc window -t focused
 
 # resizer mode
+
 resizer + ctrl - s : khd -e "mode activate default"
 resizer - escape : khd -e "mode activate default"
 resizer + ctrl - up : khd -e "mode activate switcher"
@@ -58,3 +62,8 @@ resizer - left : kwmc window -c reduce 0.05 east
 resizer + ctrl - left : kwmc window -c expand 0.05 west
 resizer - right : kwmc window -c reduce 0.05 west
 resizer + ctrl - right : kwmc window -c expand 0.05 east
+
+# config mode
+
+config + ctrl - 0x1d : khd -e "mode activate default"
+config + ctrl - r : khd -e "reload"
