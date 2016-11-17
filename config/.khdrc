@@ -28,7 +28,6 @@ khd mode config restore default
 ctrl - 0x2a : kwmc window -z parent
 
 # mode selectors
-ctrl - up : khd -e "mode activate switcher"
 cmd + shift - left : khd -e "mode activate switcher"
 cmd + shift - right : khd -e "mode activate switcher"
 ctrl - s : khd -e "mode activate resizer"
@@ -40,8 +39,8 @@ switcher + ctrl - up : khd -e "mode activate default"
 switcher - escape : khd -e "mode activate default"
 switcher + ctrl - s : khd -e "mode activate resizer"
 
-switcher - right : kwmc window -f next
-switcher - left : kwmc window -f prev
+switcher + cmd - right : kwmc window -f next
+switcher + cmd - left : kwmc window -f prev
 
 switcher + cmd + shift - left : kwmc space -fExperimental left
 switcher + cmd + shift - right : kwmc space -fExperimental right
