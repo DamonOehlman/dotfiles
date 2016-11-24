@@ -67,7 +67,7 @@ kwmc config center-on-float on
     The mouse will automatically move to the center
     of the focused window
 */
-kwmc config mouse-follows-focus on
+kwmc config mouse-follows-focus off
 
 /*
     Allows a window to be moved by dragging,
@@ -129,6 +129,14 @@ if the screen exists.
 
    kwmc rule owner="iTunes" properties={display="1"}
 */
+
+# set space names
+kwmc config space 0 2 name music
+kwmc config space 0 3 name term
+kwmc config space 0 4 name editor
+kwmc config space 0 5 name web
+kwmc config space 0 6 name mail
+kwmc config space 0 7 name chat
 
 # Enable border for focused window
 kwmc config border focused on
