@@ -30,6 +30,7 @@
   core:
     disabledPackages: [
       "atom-typescript"
+      "flow-ide"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -38,12 +39,13 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
+    fontSize: 13
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
     userId: "af233340-5c15-c53f-4f8b-e7aa03977dcf"
   linter:
-    errorPanelHeight: 136
+    errorPanelHeight: 180
   metrics:
     userId: "5afe01d925f56ca54ea8945b2cce677f8755be3a"
   "tree-view":
