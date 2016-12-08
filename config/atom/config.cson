@@ -1,11 +1,52 @@
 "*":
+  "atom-shell-commands":
+    commands: [
+      {
+        name: "commits_jump_next"
+        command: "/Users/damo/bin/commits_jump_next.sh"
+        options:
+          cwd: "{FileDir}"
+          silent: true
+      }
+      {
+        name: "commits_jump_back"
+        command: "/Users/damo/bin/commits_jump_back.sh"
+        options:
+          cwd: "{FileDir}"
+          silent: true
+      }
+      {
+        name: "npm_coverage"
+        command: "npm"
+        arguments: [
+          "run"
+          "coverage"
+        ]
+        options:
+          cwd: "{FileDir}"
+          silent: true
+      }
+    ]
+  core:
+    disabledPackages: [
+      "atom-typescript"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "seti-ui"
+      "monokai-seti"
+    ]
   editor:
     fontFamily: "Source Code Pro"
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
     userId: "af233340-5c15-c53f-4f8b-e7aa03977dcf"
+  linter:
+    errorPanelHeight: 136
   metrics:
     userId: "5afe01d925f56ca54ea8945b2cce677f8755be3a"
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false

@@ -5,3 +5,5 @@
   'ctrl-a': 'editor:move-to-first-character-of-line'
   'ctrl-e': 'editor:move-to-end-of-screen-line'
   'ctrl-shift-a': 'core:select-all'
+  'ctrl-left': 'atom-shell-commands:commits_jump_back'
+  'ctrl-right': 'atom-shell-commands:commits_jump_next'
