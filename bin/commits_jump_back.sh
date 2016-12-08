@@ -4,6 +4,7 @@ get_previous_commit() {
 }
 
 main() {
+	git reset --hard HEAD
   git checkout "$(get_previous_commit)"
 }
 

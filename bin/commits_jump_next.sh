@@ -4,6 +4,7 @@ get_next_commit() {
 }
 
 main() {
+	git reset --hard HEAD
   git checkout "$(get_next_commit)"
 }
 
