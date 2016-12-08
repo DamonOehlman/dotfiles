@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-FLOW_TARGET_VERSION="0.33.0"
+FLOW_TARGET_VERSION="0.36.0"
+TYPESCRIPT_TARGET_VERSION="2.1.4"
 
 ELM_HOME="$(dirname $(dirname $(which node)))"/lib/node_modules/elm/share
-ELM_TARGET_VERSION="0.17.1"
+ELM_TARGET_VERSION="0.18.0"
 
 echo -ne "\n${YELLOW}altJS:\t${NC}"
 
@@ -11,7 +12,7 @@ installElm() {
     local elm_version
 
     if hash elm 2>/dev/null; then
-        elm_version="$(elm make -h | head -n1 | cut -f2 -d' ')"
+        elm_version="$(elm make -h | head -n1 | sed -E 's/(\(|\))//g' | cut -f5 -d' ')"
     fi
 
     if [[ -z "${elm_version}" ]] || [[ "${elm_version}" != "${ELM_TARGET_VERSION}" ]]; then
@@ -19,7 +20,7 @@ installElm() {
         npm install -g elm@"${ELM_TARGET_VERSION}"
     fi
 
-    tool_available elm "elm make -h | head -n1 | cut -f2 -d' '"
+    tool_available elm "elm make -h | head -n1 | sed -E 's/(\(|\))//g' | cut -f5 -d' '"
 }
 
 installFlow() {
@@ -38,7 +39,7 @@ installFlow() {
 }
 
 # typescript
-hash tsc 2> /dev/null || npm install -g typescript@beta
+hash tsc 2> /dev/null || npm install -g typescript@"${TYPESCRIPT_TARGET_VERSION}"
 hash tsc && tool_available tsc "tsc --version | cut -f2 -d' '" typescript
 
 # haxe
