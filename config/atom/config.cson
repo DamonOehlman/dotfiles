@@ -16,21 +16,49 @@
           silent: true
       }
       {
-        name: "npm_coverage"
-        command: "npm"
+        name: "coverage_flow_report"
+        command: "flow-coverage-report"
         arguments: [
-          "run"
-          "coverage"
+          "-i"
+          "*.js"
+          "-x"
+          "lib/**"
+          "-t"
+          "html"
+          "-o"
+          "/tmp/flow-coverage-report"
         ]
         options:
           cwd: "{FileDir}"
           silent: true
       }
+      {
+        name: "coverage_flow"
+        command: "flow"
+        arguments: [
+          "coverage"
+          "{FileName}"
+        ]
+        options:
+          cwd: "{FileDir}"
+      }
     ]
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
-      "atom-typescript"
-      "flow-ide"
+      "tree-view"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -39,7 +67,6 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
-    fontSize: 13
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
@@ -48,6 +75,9 @@
     errorPanelHeight: 180
   metrics:
     userId: "5afe01d925f56ca54ea8945b2cce677f8755be3a"
+  nuclide:
+    "nuclide-flow":
+      enableStructuredTypeHints: true
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
