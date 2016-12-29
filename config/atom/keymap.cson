@@ -10,5 +10,12 @@
   # 'ctrl-right': 'atom-shell-commands:commits_jump_next'
   'ctrl-shift-c': 'atom-shell-commands:coverage_flow_report'
 
-  # 'ctrl-right': 'editor:editor:move-to-beginning-of-word'
-  # 'ctrl-left': 'editor:editor:move-to-end-of-word'
+  'cmd-left': 'pane:show-previous-item'
+  'cmd-right': 'pane:show-next-item'
+
+
+  'ctrl-left': 'editor:move-to-previous-subword-boundary'
+  'ctrl-shift-left': 'editor:select-to-previous-subword-boundary'
+
+  'ctrl-right': 'editor:move-to-next-subword-boundary'
+  'ctrl-shift-right': 'editor:select-to-next-subword-boundary'
