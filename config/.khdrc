@@ -13,10 +13,7 @@ cmd + shift - down : kwmc window -s next
 cmd + shift - up : kwmc window -s prev
 
 # mode selectors
-cmd + shift - left : khd -e "mode activate switcher" \
-                     && kwmc space -fExperimental left
-cmd + shift - right : khd -e "mode activate switcher" \
-                      && kwmc space -fExperimental right
+ctrl + shift - s : khd -e "mode activate switcher"
 ctrl - s : khd -e "mode activate resizer"
 ctrl - 0x1d : khd -e "mode activate config"
 ctrl - 0x19 : khd -e "mode activate launcher"
@@ -31,9 +28,6 @@ khd mode switcher restore default
 switcher + ctrl - up : khd -e "mode activate default"
 switcher - escape : khd -e "mode activate default"
 switcher + ctrl - s : khd -e "mode activate resizer"
-
-switcher + cmd + shift - left : kwmc space -fExperimental left
-switcher + cmd + shift - right : kwmc space -fExperimental right
 switcher + cmd + ctrl + shift - left : kwmc window -m space left
 switcher + cmd + ctrl + shift - right : kwmc window -m space right
 
@@ -77,4 +71,3 @@ khd mode launcher timeout 1
 khd mode launcher restore default
 
 launcher - u : sde run services/blob/bin/start_local_s3.sh
-
