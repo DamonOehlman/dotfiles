@@ -71,6 +71,8 @@
     showInvisibles: true
   "exception-reporting":
     userId: "af233340-5c15-c53f-4f8b-e7aa03977dcf"
+  "ide-flow":
+    flowPath: "/Users/damo/.nvm/versions/node/v7.3.0/bin/flow"
   linter:
     errorPanelHeight: 180
   metrics:
