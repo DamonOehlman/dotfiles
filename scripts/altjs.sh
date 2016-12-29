@@ -44,7 +44,7 @@ hash tsc && tool_available tsc "tsc --version | cut -f2 -d' '" typescript
 
 # haxe
 hash haxe 2> /dev/null || npm install -g haxe
-tool_available haxe "haxe | head -n1 | cut -f3 -d' '"
+tool_available haxe "haxe -version 2>&1"
 
 installFlow
 installElm
