@@ -111,8 +111,8 @@ kwmc config spawn right
     AXWindowRole and AXStandardWindowSubRole
 */
 kwmc rule owner="iTerm" properties={role="AXDialog"}
-kmrc rule owner="IntelliJ IDEA" name="Go to Line" properties={float="true"; role="AXDialog"}
-kmrc rule owner="Spotify" properties={display="0"}
+kwmc rule owner="IntelliJ IDEA" name="Go to Line" properties={float="true"}
+kwmc rule owner="Spotify" properties={display="0"}
 
 /*
 The following commands create rules that
