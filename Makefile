@@ -7,6 +7,9 @@ default: macapps bashrc editors localbin private_settings
 bashrc:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
 
+tools:
+	@ln -sf $(DOTFILES_HOME)/config/.mertrc ~/.mertrc
+
 synapse:
 	@rm -rf ~/.config/synapse
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse

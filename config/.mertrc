@@ -1,0 +1,10 @@
+sde:
+  launch_strategy: tab
+  root: "~/code/canva/canva"
+  layout:
+    -
+      - canva_s3
+      - canva_be
+      - canva_cfe
+    -
+      - cfe/bin/webpack-dev-server
