@@ -48,3 +48,21 @@ badge-flexible {
     background-color: #E07743;
     color: white;
 }
+
+.plain-message.stdout, .plain-message.echo {
+  font-family: Source Code Pro, monospace;
+}
+
+.plain-message.stdout {
+  font-size: 16px;
+}
+
+/* customize atom flow error highlighting */
+atom-text-editor::shadow .ide-flow-error {
+  /* background-color: #519aba; */
+  z-index: 3;
+}
+atom-text-editor::shadow .highlight.ide-flow-error .region {
+  /* background: linear-gradient(to right, rgba(204, 62, 68, 0.7) 0%, rgba(204, 62, 68, 0.65) 100%); */
+  z-index: 3;
+}

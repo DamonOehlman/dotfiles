@@ -67,6 +67,7 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
+    fontSize: 13
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
