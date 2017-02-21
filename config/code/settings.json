@@ -5,7 +5,7 @@
 	"editor.lineHeight": 20,
 	"editor.tabSize": 2,
 	"editor.detectIndentation": false,
-	"editor.renderWhitespace": true,
+	"editor.renderWhitespace": "boundary",
 	"files.exclude": {
 		"**/.git": true,
 		"**/.DS_Store": true,
@@ -15,7 +15,6 @@
 
 	// typescript
 	"typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.5.0/lib/node_modules/typescript/lib/",
-	"typescript.tsserver.experimentalAutoBuild": true,
 
 	// extensions
 	"extensions.autoUpdate": true,
@@ -34,5 +33,14 @@
   ],
   "gitProjectManager.maxDepthRecursion": 3,
   "gitProjectManager.checkRemoteOrigin": false,
-  "gitProjectManager.storeRepositoriesBetweenSessions": true
+  "gitProjectManager.storeRepositoriesBetweenSessions": true,
+
+  "eslint.nodePath": "/Users/damo/.nvm/versions/node/v7.5.0/lib/node_modules",
+  "eslint.options": {
+    "configFile": "/Users/damo/code/dotfiles/config/.eslintrc.json"
+  },
+  "eslint.run": "onSave",
+  "eslint.validate": [
+    "javascript"
+  ]
 }
