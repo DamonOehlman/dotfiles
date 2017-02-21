@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "c03394b9-996e-4451-bc14-6d373a640632"
   "atom-shell-commands":
     commands: [
       {
@@ -62,11 +65,11 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "seti-ui"
-      "monokai-seti"
+      "atom-material-ui"
+      "one-dark-syntax"
     ]
   editor:
-    fontFamily: "Source Code Pro"
+    fontFamily: "Fira Code"
     fontSize: 13
     showIndentGuide: true
     showInvisibles: true
