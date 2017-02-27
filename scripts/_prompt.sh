@@ -37,6 +37,14 @@ function report_status() {
   fi
 }
 
+function term_title() {
+  # language versions
+  echo -ne "\033]0;"
+  echo -ne "☢️ node@$(node --version | cut -c 2-) "
+  echo -ne "☢️ python@$(python --version 2>&1 | cut -d' ' -f2) "
+  echo -ne "\007"
+}
+
 function prompt_head() {
   echo -ne "\n🚤  \w\[$NC\]"
 }
@@ -47,4 +55,4 @@ function prompt_tail() {
 
 export _PS1="\[$NC\] \w"
 export PS2="\[$NC\]> "
-export PROMPT_COMMAND='_status=$(report_status);export PS1="$(prompt_head)$(_git_prompt)${_status}$(prompt_tail)\$ ";unset _status;'
+export PROMPT_COMMAND='_status=$(report_status);export PS1="$(term_title)$(prompt_head)$(_git_prompt)${_status}$(prompt_tail)\$ ";unset _status;'

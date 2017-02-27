@@ -28,7 +28,5 @@ tool_available eslint "echo $(eslint --version) | cut -c 2-"
 hash mert 2> /dev/null || npm install -g mert
 tool_available mert "mert --version"
 
-hash node && tool_available "node" "node --version | cut -c2-"
-
 installTool "webpack" "webpack --version" "${WEBPACK_VERSION}"
 installTool "yarn" "yarn --version" "${YARN_VERSION}"
