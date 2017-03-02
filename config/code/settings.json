@@ -11,7 +11,6 @@
 		"**/.DS_Store": true,
 		"**/target": true
 	},
-	"editor.wrappingColumn": -1,
 
 	// typescript
 	"typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.5.0/lib/node_modules/typescript/lib/",
@@ -42,5 +41,8 @@
   "eslint.run": "onSave",
   "eslint.validate": [
     "javascript"
-  ]
+  ],
+  "workbench.welcome.enabled": false,
+  "workbench.colorTheme": "Firewatch Theme",
+  "workbench.iconTheme": "vs-seti"
 }
