@@ -107,7 +107,6 @@ echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/node.sh
 . $DOTFILES_HOME/scripts/python.sh
 . $DOTFILES_HOME/scripts/ruby.sh
-. $DOTFILES_HOME/scripts/ocaml.sh
 . $DOTFILES_HOME/scripts/altjs.sh
 . $DOTFILES_HOME/scripts/tools.sh
 echo -ne "\n"
