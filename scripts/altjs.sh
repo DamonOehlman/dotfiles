@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FLOW_TARGET_VERSION="0.36.0"
+FLOW_TARGET_VERSION="0.41.0"
 TYPESCRIPT_TARGET_VERSION="2.1.4"
 
 ELM_HOME="$(dirname $(dirname $(which node)))"/lib/node_modules/elm/share
