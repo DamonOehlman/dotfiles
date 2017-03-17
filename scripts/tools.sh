@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 YARN_VERSION=0.20.3
 WEBPACK_VERSION=2.2.1
+FLOWTYPED_VERSION=2.0.0
 
 echo -ne "\n${YELLOW}tools:\t${NC}"
 
@@ -30,3 +31,4 @@ tool_available mert "mert --version"
 
 installTool "webpack" "webpack --version" "${WEBPACK_VERSION}"
 installTool "yarn" "yarn --version" "${YARN_VERSION}"
+# installTool "flow-typed" "echo $(flow-typed version) | cut -c 12-" "${FLOWTYPED_VERSION}"
