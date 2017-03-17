@@ -3,5 +3,6 @@
 private/
 .xmonad/.xmonad
 config/taffybar/taffybar
+node_modules/
 npm-debug.log
 *~

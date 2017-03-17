@@ -79,6 +79,9 @@ echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/tools.sh
 echo -ne "\n"
 
+# run the npm install script in the $DOTFILES_HOME path
+pushd $DOTFILES_HOME > /dev/null; npm install; popd > /dev/null;
+
 # opam initialisation (ocaml)
 $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
