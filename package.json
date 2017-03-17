@@ -1,0 +1,19 @@
+{
+  "name": "dotfiles.damon",
+  "version": "1.0.0",
+  "description": "Packages required for my dotfiles :)",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamonOehlman/dotfiles.git"
+  },
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/dotfiles/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/dotfiles#readme",
+  "devDependencies": {
+    "babel-eslint": "^6.1.2"
+  }
+}
