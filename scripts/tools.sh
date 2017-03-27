@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-YARN_VERSION=0.20.3
-WEBPACK_VERSION=2.2.1
 FLOWTYPED_VERSION=2.0.0
 
 echo -ne "\n${YELLOW}tools:\t${NC}"
@@ -29,6 +27,10 @@ tool_available eslint "echo $(eslint --version) | cut -c 2-"
 hash mert 2> /dev/null || npm install -g mert
 tool_available mert "mert --version"
 
-installTool "webpack" "webpack --version" "${WEBPACK_VERSION}"
-installTool "yarn" "yarn --version" "${YARN_VERSION}"
+hash webpack 2> /dev/null || npm install -g webpack
+tool_available webpack "webpack --version"
+
+hash yarn 2> /dev/null || npm install -g yarn
+tool_available yarn "yarn --version"
+
 # installTool "flow-typed" "echo $(flow-typed version) | cut -c 12-" "${FLOWTYPED_VERSION}"
