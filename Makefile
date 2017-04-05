@@ -1,7 +1,7 @@
 DOTFILES_HOME=~/code/dotfiles
 GITHUB_USERNAME=DamonOehlman
 
-default: macapps bashrc editors localbin private_settings
+default: macapps bashrc editors localbin private_settings code_settings
 	@echo "sync complete"
 
 bashrc:
@@ -73,3 +73,6 @@ private_settings: private pull_private
 
 clean:
 	@rm -rf private/
+
+code_settings:
+	@ln -sf $(DOTFILES_HOME)/config/.editorconfig ~/code/.editorconfig
