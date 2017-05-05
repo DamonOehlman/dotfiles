@@ -20,7 +20,7 @@ PATH="$HOME/.pyenv/shims:$PATH"
 
 ## TOOL PATHS
 PATH="$PATH:~/packer"; # packer
-PATH="~/bin:$PATH";
+PATH="~/bin:${DOTFILES_PRIVATE}/bin:$PATH";
 AWS_HOME="/opt/aws";
 
 # chrome sandbox
