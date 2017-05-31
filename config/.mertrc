@@ -1,10 +1,13 @@
 sde:
-  launch_strategy: tab
   root: "~/code/canva/canva"
+  launch_strategy: in_place
+  split_strategy: vertical
   layout:
+    -
+      - echo "sde started"
+
     -
       - canva_s3
       - canva_be
       - canva_cfe
-    -
       - cfe/bin/webpack-dev-server
