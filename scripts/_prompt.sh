@@ -40,8 +40,8 @@ function report_status() {
 function term_title() {
   # language versions
   echo -ne "\033]0;"
-  echo -ne "☢️ node@$(node --version | cut -c 2-) "
-  echo -ne "☢️ python@$(python --version 2>&1 | cut -d' ' -f2) "
+  echo -ne " node@$(node --version | cut -c 2-) "
+  echo -ne " python@$(python --version 2>&1 | cut -d' ' -f2) "
   echo -ne "\007"
 }
 
