@@ -1,8 +1,12 @@
 DOTFILES_HOME=~/code/dotfiles
 GITHUB_USERNAME=DamonOehlman
+UNAME := $(shell uname -s)
 
 default: macapps bashrc editors localbin private_settings code_settings
 	@echo "sync complete"
+
+windows: bashrc editors localbin code_settings
+	@echo "windows sync complete"
 
 bashrc:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
@@ -38,10 +42,12 @@ sublime:
 	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
 
 macapps:
+ifeq ($(UNAME),Darwin)
 	@ln -sf $(DOTFILES_HOME)/Library/Preferences/*.plist ~/Library/Preferences
 	@ln -sf $(DOTFILES_HOME)/config/.kwm ~/.kwm
 	@ln -sf $(DOTFILES_HOME)/config/.khdrc ~/.khdrc
 	@$(DOTFILES_HOME)/scripts/mac-defaults.sh
+endif
 
 /usr/share/xsessions:
 	sudo cp $(DOTFILES_HOME)/.xmonad/xmonad.desktop /usr/share/xsessions
@@ -65,11 +71,15 @@ private:
 
 pull_private:
 	@echo "fetching latest private configuration"
-	@pushd private > /dev/null && git pull -q origin master
+	@cd private/
+	@git pull -q origin master
+	@cd ..
 
 private_settings: private pull_private
+ifeq ($(UNAME),Darwin)
 	@echo "running private configuration tasks"
 	@private/mac_defaults.sh
+endif
 
 clean:
 	@rm -rf private/
