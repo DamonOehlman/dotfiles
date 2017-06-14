@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-[[ -e ~/.pyenv/bin/pyenv ]] && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
-hash pyenv && pyenv global ${PYTHON_VERSION-2.7.9}
-hash python && tool_available "python" "python --version 2>&1 | cut -d' ' -f2"
+if [[ -e ~/pyenv/bin/pyenv ]]; then
+    eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
+    pyenv global ${PYTHON_VERSION-2.7.9}
+    tool_available "python" "python --version 2>&1 | cut -d' ' -f2"
 
-export PATH="~/.pyenv/versions/$(python --version 2>&1 | cut -d' ' -f2)/bin:$PATH"
+    export PATH="~/.pyenv/versions/$(python --version 2>&1 | cut -d' ' -f2)/bin:$PATH"
+fi
