@@ -37,7 +37,7 @@ e.g: window-rules in a separate file called 'rules'
 */
 
 kwmc config padding 35 15 5 5
-kwmc config space 0 3 padding 30 0 2 2
+kwmc config space 0 3 padding 20 0 0 0
 
 kwmc config gap 5 5
 
@@ -114,7 +114,7 @@ kwmc rule owner="Terminal" properties={role="AXDialog"}
 kwmc rule owner="IntelliJ IDEA" name="Go to Line" properties={float="true"}
 kwmc rule owner="IntelliJ IDEA" name="New File" properties={float="true"}
 kwmc rule owner="IntelliJ IDEA" name="Update Project" properties={float="true"}
-kwmc rule owner="Spotify" properties={space="2"}
+kwmc rule owner="Spotify" properties={space="1"}
 kwmc rule owner="Slack" properties={space="7"}
 kwmc rule owner="Airmail" properties={space="6"}
 kwmc rule owner="IntelliJ IDEA" properties={space="4"}
@@ -126,7 +126,8 @@ kwmc rule owner="System Preferences" name="Time Machine" properties={float="true
 kwmc rule owner="VNC Viewer" properties={float="true"}
 
 # set space names
-kwmc config space 0 2 name music
+kwmc config space 0 1 name music
+kwmc config space 0 2 name vs
 kwmc config space 0 3 name term
 kwmc config space 0 4 name editor
 kwmc config space 0 5 name web
