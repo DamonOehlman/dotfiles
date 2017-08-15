@@ -15,7 +15,7 @@ installTool() {
 
   if [[ -z "${tool_version}" ]] || [[ "${tool_version}" != "${target_version}" ]]; then
       echo -e "\nInstalling / Updating ${tool} to ${target_version}\n"
-      npm install -g "${tool}"@"${target_version}"
+      yarn global add "${tool}"@"${target_version}"
   fi
 
   tool_available "${tool}" "${get_version}"
@@ -24,10 +24,7 @@ installTool() {
 hash mert 2> /dev/null || npm install -g mert
 tool_available mert "mert --version"
 
-hash webpack 2> /dev/null || npm install -g webpack
+hash webpack 2> /dev/null || yarn global add webpack
 tool_available webpack "webpack --version"
-
-hash yarn 2> /dev/null || npm install -g yarn
-tool_available yarn "yarn --version"
 
 # installTool "flow-typed" "echo $(flow-typed version) | cut -c 12-" "${FLOWTYPED_VERSION}"

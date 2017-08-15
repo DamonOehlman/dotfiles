@@ -14,9 +14,9 @@ hash flow 2> /dev/null || npm install -g flow-bin
 tool_available flow "flow version | sed s/[^0-9.]//g"
 
 # haxe
-hash haxe 2> /dev/null || npm install -g haxe
+hash haxe 2> /dev/null || yarn global add haxe
 tool_available haxe "haxe -version 2>&1"
 
 # elm
-hash elm 2> /dev/null || npm install -g elm
+hash elm 2> /dev/null || yarn global add elm
 tool_available elm "elm make -h | head -n1 | sed -E 's/(\(|\))//g' | cut -f5 -d' '"
