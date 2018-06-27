@@ -2,7 +2,7 @@ DOTFILES_HOME=~/code/dotfiles
 GITHUB_USERNAME=DamonOehlman
 UNAME := $(shell uname -s)
 
-default: macapps bashrc editors localbin private_settings code_settings
+default: configfiles macapps bashrc editors localbin private_settings code_settings
 	@echo "sync complete"
 
 windows: bashrc editors localbin code_settings
@@ -11,8 +11,12 @@ windows: bashrc editors localbin code_settings
 bashrc:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
 
-tools:
-	@ln -sf $(DOTFILES_HOME)/config/.mertrc ~/.mertrc
+configfiles:
+	@mkdir -p ~/.config
+	@ln -sf $(DOTFILES_HOME)/config/alacritty ~/.config/alacritty
+
+tools: dotfiles.private
+	@cat $(DOTFILES_HOME)/config/.mertrc $(DOTFILES_HOME)/private/.mertrc > ~/.mertrc
 
 synapse:
 	@rm -rf ~/.config/synapse
@@ -45,6 +49,7 @@ macapps:
 ifeq ($(UNAME),Darwin)
 	@ln -sf $(DOTFILES_HOME)/Library/Preferences/*.plist ~/Library/Preferences
 	@ln -sf $(DOTFILES_HOME)/config/.kwm ~/.kwm
+	@ln -sf $(DOTFILES_HOME)/config/chunkwmrc ~/.chunkwmrc
 	@ln -sf $(DOTFILES_HOME)/config/.khdrc ~/.khdrc
 	@$(DOTFILES_HOME)/scripts/mac-defaults.sh
 endif
@@ -65,8 +70,9 @@ fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf
 	mkdir -p ~/.local/share/fonts
 	cp /tmp/source-code-pro*/OTF/* ~/.local/share/fonts
 
-private:
+dotfiles.private:
 	@echo "cloning private configuration repo"
+	@rm -rf $(DOTFILES_HOME)/private
 	@git clone -q git@github.com:$(GITHUB_USERNAME)/dotfiles.private.git private
 
 pull_private:
@@ -75,14 +81,14 @@ pull_private:
 	@git pull -q origin master
 	@cd ..
 
-private_settings: private pull_private
+private_settings: dotfiles.private pull_private
 ifeq ($(UNAME),Darwin)
 	@echo "running private configuration tasks"
 	@private/mac_defaults.sh
 endif
 
 clean:
-	@rm -rf private/
+	@rm -rf $(DOTFILES_HOME)/private
 
 code_settings:
 	@ln -sf $(DOTFILES_HOME)/config/.editorconfig ~/code/.editorconfig
