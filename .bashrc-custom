@@ -8,20 +8,16 @@ DOTFILES_PRIVATE=$HOME/code/dotfiles.private
 DOTFILES_LOCAL="${DOTFILES_PRIVATE}"/.bashrc_local
 SECRETS_FILE="${DOTFILES_PRIVATE}"/.bashrc_secrets
 
-# LANGUAGE VERSIONS
-PYTHON_VERSION=2.7.13
-RUBY_VERSION=2.3.0
-OCAML_VERSION=4.02.3
-NODE_VERSION=8
-
-## LANGUAGE PATHS
-PATH="~/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:/opt/happy/1.19.4/bin:/opt/alex/3.1.3/bin:$PATH";
-PATH="$HOME/.pyenv/shims:$PATH"
-
 ## TOOL PATHS
 PATH="$PATH:~/packer"; # packer
 PATH="~/bin:${DOTFILES_PRIVATE}/bin:$PATH";
 AWS_HOME="/opt/aws";
+
+## LANG VERSIONS
+PYTHON_VERSION="3.6.5"
+
+# include local config preferences
+[[ -e "${HOME}/.myconfigrc" ]] && . "${HOME}/.myconfigrc"
 
 # chrome sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
@@ -32,16 +28,6 @@ export PATH="$PATH:$GDEV_HOME/depot_tools"
 
 . $DOTFILES_HOME/includes/color.sh
 . $DOTFILES_HOME/includes/logging.sh
-
-if [[ $UNAME -ne 'Darwin' ]]; then
-	# video modes
-	VM_U2713HM="U2713HM"
-	VM_U2713HM_MODELINE="172.80 1920 2040 2248 2576  1080 1081 1084 1118 -hsync +vsync"
-	VM_WORK=$VM_U2713HM
-	VM_SURFACE_SCALED="109.50  1368 1448 1592 1816  768 771 781 805 -hsync +vsync"
-	VM_B2440="172.80  1920 2040 2248 2576  1080 1081 1084 1118  -hsync +vsync"
-	DISPLAY_INTERNAL=`xrandr | sed -n 2p | cut -f1 -d$' '`
-fi
 
 # not typically using a gnome environment so better to have this off
 unset GNOME_KEYRING_CONTROL
@@ -76,26 +62,22 @@ echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/node.sh
 . $DOTFILES_HOME/scripts/python.sh
 . $DOTFILES_HOME/scripts/ruby.sh
-. $DOTFILES_HOME/scripts/altjs.sh
-. $DOTFILES_HOME/scripts/tools.sh
+. $DOTFILES_HOME/scripts/lang/ocaml.sh
+# . $DOTFILES_HOME/scripts/altjs.sh
+# . $DOTFILES_HOME/scripts/tools.sh
 echo -ne "\n"
 
 # run the npm install script in the $DOTFILES_HOME path
-pushd $DOTFILES_HOME > /dev/null; npm install; popd > /dev/null;
-
-# opam initialisation (ocaml)
-$HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+# pushd $DOTFILES_HOME > /dev/null; npm install; popd > /dev/null;
 
 # tune editors
 . $DOTFILES_HOME/scripts/editors/intellij.sh
+
+# tune displays, etc
+. $DOTFILES_HOME/scripts/displays.sh
 
 # bring in local configuration settings
 [[ -e "${DOTFILES_LOCAL}" ]] && source "${DOTFILES_LOCAL}"
 
 # include the bash secrets file
 [[ -e "${SECRETS_FILE}" ]] && source "${SECRETS_FILE}"
-
-# define some video modes for different monitor configurations
-xrandr --newmode "$VM_U2713HM" $VM_U2713HM_MODELINE &> /dev/null
-xrandr --newmode "INTERNAL_SCALED" $VM_SURFACE_SCALED &> /dev/null
-xrandr --newmode "VM_B2440" $VM_B2440 &> /dev/null
