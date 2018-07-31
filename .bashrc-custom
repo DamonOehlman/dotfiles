@@ -58,10 +58,10 @@ echo -ne "\033]0;Configuring and Installing Languages\007";
 
 # language configuration
 echo -ne "${YELLOW}langs:\t${NC}"
-. $DOTFILES_HOME/scripts/go.sh
-. $DOTFILES_HOME/scripts/node.sh
-. $DOTFILES_HOME/scripts/python.sh
-. $DOTFILES_HOME/scripts/ruby.sh
+. $DOTFILES_HOME/scripts/lang/go.sh
+. $DOTFILES_HOME/scripts/lang/node.sh
+. $DOTFILES_HOME/scripts/lang/python.sh
+. $DOTFILES_HOME/scripts/lang/ruby.sh
 . $DOTFILES_HOME/scripts/lang/ocaml.sh
 # . $DOTFILES_HOME/scripts/altjs.sh
 # . $DOTFILES_HOME/scripts/tools.sh
