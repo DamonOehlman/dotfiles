@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
-if [[ -e ~/pyenv/bin/pyenv ]]; then
-    eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
+PYENV_EXECUTABLE=""
+if [[ -e "~/pyenv/bin/pyenv" ]]; then
+  PYENV_EXECUTABLE="~/pyenv/bin/pyenv"
+elif [[ -e "/usr/local/bin/pyenv" ]]; then
+  PYENV_EXECUTABLE="/usr/local/bin/pyenv"
+fi
+
+if [[ ! -z "${PYENV_EXECUTABLE}" ]]; then
+    eval "$(pyenv init -)"
     pyenv global ${PYTHON_VERSION-2.7.9}
     tool_available "python" "python --version 2>&1 | cut -d' ' -f2"
 
