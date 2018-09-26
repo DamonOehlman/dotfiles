@@ -4,9 +4,10 @@
 function _git_prompt() {
   local git_status
   local ansi
+  local branch
 
-  git_status="`git status -unormal 2>&1`"
-  if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+  git_status="`git status 2>&1 | tr '[:upper:]' '[:lower:]'`"
+  if ! [[ "$git_status" =~ not\ a\ git\ repo ]]; then
     if [[ "$git_status" =~ nothing\ to\ commit ]]; then
       ansi=$green
     elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
@@ -14,9 +15,8 @@ function _git_prompt() {
     else
       ansi=$yellow
     fi
-    if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
+    if [[ "$git_status" =~ on\ branch\ ([^[:space:]]+) ]]; then
       branch=${BASH_REMATCH[1]}
-      #test "$branch" != master || branch=' '
     else
       # Detached HEAD.  (branch=HEAD is a faster alternative.)
       branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
