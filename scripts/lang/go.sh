@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-PATH="~/.go/bin:/opt/go/bin:$PATH";
-export GOROOT=/opt/go
-export GOPATH=~/code/go
+# #!/usr/bin/env bash
+PATH="$PATH:$HOME/tools/go/bin";
+export GOROOT=$HOME/tools/go
+export GOPATH=$HOME/code/go
 mkdir -p $GOPATH

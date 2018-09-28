@@ -1,0 +1,28 @@
+sde:
+  root: "~/code/canva/canva"
+  launch_strategy: in_place
+  split_strategy: vertical
+  layout:
+    -
+      - echo "sde started"
+
+    -
+      - sde run services/blob/bin/start_local_s3.sh
+      - sde run backends/bin/start.sh --debug --rpcs
+      - sde run cfe/bin/start.sh --debug --hot
+      - cfe/bin/webpack-dev-server
+
+e2:
+  root: "~/code/canva/canva"
+  launch_strategy: in_place
+  split_strategy: vertical
+  layout:
+    -
+      - echo "e2 started"
+
+    -
+      - sde run services/blob/bin/start_local_s3.sh
+      - sde run backends/bin/start.sh --debug --rpcs
+      - sde run cfe/bin/start.sh --debug --hot
+      - cfe/bin/webpack-dev-server
+      - cd web && CLOSURE_COMPILE=false yarn page:run editor

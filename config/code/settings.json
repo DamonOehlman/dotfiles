@@ -1,30 +1,24 @@
 {
-	"editor.fontFamily": "Fira Code",
-	"editor.fontSize": 13,
-	"editor.fontLigatures": true,
-	"editor.lineHeight": 20,
-	"editor.tabSize": 2,
-	"editor.detectIndentation": false,
-	"editor.renderWhitespace": "boundary",
-	"files.exclude": {
-		"**/.git": true,
-		"**/.DS_Store": true,
-		"**/target": true
-	},
-
-	// typescript
-	"typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.9.0/lib/node_modules/typescript/lib/",
-  "typescript.validate.enable": false,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 20,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "all",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/target": true
+  },
+  "editor.formatOnSave": true,
+  // typescript
+  // "typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.10.0/bin",
+  "typescript.validate.enable": true,
   "javascript.validate.enable": false,
-
-	// extensions
-	"extensions.autoUpdate": true,
-
-	"docthis.includeMemberOfOnClassMembers": false,
-	"docthis.includeMemberOfOnInterfaceMembers": false,
-  "docthis.includeDescriptionTag": false,
+  // extensions
+  "extensions.autoUpdate": true,
   "window.zoomLevel": 0,
-
   "gitProjectManager.baseProjectsFolders": [
     "~/code/"
   ],
@@ -35,19 +29,36 @@
   "gitProjectManager.maxDepthRecursion": 3,
   "gitProjectManager.checkRemoteOrigin": false,
   "gitProjectManager.storeRepositoriesBetweenSessions": true,
-
-  "eslint.nodePath": "/Users/damo/.nvm/versions/node/v7.5.0/lib/node_modules",
-  "eslint.options": {
-    "configFile": "/Users/damo/code/dotfiles/config/.eslintrc.json"
-  },
   "eslint.run": "onSave",
   "eslint.validate": [
     "javascript"
   ],
-  "workbench.welcome.enabled": false,
-  "workbench.colorTheme": "Firewatch Theme",
+  "eslint.packageManager": "yarn",
+  "workbench.colorTheme": "Solarized Dark",
   "workbench.iconTheme": "vs-seti",
   "files.associations": {
     ".bithoundrc": "json"
-  }
+  },
+  "trailing-spaces.includeEmptyLines": false,
+  "flow.runOnEdit": false,
+  // "flow.useNPMPackagedFlow": true,
+  "extensions.ignoreRecommendations": false,
+  "jsDocCompletion.enabled": false,
+  "explorer.confirmDelete": false,
+  "rust.rustup": {
+    "toolchain": "stable-x86_64-apple-darwin",
+    "nightlyToolchain": "nightly-x86_64-apple-darwin"
+  },
+  "rust.mode": null,
+  "prettier.requireConfig": true,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "[plaintext]": {
+    "editor.fontLigatures": false,
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.autoImportSuggestions.enabled": false,
+  "purescript.autocompleteAddImport": false,
 }

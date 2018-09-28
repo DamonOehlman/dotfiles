@@ -6,7 +6,7 @@ ELM_TARGET_VERSION="0.18.0"
 echo -ne "\n${YELLOW}altJS:\t${NC}"
 
 # typescript
-hash tsc 2> /dev/null || npm install -g typescript
+hash tsc 2> /dev/null || npm install -g tsc
 hash tsc && tool_available tsc "tsc --version | cut -f2 -d' '" typescript
 
 # flow

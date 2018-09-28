@@ -10,5 +10,24 @@
   { "key": "cmd+|", "command": "workbench.action.splitEditor"},
   { "key": "ctrl+g", "command": "editor.action.nextMatchFindAction", "when": "editorFocus" },
   { "key": "shift+ctrl+g", "command": "editor.action.previousMatchFindAction", "when": "editorFocus" },
-  { "key": "cmd+g", "command": "workbench.action.gotoLine" }
+  {
+    "key": "cmd+g",
+    "command": "workbench.action.gotoLine"
+  },
+  {
+    "key": "ctrl+cmd+left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+cmd+right",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  }
 ]

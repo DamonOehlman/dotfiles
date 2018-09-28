@@ -14,7 +14,7 @@ PATH="~/bin:${DOTFILES_PRIVATE}/bin:$PATH";
 AWS_HOME="/opt/aws";
 
 ## LANG VERSIONS
-PYTHON_VERSION="3.6.5"
+PYTHON_VERSION="3.7.0"
 
 # include local config preferences
 [[ -e "${HOME}/.myconfigrc" ]] && . "${HOME}/.myconfigrc"
@@ -63,6 +63,7 @@ echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/lang/python.sh
 . $DOTFILES_HOME/scripts/lang/ruby.sh
 . $DOTFILES_HOME/scripts/lang/ocaml.sh
+. $DOTFILES_HOME/scripts/lang/rust.sh
 # . $DOTFILES_HOME/scripts/altjs.sh
 # . $DOTFILES_HOME/scripts/tools.sh
 echo -ne "\n"

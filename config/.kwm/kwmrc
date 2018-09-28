@@ -124,6 +124,9 @@ kwmc rule owner="Steam" properties={float="true"}
 kwmc rule owner="DaisyDisk" properties={float="true"}
 kwmc rule owner="System Preferences" name="Time Machine" properties={float="true"}
 kwmc rule owner="VNC Viewer" properties={float="true"}
+kwmc rule owner="Finder" properties={float="true"}
+kwmc rule owner="Preview" properties={float="true"}
+
 
 # set space names
 kwmc config space 0 1 name music

@@ -4,12 +4,15 @@
 khd mode default color 0xddd5c4a1
 
 # chunkwm window navigation
-cmd - left  : chunkc tiling::window --focus west
-cmd - down  : chunkc tiling::window --focus south
-cmd - up    : chunkc tiling::window --focus north
-cmd - right : chunkc tiling::window --focus east
+# cmd - left  : chunkc tiling::window --focus west
+# cmd - down  : chunkc tiling::window --focus south
+# cmd - up    : chunkc tiling::window --focus north
+# cmd - right : chunkc tiling::window --focus east
 
-cmd - e : chunkc tiling::window --toggle split
+# cmd - e : chunkc tiling::window --toggle split
+
+# terminal opener
+cmd + shift - return : open -n /Applications/iTerm.app/
 
 # common commands
 ctrl - 0x2a : kwmc window -z parent

@@ -109,8 +109,10 @@ chunkc tiling::rule --owner \"Accessibility Inspector\" --state float
 chunkc tiling::rule --owner Xcode --state float
 chunkc tiling::rule --owner Calendar --state float
 chunkc tiling::rule --owner Todoist --state float
+chunkc tiling::rule --owner Calculator --state float
 chunkc tiling::rule --owner \"IntelliJ IDEA\" --role AXWindow --subrole AXStandardWindow --state float
 chunkc tiling::rule --owner \"IntelliJ IDEA\" --role AXWindow --subrole AXDialog --state tile
+chunkc tiling::rule --owner \"GIPHY CAPTURE\" --role AXWindow --subrole AXDialog --state float
 # chunkc tiling::rule --owner \"IntelliJ IDEA\" --name \"Go to Line/Column\" --state float
 # chunkc tiling::rule --owner \"IntelliJ IDEA\" --name \"New File\" --state float
 # chunkc tiling::rule --owner \"IntelliJ IDEA\" --state tile

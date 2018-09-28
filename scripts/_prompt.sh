@@ -7,10 +7,10 @@ function _git_prompt() {
   local branch
 
   git_status="`git status 2>&1 | tr '[:upper:]' '[:lower:]'`"
-  if ! [[ "$git_status" =~ not\ a\ git\ repo ]]; then
-    if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+  if ! [[ "$git_status" =~ "not a git repo" ]]; then
+    if [[ "$git_status" =~ "nothing to commit" ]]; then
       ansi=$green
-    elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+    elif [[ "$git_status" =~ "nothing added to commit but untracked files present" ]]; then
       ansi=$magenta
     else
       ansi=$yellow
