@@ -18,7 +18,7 @@ bashrc:
 
 configfiles:
 	@mkdir -p ~/.config
-	@ln -sf $(DOTFILES_HOME)/config/alacritty ~/.config/alacritty
+	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
 
 tools: dotfiles.private
 	@cat $(DOTFILES_HOME)/config/.mertrc $(DOTFILES_HOME)/private/.mertrc > ~/.mertrc
@@ -28,9 +28,14 @@ synapse:
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse
 
 vscode:
+ifeq ($(UNAME),Darwin)
 	@rm -rf ~/Library/Application\ Support/Code/User
 	@mkdir -p ~/Library/Application\ Support/Code/User
 	@ln -sf $(DOTFILES_HOME)/config/code/* ~/Library/Application\ Support/Code/User
+endif
+ifeq ($(UNAME),Linux)
+	@ln -sf $(DOTFILES_HOME)/config/code/* ~/.config/Code\ -\ OSS/User
+endif
 
 localbin:
 	@mkdir -p ~/bin
@@ -67,13 +72,16 @@ tmux:
 	@mkdir -p $(DOTFILES_HOME)/.tmux/plugins
 	@rm -rf $(DOTFILES_HOME)/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm $(DOTFILES_HOME)/.tmux/plugins/tpm
 
-fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf
+fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf ~/.local/share/fonts/FiraCode-Regular.ttf
 
 ~/.local/share/fonts/SourceCodePro-Regular.otf:
 	wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz -O /tmp/sourcecodepro.tar.gz
 	tar xf /tmp/sourcecodepro.tar.gz --directory /tmp
 	mkdir -p ~/.local/share/fonts
 	cp /tmp/source-code-pro*/OTF/* ~/.local/share/fonts
+
+~/.local/share/fonts/FiraCode-Regular.ttf:
+	@./scripts/install-firacode.sh
 
 dotfiles.private:
 	@echo "cloning private configuration repo"

@@ -1,14 +1,62 @@
 [
-  { "key": "cmd+left", "command": "workbench.action.previousEditor"},
-  { "key": "cmd+right", "command": "workbench.action.nextEditor" },
-  { "key": "ctrl+right", "command": "cursorWordStartRight" },
-  { "key": "ctrl+left", "command": "cursorWordStartLeft" },
-  { "key": "ctrl+shift+right", "command": "cursorWordStartRightSelect" },
-  { "key": "ctrl+shift+left", "command": "cursorWordStartLeftSelect" },
-  { "key": "ctrl+cmd+down", "command": "cursorPageDown" },
-  { "key": "ctrl+cmd+up", "command": "cursorPageUp" },
-  { "key": "cmd+|", "command": "workbench.action.splitEditor"},
-  { "key": "ctrl+g", "command": "editor.action.nextMatchFindAction", "when": "editorFocus" },
-  { "key": "shift+ctrl+g", "command": "editor.action.previousMatchFindAction", "when": "editorFocus" },
-  { "key": "cmd+g", "command": "workbench.action.gotoLine" }
+    {
+        "key": "ctrl+shift+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "editor.action.selectAll",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-editor.action.selectAll",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "editor.action.webvieweditor.selectAll",
+        "when": "webviewEditorFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-editor.action.webvieweditor.selectAll",
+        "when": "webviewEditorFocus"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "list.selectAll",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-list.selectAll",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "workbench.action.terminal.moveToLineStart"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.terminal.moveToLineEnd"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "cursorLineEnd"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "cursorLineStart"
+    }
 ]
