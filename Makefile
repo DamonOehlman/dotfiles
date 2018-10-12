@@ -2,11 +2,16 @@ DOTFILES_HOME=~/code/dotfiles
 GITHUB_USERNAME=DamonOehlman
 UNAME := $(shell uname -s)
 
-default: configfiles macapps bashrc editors localbin private_settings code_settings
+default: configfiles macapps bashrc editors localbin private_settings code_settings i3
 	@echo "sync complete"
 
 windows: bashrc editors localbin code_settings
 	@echo "windows sync complete"
+
+i3:
+ifeq ($(UNAME),Linux)
+	@ln -sf $(DOTFILES_HOME)/.i3 ~/.i3
+endif
 
 bashrc:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
