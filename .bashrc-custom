@@ -51,8 +51,9 @@ if [[ $UNAME -ne 'Darwin' ]]; then
 	. $DOTFILES_HOME/scripts/screencasting.sh
 fi
 
-# git completion
+# bash completion files
 source $DOTFILES_HOME/bin/git-completion.bash
+source $DOTFILES_HOME/scripts/pass.bash-completion
 
 echo -ne "\033]0;Configuring and Installing Languages\007";
 
