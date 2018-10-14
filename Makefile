@@ -10,7 +10,7 @@ windows: bashrc editors localbin code_settings
 
 i3:
 ifeq ($(UNAME),Linux)
-	@ln -sf $(DOTFILES_HOME)/.i3 ~/.i3
+	@ln -sf $(DOTFILES_HOME)/.i3 ~/
 endif
 
 bashrc:
@@ -19,6 +19,7 @@ bashrc:
 configfiles:
 	@mkdir -p ~/.config
 	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
+	@ln -sf $(DOTFILES_HOME)/config/terminator ~/.config/terminator
 
 tools: dotfiles.private
 	@cat $(DOTFILES_HOME)/config/.mertrc $(DOTFILES_HOME)/private/.mertrc > ~/.mertrc
