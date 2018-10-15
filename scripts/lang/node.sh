@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-NVM_ENABLED="${USE_NVM:-}"
-if [[ -e ~/.nvm/nvm.sh && "${NVM_ENABLED}" ]]; then
+if [[ -e ~/.nvm/nvm.sh ]]; then
   . ~/.nvm/nvm.sh 2> /dev/null
   nvm use default > /dev/null
   npm config delete prefix
