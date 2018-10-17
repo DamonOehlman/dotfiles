@@ -6,19 +6,17 @@
   geometry_hinting = False
   title_transmit_bg_color = "#94BA65"
   tab_position = bottom
-[keybindings]
-  new_tab = <Alt>4
+  borderless = True
 [profiles]
   [[default]]
+    font = Bitstream Vera Sans Mono 11
     scrollbar_position = hidden
     background_image = None
     cursor_shape = ibeam
     use_system_font = False
-    font = Source Code Pro 11
     background_color = "#353432"
 [layouts]
   [[default]]
-    
     [[[child1]]]
       type = Terminal
       parent = window0

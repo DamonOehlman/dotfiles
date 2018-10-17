@@ -19,7 +19,7 @@ bashrc:
 configfiles:
 	@mkdir -p ~/.config
 	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
-	@ln -sf $(DOTFILES_HOME)/config/terminator ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/termite ~/.config/
 
 tools: dotfiles.private
 	@cat $(DOTFILES_HOME)/config/.mertrc $(DOTFILES_HOME)/private/.mertrc > ~/.mertrc
