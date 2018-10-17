@@ -12,10 +12,10 @@ cmd - right : chunkc tiling::window --focus east
 cmd - e : chunkc tiling::window --toggle split
 
 # common commands
-ctrl - 0x2a : kwmc window -z parent
-cmd - 0x32 : kwmc window -f next
-cmd + shift - down : kwmc window -s next
-cmd + shift - up : kwmc window -s prev
+# ctrl - 0x2a : kwmc window -z parent
+# cmd - 0x32 : kwmc window -f next
+# cmd + shift - down : kwmc window -s next
+# cmd + shift - up : kwmc window -s prev
 
 # mode selectors
 ctrl + shift - s : khd -e "mode activate switcher"
@@ -33,8 +33,8 @@ khd mode switcher restore default
 switcher + ctrl - up : khd -e "mode activate default"
 switcher - escape : khd -e "mode activate default"
 switcher + ctrl - s : khd -e "mode activate resizer"
-switcher + cmd + ctrl + shift - left : kwmc window -m space left
-switcher + cmd + ctrl + shift - right : kwmc window -m space right
+# switcher + cmd + ctrl + shift - left : kwmc window -m space left
+# switcher + cmd + ctrl + shift - right : kwmc window -m space right
 
 switcher + cmd - 0x32 : kwmc window -f next \
                         && khd -e "mode activate default"
@@ -50,13 +50,13 @@ resizer + ctrl - s : khd -e "mode activate default"
 resizer - escape : khd -e "mode activate default"
 resizer + ctrl - up : khd -e "mode activate switcher"
 
-resizer - up : kwmc window -c reduce 0.05 south
-resizer - down : kwmc window -c reduce 0.05 north
-resizer - left : kwmc window -c reduce 0.05 east
-resizer + ctrl - left : kwmc window -c expand 0.05 west
-resizer - right : kwmc window -c reduce 0.05 west
-resizer + ctrl - right : kwmc window -c expand 0.05 east
-resizer + ctrl - f : kwmc window -t focused
+# resizer - up : kwmc window -c reduce 0.05 south
+# resizer - down : kwmc window -c reduce 0.05 north
+# resizer - left : kwmc window -c reduce 0.05 east
+# resizer + ctrl - left : kwmc window -c expand 0.05 west
+# resizer - right : kwmc window -c reduce 0.05 west
+# resizer + ctrl - right : kwmc window -c expand 0.05 east
+# resizer + ctrl - f : kwmc window -t focused
 
 # config mode
 
