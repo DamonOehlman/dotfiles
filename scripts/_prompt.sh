@@ -25,7 +25,7 @@ function _git_prompt() {
       branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
       echo HEAD`)"
     fi
-    echo -n ' '"${BRANCH_EMOJI}"' '"$ansi"'\]'"$branch""$NC"'\]'
+    echo -ne ' '"${BRANCH_EMOJI}"' '"\[$ansi"'\]'"$branch""\[$NC"'\]'
   fi
 }
 
