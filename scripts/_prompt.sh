@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+COMMAND_FAILED_EMOJI="🙈"
+BRANCH_EMOJI="🌱"
+
 # Taken from http://www.opinionatedprogrammer.com/2011/01/colorful-bash-prompt-reflecting-git-status/
 function _git_prompt() {
   local git_status
@@ -22,7 +25,7 @@ function _git_prompt() {
       branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
       echo HEAD`)"
     fi
-    echo -n ' 🌱  '"$ansi"'\]'"$branch""$NC"'\]'
+    echo -n ' '"${BRANCH_EMOJI}"' '"$ansi"'\]'"$branch""$NC"'\]'
   fi
 }
 
@@ -30,9 +33,9 @@ function report_status() {
   RET_CODE=$?
   if [[ $RET_CODE -ne 0 ]] ; then
     if [[ $RET_CODE -eq 130 ]]; then
-      echo -ne " 🌀  ";
+      echo -ne " ${COMMAND_FAILED_EMOJI} ";
     else
-      echo -ne " 🙈  \[$RED\]$RET_CODE\[$NC\]";
+      echo -ne " ${COMMAND_FAILED_EMOJI} \[$RED\]$RET_CODE\[$NC\]";
     fi
   fi
 }
@@ -46,11 +49,11 @@ function term_title() {
 }
 
 function prompt_head() {
-  echo -ne "\n🚤  \w\[$NC\]"
+  echo -ne "\n\w\[$NC\]"
 }
 
 function prompt_tail() {
-  echo -ne "\\n👤  \u \[$NC\]"
+  echo -ne "\\n\u \[$NC\]"
 }
 
 export _PS1="\[$NC\] \w"
