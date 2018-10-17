@@ -19,7 +19,7 @@ bashrc:
 configfiles:
 	@mkdir -p ~/.config
 	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
-	@ln -sf $(DOTFILES_HOME)/config/terminator ~/.config/terminator
+	@ln -sf $(DOTFILES_HOME)/config/terminator ~/.config/
 
 tools: dotfiles.private
 	@cat $(DOTFILES_HOME)/config/.mertrc $(DOTFILES_HOME)/private/.mertrc > ~/.mertrc
@@ -42,10 +42,6 @@ localbin:
 	@mkdir -p ~/bin
 	@ln -sf $(DOTFILES_HOME)/bin/* ~/bin/
 
-roxterm:
-	@rm -rf ~/.config/roxterm.sourceforge.net
-	@ln -s $(DOTFILES_HOME)/config/roxterm.sourceforge.net ~/.config/roxterm.sourceforge.net
-
 editors:
 	@ln -sf $(DOTFILES_HOME)/.vimrc ~/.vimrc
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
@@ -62,14 +58,6 @@ ifeq ($(UNAME),Darwin)
 	@ln -sf $(DOTFILES_HOME)/config/.khdrc ~/.khdrc
 	@$(DOTFILES_HOME)/scripts/mac-defaults.sh
 endif
-
-/usr/share/xsessions:
-	sudo cp $(DOTFILES_HOME)/.xmonad/xmonad.desktop /usr/share/xsessions
-
-tmux:
-	@ln -sf $(DOTFILES_HOME)/.tmux/.tmux.conf ~/.tmux.conf
-	@mkdir -p $(DOTFILES_HOME)/.tmux/plugins
-	@rm -rf $(DOTFILES_HOME)/.tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm $(DOTFILES_HOME)/.tmux/plugins/tpm
 
 fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf ~/.local/share/fonts/FiraCode-Regular.ttf
 
