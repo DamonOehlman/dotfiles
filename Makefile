@@ -49,7 +49,6 @@ roxterm:
 editors:
 	@ln -sf $(DOTFILES_HOME)/.vimrc ~/.vimrc
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
-	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/atom.sh
 
 sublime:
 	@rm -rf ~/.config/sublime-text-3/Packages/User
