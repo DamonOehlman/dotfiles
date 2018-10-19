@@ -65,6 +65,7 @@ echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/lang/python.sh
 . $DOTFILES_HOME/scripts/lang/ruby.sh
 . $DOTFILES_HOME/scripts/lang/ocaml.sh
+. $DOTFILES_HOME/scripts/lang/rust.sh
 # . $DOTFILES_HOME/scripts/altjs.sh
 # . $DOTFILES_HOME/scripts/tools.sh
 echo -ne "\n"
