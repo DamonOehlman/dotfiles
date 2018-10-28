@@ -49,5 +49,16 @@
   "workbench.iconTheme": "vs-seti",
   "files.associations": {
     ".bithoundrc": "json"
+  },
+  "[elixir]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordBasedSuggestions": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
   }
 }

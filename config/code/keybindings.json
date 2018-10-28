@@ -58,5 +58,24 @@
     {
         "key": "ctrl+a",
         "command": "cursorLineStart"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "deleteAllRight"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "-editor.action.addSelectionToNextFindMatch",
+      "when": "editorFocus"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "deleteRight",
+      "when": "textInputFocus && !editorReadonly"
+    },
+    {
+      "key": "delete",
+      "command": "-deleteRight",
+      "when": "textInputFocus && !editorReadonly"
     }
-]
+  ]
