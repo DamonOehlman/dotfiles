@@ -26,7 +26,8 @@
   "window.zoomLevel": 0,
 
   "gitProjectManager.baseProjectsFolders": [
-    "~/code/"
+    "~/code/",
+    "~/dotfiles/"
   ],
   "gitProjectManager.ignoredFolders": [
     "offline",
