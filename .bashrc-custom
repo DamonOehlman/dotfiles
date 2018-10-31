@@ -3,8 +3,8 @@ export EDITOR=vim
 UNAME=$(uname)
 
 # DOTFILES HOME
-DOTFILES_HOME=$HOME/code/dotfiles
-DOTFILES_PRIVATE=$HOME/code/dotfiles.private
+DOTFILES_HOME=$HOME/dotfiles
+DOTFILES_PRIVATE=$HOME/dotfiles.private
 DOTFILES_LOCAL="${DOTFILES_PRIVATE}"/.bashrc_local
 SECRETS_FILE="${DOTFILES_PRIVATE}"/.bashrc_secrets
 NIX_SETUP=$HOME/.nix-profile/etc/profile.d/nix.sh
