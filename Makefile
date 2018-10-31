@@ -1,4 +1,4 @@
-DOTFILES_HOME=~/code/dotfiles
+DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
 UNAME := $(shell uname -s)
 
