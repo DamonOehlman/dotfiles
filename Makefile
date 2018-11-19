@@ -1,9 +1,16 @@
 DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
 UNAME := $(shell uname -s)
+WINDOWS_UNAME=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
 
+ifneq (,$(WINDOWS_UNAME))
+IS_WINDOWS=1
+default: vscode
+	@echo "sync complete"
+else
 default: configfiles macapps bashrc editors localbin private_settings code_settings i3
 	@echo "sync complete"
+endif
 
 windows: bashrc editors localbin code_settings
 	@echo "windows sync complete"
@@ -36,6 +43,10 @@ ifeq ($(UNAME),Darwin)
 endif
 ifeq ($(UNAME),Linux)
 	@ln -sf $(DOTFILES_HOME)/config/code/* ~/.config/Code\ -\ OSS/User
+endif
+ifeq ($(IS_WINDOWS),1)
+	@mkdir -p "$(APPDATA)\Code\User"
+	@cp config/code/* "$(APPDATA)\Code\User"
 endif
 
 localbin:

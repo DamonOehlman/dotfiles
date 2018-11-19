@@ -1,31 +1,33 @@
 {
   "editor.fontFamily": "Fira Code",
-	"editor.fontSize": 13,
-	"editor.fontLigatures": true,
-	"editor.lineHeight": 20,
-	"editor.tabSize": 2,
-	"editor.detectIndentation": false,
-	"editor.renderWhitespace": "boundary",
-	"files.exclude": {
-		"**/.git": true,
-		"**/.DS_Store": true,
-		"**/target": true
-	},
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 20,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "boundary",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/target": true
+  },
 
-	// typescript
-	"typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.9.0/lib/node_modules/typescript/lib/",
+  // typescript
+  "typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.9.0/lib/node_modules/typescript/lib/",
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
 
-	// extensions
-	"extensions.autoUpdate": true,
+  // extensions
+  "extensions.autoUpdate": true,
 
-	"docthis.includeMemberOfOnClassMembers": false,
-	"docthis.includeMemberOfOnInterfaceMembers": false,
+  "docthis.includeMemberOfOnClassMembers": false,
+  "docthis.includeMemberOfOnInterfaceMembers": false,
   "docthis.includeDescriptionTag": false,
   "window.zoomLevel": 0,
 
   "gitProjectManager.baseProjectsFolders": [
+    "c:\\msys64\\home\\damon",
     "~/code/",
     "~/dotfiles/"
   ],
@@ -61,5 +63,6 @@
     "editor.trimAutoWhitespace": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
-  }
+  },
+  "prettier.tslintIntegration": true
 }
