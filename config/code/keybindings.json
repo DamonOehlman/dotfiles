@@ -116,5 +116,20 @@
   {
     "key": "ctrl+shift+`",
     "command": "-workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "panelFocus"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
   }
 ]
