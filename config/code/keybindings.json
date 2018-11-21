@@ -84,6 +84,23 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "ctrl+alt+right",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-workbench.action.previousEditor"
+  },
+  // integrated terminal settings
+  {
     "key": "ctrl+shift+\\",
     "command": "workbench.action.terminal.new"
   },
@@ -97,12 +114,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+k",
-    "command": "-editor.action.deleteLines",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+k",
+    "key": "ctrl+alt+k",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -118,6 +130,12 @@
     "command": "-workbench.action.terminal.new"
   },
   {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  // panel settings
+  {
     "key": "ctrl+enter",
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "panelFocus"
@@ -131,5 +149,10 @@
     "key": "ctrl+alt+left",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
+  },
+  // slack extension bindings
+  {
+    "key": "ctrl+shift+alt+\\",
+    "command": "chat.treeView.channels.slack.focus"
   }
 ]
