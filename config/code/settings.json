@@ -1,30 +1,51 @@
 {
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 13,
+  "editor.fontSize": 11,
   "editor.fontLigatures": true,
   "editor.lineHeight": 20,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.renderWhitespace": "boundary",
+  "editor.dragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "files.defaultLanguage": "javascript",
+  "files.enableTrash": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
+  "files.associations": {
+    ".bithoundrc": "json"
+  },
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
     "**/target": true
   },
 
+  "search.quickOpen.includeHistory": false,
+  "search.location": "panel",
+
+  "terminal.integrated.shell.windows": "c:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 11,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tips.enabled": false,
+  "window.menuBarVisibility": "hidden",
+  "window.newWindowDimensions": "maximized",
+
+  // extensions
+  "extensions.autoUpdate": true,
+
   // typescript
   "typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.9.0/lib/node_modules/typescript/lib/",
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
 
-  // extensions
-  "extensions.autoUpdate": true,
-
   "docthis.includeMemberOfOnClassMembers": false,
   "docthis.includeMemberOfOnInterfaceMembers": false,
   "docthis.includeDescriptionTag": false,
-  "window.zoomLevel": 0,
 
   "gitProjectManager.baseProjectsFolders": ["~/code/", "~/dotfiles/"],
   "gitProjectManager.ignoredFolders": ["offline", "node_modules"],
@@ -38,12 +59,11 @@
   },
   "eslint.run": "onSave",
   "eslint.validate": ["javascript"],
+
   "workbench.welcome.enabled": false,
   "workbench.colorTheme": "Firewatch Theme",
   "workbench.iconTheme": "vs-seti",
-  "files.associations": {
-    ".bithoundrc": "json"
-  },
+
   "[elixir]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -55,23 +75,5 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
   },
-  "prettier.tslintIntegration": true,
-
-  "terminal.integrated.shell.windows": "c:\\Program Files\\Git\\bin\\bash.exe",
-  "terminal.integrated.fontFamily": "Fira Code",
-  "terminal.integrated.fontSize": 11,
-  "search.quickOpen.includeHistory": false,
-  "editor.dragAndDrop": false,
-  "editor.formatOnSave": true,
-  "editor.rulers": [80, 120],
-  "workbench.editor.tabCloseButton": "off",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.tips.enabled": false,
-  "window.menuBarVisibility": "hidden",
-  "window.newWindowDimensions": "maximized",
-  "files.defaultLanguage": "javascript",
-  "files.enableTrash": false,
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "search.location": "panel"
+  "prettier.tslintIntegration": true
 }
