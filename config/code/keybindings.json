@@ -1,81 +1,120 @@
 [
-    {
-        "key": "ctrl+shift+a",
-        "command": "-editor.action.blockComment",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+a",
-        "command": "editor.action.selectAll",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+a",
-        "command": "-editor.action.selectAll",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+shift+a",
-        "command": "editor.action.webvieweditor.selectAll",
-        "when": "webviewEditorFocus"
-    },
-    {
-        "key": "ctrl+a",
-        "command": "-editor.action.webvieweditor.selectAll",
-        "when": "webviewEditorFocus"
-    },
-    {
-        "key": "ctrl+shift+a",
-        "command": "list.selectAll",
-        "when": "listFocus && listSupportsMultiselect && !inputFocus"
-    },
-    {
-        "key": "ctrl+a",
-        "command": "-list.selectAll",
-        "when": "listFocus && listSupportsMultiselect && !inputFocus"
-    },
-    {
-        "key": "ctrl+a",
-        "command": "workbench.action.terminal.moveToLineStart"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-        "when": "inFilesPicker && inQuickOpen"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "-workbench.action.quickOpen"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "workbench.action.terminal.moveToLineEnd"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "cursorLineEnd"
-    },
-    {
-        "key": "ctrl+a",
-        "command": "cursorLineStart"
-    },
-    {
-      "key": "ctrl+k",
-      "command": "deleteAllRight"
-    },
-    {
-      "key": "ctrl+d",
-      "command": "-editor.action.addSelectionToNextFindMatch",
-      "when": "editorFocus"
-    },
-    {
-      "key": "ctrl+d",
-      "command": "deleteRight",
-      "when": "textInputFocus && !editorReadonly"
-    },
-    {
-      "key": "delete",
-      "command": "-deleteRight",
-      "when": "textInputFocus && !editorReadonly"
-    }
-  ]
+  {
+    "key": "ctrl+shift+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "editor.action.selectAll",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-editor.action.selectAll",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "editor.action.webvieweditor.selectAll",
+    "when": "webviewEditorFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-editor.action.webvieweditor.selectAll",
+    "when": "webviewEditorFocus"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "-list.selectAll",
+    "when": "listFocus && listSupportsMultiselect && !inputFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.action.terminal.moveToLineStart"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+    "when": "inFilesPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.terminal.moveToLineEnd"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "cursorLineEnd"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "cursorLineStart"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "deleteAllRight"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "deleteRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "delete",
+    "command": "-deleteRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+\\",
+    "command": "-editor.action.jumpToBracket",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+\\",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+shift+alt+k",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new"
+  }
+]

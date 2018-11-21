@@ -5,7 +5,7 @@ WINDOWS_UNAME=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
 
 ifneq (,$(WINDOWS_UNAME))
 IS_WINDOWS=1
-default: vscode
+default: vscode mintty
 	@echo "sync complete"
 else
 default: configfiles macapps bashrc editors localbin private_settings code_settings i3
@@ -107,3 +107,8 @@ clean:
 
 code_settings:
 	@ln -sf $(DOTFILES_HOME)/config/.editorconfig ~/code/.editorconfig
+
+# WINDOWS THINGS
+
+mintty:
+	@cp $(DOTFILES_HOME)/config/.minttyrc ~/.minttyrc

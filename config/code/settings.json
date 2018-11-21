@@ -31,10 +31,7 @@
     "~/code/",
     "~/dotfiles/"
   ],
-  "gitProjectManager.ignoredFolders": [
-    "offline",
-    "node_modules"
-  ],
+  "gitProjectManager.ignoredFolders": ["offline", "node_modules"],
   "gitProjectManager.maxDepthRecursion": 3,
   "gitProjectManager.checkRemoteOrigin": false,
   "gitProjectManager.storeRepositoriesBetweenSessions": true,
@@ -44,9 +41,7 @@
     "configFile": "/Users/damo/code/dotfiles/config/.eslintrc.json"
   },
   "eslint.run": "onSave",
-  "eslint.validate": [
-    "javascript"
-  ],
+  "eslint.validate": ["javascript"],
   "workbench.welcome.enabled": false,
   "workbench.colorTheme": "Firewatch Theme",
   "workbench.iconTheme": "vs-seti",
@@ -64,5 +59,23 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
   },
-  "prettier.tslintIntegration": true
+  "prettier.tslintIntegration": true,
+
+  "terminal.integrated.shell.windows": "c:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 11,
+  "search.quickOpen.includeHistory": false,
+  "editor.dragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.tips.enabled": false,
+  "window.menuBarVisibility": "hidden",
+  "window.newWindowDimensions": "maximized",
+  "files.defaultLanguage": "javascript",
+  "files.enableTrash": false,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "search.location": "panel"
 }
