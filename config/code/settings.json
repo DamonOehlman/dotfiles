@@ -26,11 +26,7 @@
   "docthis.includeDescriptionTag": false,
   "window.zoomLevel": 0,
 
-  "gitProjectManager.baseProjectsFolders": [
-    "c:\\msys64\\home\\damon",
-    "~/code/",
-    "~/dotfiles/"
-  ],
+  "gitProjectManager.baseProjectsFolders": ["~/code/", "~/dotfiles/"],
   "gitProjectManager.ignoredFolders": ["offline", "node_modules"],
   "gitProjectManager.maxDepthRecursion": 3,
   "gitProjectManager.checkRemoteOrigin": false,
