@@ -42,6 +42,7 @@ ifeq ($(UNAME),Darwin)
 	@ln -sf $(DOTFILES_HOME)/config/code/* ~/Library/Application\ Support/Code/User
 endif
 ifeq ($(UNAME),Linux)
+	@mkdir -p ~/.config/Code\ -\ OSS/User
 	@ln -sf $(DOTFILES_HOME)/config/code/* ~/.config/Code\ -\ OSS/User
 endif
 ifeq ($(IS_WINDOWS),1)
