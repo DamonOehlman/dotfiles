@@ -1,10 +1,18 @@
 DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
-UNAME := $(shell uname -s)
-WINDOWS_UNAME=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
+WINDOWS_USERNAME=Damon
+UNAME := $(shell uname -a)
+UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f3 -d'-')
+UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
 
-ifneq (,$(WINDOWS_UNAME))
-IS_WINDOWS=1
+ifneq (,$(UNAME_WSL_KERNEL_MICROSOFT))
+	IS_WINDOWS=1
+	APPDATA=/mnt/c/Users/$(WINDOWS_USERNAME)/AppData/Roaming
+else ifneq (,$(UNAME_MSYS))
+	IS_WINDOWS=1
+endif
+
+ifeq ($(IS_WINDOWS),1)
 default: vscode mintty
 	@echo "sync complete"
 else
@@ -36,18 +44,19 @@ synapse:
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse
 
 vscode:
-ifeq ($(UNAME),Darwin)
+	@echo "$(UNAME)"
+	@echo "$(IS_WINDOWS)"
+ifeq ($(IS_WINDOWS),1)
+	@echo "copying code configuration files to $(APPDATA)"
+	@mkdir -p "$(APPDATA)/Code/User"
+	@cp config/code/* "$(APPDATA)/Code/User"
+else ifeq ($(UNAME),Darwin)
 	@rm -rf ~/Library/Application\ Support/Code/User
 	@mkdir -p ~/Library/Application\ Support/Code/User
 	@ln -sf $(DOTFILES_HOME)/config/code/* ~/Library/Application\ Support/Code/User
-endif
-ifeq ($(UNAME),Linux)
+else ifeq ($(UNAME),Linux)
 	@mkdir -p ~/.config/Code\ -\ OSS/User
 	@ln -sf $(DOTFILES_HOME)/config/code/* ~/.config/Code\ -\ OSS/User
-endif
-ifeq ($(IS_WINDOWS),1)
-	@mkdir -p "$(APPDATA)\Code\User"
-	@cp config/code/* "$(APPDATA)\Code\User"
 endif
 
 localbin:
