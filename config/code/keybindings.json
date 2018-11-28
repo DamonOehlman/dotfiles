@@ -1,11 +1,6 @@
 [
   // unsets
   {
-    "key": "delete",
-    "command": "-deleteRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+a",
     "command": "-editor.action.selectAll",
     "when": "textInputFocus"
@@ -60,7 +55,6 @@
     "command": "-editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
   },
-
   // editor shortcuts
   {
     "key": "ctrl+shift+a",

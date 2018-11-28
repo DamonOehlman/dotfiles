@@ -5,4 +5,5 @@ private/
 config/taffybar/taffybar
 node_modules/
 npm-debug.log
+yarn-error.log
 *~

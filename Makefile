@@ -2,8 +2,10 @@ DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
 WINDOWS_USERNAME=Damon
 UNAME := $(shell uname -a)
+YARN_BIN := $(shell yarn bin)
 UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f3 -d'-')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
+TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_nix.json
 
 ifneq (,$(UNAME_WSL_KERNEL_MICROSOFT))
 	IS_WINDOWS=1
@@ -13,6 +15,15 @@ else ifneq (,$(UNAME_MSYS))
 endif
 
 ifeq ($(IS_WINDOWS),1)
+	PATH_VSCODE=$(APPDATA)/Code/User
+else ifeq ($(UNAME),Darwin)
+	PATH_VSCODE=~/Library/Application\ Support/Code/User
+else ifeq ($(UNAME),Linux)
+	PATH_VSCODE=~/.config/Code\ -\ OSS/User
+endif
+
+ifeq ($(IS_WINDOWS),1)
+TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_win.json
 default: vscode mintty
 	@echo "sync complete"
 else
@@ -43,21 +54,11 @@ synapse:
 	@rm -rf ~/.config/synapse
 	@ln -s $(DOTFILES_HOME)/config/synapse ~/.config/synapse
 
-vscode:
-	@echo "$(UNAME)"
-	@echo "$(IS_WINDOWS)"
-ifeq ($(IS_WINDOWS),1)
-	@echo "copying code configuration files to $(APPDATA)"
-	@mkdir -p "$(APPDATA)/Code/User"
-	@cp config/code/* "$(APPDATA)/Code/User"
-else ifeq ($(UNAME),Darwin)
-	@rm -rf ~/Library/Application\ Support/Code/User
-	@mkdir -p ~/Library/Application\ Support/Code/User
-	@ln -sf $(DOTFILES_HOME)/config/code/* ~/Library/Application\ Support/Code/User
-else ifeq ($(UNAME),Linux)
-	@mkdir -p ~/.config/Code\ -\ OSS/User
-	@ln -sf $(DOTFILES_HOME)/config/code/* ~/.config/Code\ -\ OSS/User
-endif
+vscode: node_modules
+	@echo "updating vscode settings in: $(PATH_VSCODE)"
+	@mkdir -p "$(PATH_VSCODE)"
+	@$(YARN_BIN)/mustache $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/settings.json > $(PATH_VSCODE)/settings.json
+	@$(YARN_BIN)/mustache $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/keybindings.json > $(PATH_VSCODE)/keybindings.json
 
 localbin:
 	@mkdir -p ~/bin
@@ -117,6 +118,9 @@ clean:
 
 code_settings:
 	@ln -sf $(DOTFILES_HOME)/config/.editorconfig ~/code/.editorconfig
+
+node_modules:
+	yarn install
 
 # WINDOWS THINGS
 

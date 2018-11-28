@@ -2,13 +2,16 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontSize": 11,
   "editor.fontLigatures": true,
-  "editor.lineHeight": 20,
+  "editor.lineHeight": 18,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.renderWhitespace": "boundary",
   "editor.dragAndDrop": false,
   "editor.formatOnSave": true,
-  "editor.rulers": [80, 120],
+  "editor.rulers": [
+    80,
+    120
+  ],
   "files.defaultLanguage": "javascript",
   "files.enableTrash": false,
   "files.insertFinalNewline": true,
@@ -22,48 +25,50 @@
     "**/.DS_Store": true,
     "**/target": true
   },
-
   "search.quickOpen.includeHistory": false,
   "search.location": "panel",
-
   "terminal.integrated.shell.windows": "c:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 11,
   "workbench.editor.tabCloseButton": "off",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
+  "workbench.welcome.enabled": false,
+  "workbench.colorTheme": "Firewatch Theme",
+  "workbench.iconTheme": "vs-seti",
   "window.menuBarVisibility": "hidden",
   "window.newWindowDimensions": "maximized",
-
+  "git.path": "{{& git.path}}",
   // extensions
   "extensions.autoUpdate": true,
-
   // typescript
-  "typescript.tsdk": "/Users/damo/.nvm/versions/node/v7.9.0/lib/node_modules/typescript/lib/",
+  "typescript.tsdk": "~/dotfiles/node_modules/typescript/",
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
-
-  "docthis.includeMemberOfOnClassMembers": false,
-  "docthis.includeMemberOfOnInterfaceMembers": false,
-  "docthis.includeDescriptionTag": false,
-
-  "gitProjectManager.baseProjectsFolders": ["~/code/", "~/dotfiles/"],
-  "gitProjectManager.ignoredFolders": ["offline", "node_modules"],
-  "gitProjectManager.maxDepthRecursion": 3,
-  "gitProjectManager.checkRemoteOrigin": false,
-  "gitProjectManager.storeRepositoriesBetweenSessions": true,
-
-  "eslint.nodePath": "/Users/damo/.nvm/versions/node/v7.5.0/lib/node_modules",
+  // eslint
+  "eslint.nodePath": "~/dotfiles/node_modules/",
   "eslint.options": {
     "configFile": "/Users/damo/code/dotfiles/config/.eslintrc.json"
   },
   "eslint.run": "onSave",
-  "eslint.validate": ["javascript"],
-
-  "workbench.welcome.enabled": false,
-  "workbench.colorTheme": "Firewatch Theme",
-  "workbench.iconTheme": "vs-seti",
-
+  "eslint.validate": [
+    "javascript"
+  ],
+  // prettier
+  "prettier.tslintIntegration": true,
+  // git project manager
+  "gitProjectManager.baseProjectsFolders": [
+    "~/code/",
+    "~/dotfiles/"
+  ],
+  "gitProjectManager.ignoredFolders": [
+    "offline",
+    "node_modules"
+  ],
+  "gitProjectManager.maxDepthRecursion": 3,
+  "gitProjectManager.checkRemoteOrigin": false,
+  "gitProjectManager.storeRepositoriesBetweenSessions": true,
+  // elixir
   "[elixir]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -74,6 +79,5 @@
     "editor.trimAutoWhitespace": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
-  },
-  "prettier.tslintIntegration": true
+  }
 }
