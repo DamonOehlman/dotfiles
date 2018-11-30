@@ -27,7 +27,7 @@
   },
   "search.quickOpen.includeHistory": false,
   "search.location": "panel",
-  "terminal.integrated.shell.windows": "c:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.shell.windows": "{{& git.path }}/bin/bash.exe",
   "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 11,
   "workbench.editor.tabCloseButton": "off",
@@ -38,18 +38,18 @@
   "workbench.iconTheme": "vs-seti",
   "window.menuBarVisibility": "hidden",
   "window.newWindowDimensions": "maximized",
-  "git.path": "{{& git.path}}",
+  "git.path": "{{& git.path}}/bin/git.exe",
   // extensions
   "extensions.autoUpdate": true,
   // typescript
-  "typescript.tsdk": "~/dotfiles/node_modules/typescript/",
+  "typescript.tsdk": "{{& dotfiles.home }}/node_modules/typescript/lib",
   "typescript.format.enable": false,
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
   // eslint
-  "eslint.nodePath": "~/dotfiles/node_modules/",
+  "eslint.nodePath": "{{& dotfiles.home }}/node_modules/",
   "eslint.options": {
-    "configFile": "/Users/damo/code/dotfiles/config/.eslintrc.json"
+    "configFile": "{{& dotfiles.home }}/config/.eslintrc.json"
   },
   "eslint.run": "onSave",
   "eslint.validate": [

@@ -1,5 +1,8 @@
 {
   "git": {
     "path": "/usr/bin/git"
+  },
+  "dotfiles": {
+    "home": "/home/damon/dotfiles"
   }
 }
