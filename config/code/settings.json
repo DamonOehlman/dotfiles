@@ -43,6 +43,7 @@
   "extensions.autoUpdate": true,
   // typescript
   "typescript.tsdk": "~/dotfiles/node_modules/typescript/",
+  "typescript.format.enable": false,
   "typescript.validate.enable": false,
   "javascript.validate.enable": false,
   // eslint
@@ -56,6 +57,7 @@
   ],
   // prettier
   "prettier.tslintIntegration": true,
+  "prettier.requireConfig": true,
   // git project manager
   "gitProjectManager.baseProjectsFolders": [
     "~/code/",
