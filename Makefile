@@ -7,7 +7,7 @@ UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f3 -d'-')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
 TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_nix.json
 
-ifneq (,$(UNAME_WSL_KERNEL_MICROSOFT))
+ifeq (Microsoft,$(UNAME_WSL_KERNEL_MICROSOFT))
 	IS_WINDOWS=1
 	APPDATA=/mnt/c/Users/$(WINDOWS_USERNAME)/AppData/Roaming
 else ifneq (,$(UNAME_MSYS))
@@ -57,8 +57,8 @@ synapse:
 vscode: node_modules
 	@echo "updating vscode settings in: $(PATH_VSCODE)"
 	@mkdir -p "$(PATH_VSCODE)"
-	@$(YARN_BIN)/mustache $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/settings.json > $(PATH_VSCODE)/settings.json
-	@$(YARN_BIN)/mustache $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/keybindings.json > $(PATH_VSCODE)/keybindings.json
+	@"$(YARN_BIN)/mustache" $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/settings.json > "$(PATH_VSCODE)/settings.json"
+	@"$(YARN_BIN)/mustache" $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/keybindings.json > "$(PATH_VSCODE)/keybindings.json"
 
 localbin:
 	@mkdir -p ~/bin
