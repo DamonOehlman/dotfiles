@@ -110,9 +110,18 @@
     "command": "workbench.action.terminal.new"
   },
   {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
     "key": "ctrl+k",
     "command": "workbench.action.terminal.clear",
     "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.terminal.toggleTerminal"
   },
   {
     "key": "ctrl+alt+k",
