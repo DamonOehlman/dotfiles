@@ -25,7 +25,7 @@ function _git_prompt() {
       branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
       echo HEAD`)"
     fi
-    echo -ne ' '"${BRANCH_EMOJI}"' '"\[$ansi"'\]'"$branch""\[$NC"'\]'
+    echo -ne ' '"${BRANCH_EMOJI}"'  '"\[$ansi"'\]'"$branch""\[$NC"'\]'
   fi
 }
 
@@ -49,7 +49,11 @@ function term_title() {
 }
 
 function prompt_head() {
-  echo -ne "\n\w\[$NC\]"
+  local currentdir
+  # remove the leading /mnt/<drive>/Users/<user> if running under WSL
+  currentdir=$(pwd | sed -E "s:/mnt/[a-z]/Users/\w+/:~/:")
+
+  echo -ne "\n${currentdir}\[$NC\]"
 }
 
 function prompt_tail() {
