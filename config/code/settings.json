@@ -48,6 +48,13 @@
   "javascript.validate.enable": false,
   "tslint.run": "onSave",
   "tslint.packageManager": "yarn",
+  "tslint.autoFixOnSave": [
+    "ordered-imports",
+    "object-literal-shorthand",
+    "trailing-comma",
+    "arrow-parens",
+    "quotemark",
+  ],
   // eslint
   "eslint.nodePath": "{{& dotfiles.home }}/node_modules/",
   "eslint.options": {
