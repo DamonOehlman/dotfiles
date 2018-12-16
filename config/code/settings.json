@@ -46,6 +46,8 @@
   "typescript.format.enable": false,
   "typescript.validate.enable": true,
   "javascript.validate.enable": false,
+  "tslint.run": "onSave",
+  "tslint.packageManager": "yarn",
   // eslint
   "eslint.nodePath": "{{& dotfiles.home }}/node_modules/",
   "eslint.options": {
