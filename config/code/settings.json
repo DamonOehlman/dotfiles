@@ -12,7 +12,7 @@
     80,
     120
   ],
-  "files.defaultLanguage": "javascript",
+  "files.defaultLanguage": "text",
   "files.enableTrash": false,
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -34,7 +34,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
   "workbench.welcome.enabled": false,
-  "workbench.colorTheme": "Firewatch Theme",
   "workbench.iconTheme": "vs-seti",
   "window.menuBarVisibility": "hidden",
   "window.newWindowDimensions": "maximized",
@@ -56,14 +55,7 @@
     "quotemark",
   ],
   // eslint
-  "eslint.nodePath": "{{& dotfiles.home }}/node_modules/",
-  "eslint.options": {
-    "configFile": "{{& dotfiles.home }}/config/.eslintrc.json"
-  },
   "eslint.run": "onSave",
-  "eslint.validate": [
-    "javascript"
-  ],
   // prettier
   "prettier.tslintIntegration": true,
   "prettier.requireConfig": true,
