@@ -33,7 +33,6 @@
   "workbench.editor.tabCloseButton": "off",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
-  "workbench.welcome.enabled": false,
   "workbench.iconTheme": "vs-seti",
   "window.menuBarVisibility": "hidden",
   "window.newWindowDimensions": "maximized",
@@ -82,5 +81,7 @@
     "editor.trimAutoWhitespace": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
-  }
+  },
+  // flow
+  "flowide.pathToFlow": "{{& path.tools }}/flow.exe"
 }

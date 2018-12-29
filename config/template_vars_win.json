@@ -4,5 +4,8 @@
   },
   "dotfiles": {
     "home": "C:/Users/damon/dotfiles"
+  },
+  "path": {
+    "tools": "C:/tools"
   }
 }

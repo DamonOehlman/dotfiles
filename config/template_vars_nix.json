@@ -3,6 +3,9 @@
     "path": "/usr/bin/git"
   },
   "dotfiles": {
-    "home": "/home/damon/dotfiles"
+    "home": "~/dotfiles"
+  },
+  "path": {
+    "tools": "~/bin"
   }
 }
