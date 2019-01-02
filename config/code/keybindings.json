@@ -104,6 +104,14 @@
     "key": "ctrl+alt+left",
     "command": "workbench.action.previousEditor"
   },
+  {
+    "key": "ctrl+alt+backspace",
+    "command": "workbench.action.navigateToLastEditLocation"
+  },
+  {
+    "key": "ctrl+k ctrl+q",
+    "command": "-workbench.action.navigateToLastEditLocation"
+  },
   // integrated terminal settings
   {
     "key": "ctrl+shift+\\",
