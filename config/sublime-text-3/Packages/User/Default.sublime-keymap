@@ -1,0 +1,13 @@
+[
+    { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+shift+a"], "command": "select_all" },
+    { "keys": ["ctrl+d"], "command": "right_delete" },
+    { "keys": ["ctrl+alt+right"], "command": "next_view" },
+    { "keys": ["ctrl+alt+left"], "command": "prev_view" },
+    { "keys": ["ctrl+alt+j"], "command": "terminus_open", "args": {
+    	"config_name": "wsl",
+    	"cwd": "${file_path:${folder}}",
+    } },
+    { "keys": ["ctrl+alt+k"], "command": "toggle_terminus_panel" },
+]

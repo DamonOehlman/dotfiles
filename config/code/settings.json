@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 11,
+  "editor.fontSize": 10,
   "editor.fontLigatures": true,
   "editor.lineHeight": 18,
   "editor.tabSize": 2,
@@ -83,5 +83,9 @@
     "files.insertFinalNewline": true
   },
   // flow
-  "flowide.pathToFlow": "{{& path.tools }}/flow.exe"
+  "flowide.pathToFlow": "{{& path.tools }}/flow.exe",
+  // workbench
+  "workbench.colorCustomization": {
+
+  }
 }

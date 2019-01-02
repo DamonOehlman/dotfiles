@@ -1,0 +1,11 @@
+{
+    "theme": "tomorrow-night-eighties",
+    "shell_configs": [{
+        "name": "WSL",
+        "cmd": "wsl.exe",
+        "env": {},
+        "enable": true,
+        "default": true,
+        "platforms": ["windows"],
+    }]
+}

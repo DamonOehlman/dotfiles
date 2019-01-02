@@ -69,9 +69,13 @@ editors: vscode
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
 
 sublime:
+ifeq ($(IS_WINDOWS),1)
+	cp $(DOTFILES_HOME)/config/sublime-text-3/Packages/User/* $(APPDATA)/Sublime\ Text\ 3/Packages/User/
+else ifeq ($(UNAME),Darwin)
 	@rm -rf ~/.config/sublime-text-3/Packages/User
 	@mkdir -p ~/.config/sublime-text-3/Packages
 	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
+endif
 
 macapps:
 ifeq ($(UNAME),Darwin)
