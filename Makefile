@@ -24,14 +24,14 @@ endif
 
 ifeq ($(IS_WINDOWS),1)
 TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_win.json
-default: vscode mintty
+default: vscode mintty alacritty
 	@echo "sync complete"
 else
-default: configfiles macapps bashrc editors localbin private_settings code_settings i3
+default: configfiles macapps bashrc editors localbin private_settings code_settings i3 alacritty
 	@echo "sync complete"
 endif
 
-windows: bashrc editors localbin code_settings
+windows: bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
 
 i3:
@@ -126,7 +126,16 @@ code_settings:
 node_modules:
 	yarn install
 
+alacritty:
+ifeq ($(IS_WINDOWS),1)
+	@mkdir -p $(APPDATA)/alacritty
+	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.windows.yml $(APPDATA)/alacritty/alacritty.yml
+else
+	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
+endif
+
 # WINDOWS THINGS
 
 mintty:
 	@cp $(DOTFILES_HOME)/config/.minttyrc ~/.minttyrc
+
