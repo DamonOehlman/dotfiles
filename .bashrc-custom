@@ -4,14 +4,11 @@ UNAME=$(uname)
 
 # DOTFILES HOME
 DOTFILES_HOME=$HOME/dotfiles
-DOTFILES_PRIVATE=$HOME/dotfiles.private
-DOTFILES_LOCAL="${DOTFILES_PRIVATE}"/.bashrc_local
-SECRETS_FILE="${DOTFILES_PRIVATE}"/.bashrc_secrets
 NIX_SETUP=$HOME/.nix-profile/etc/profile.d/nix.sh
 
 ## TOOL PATHS
 PATH="$PATH:~/packer"; # packer
-PATH="~/bin:${DOTFILES_PRIVATE}/bin:$PATH";
+PATH="~/bin:$PATH";
 AWS_HOME="/opt/aws";
 
 ## LANG VERSIONS
@@ -79,12 +76,6 @@ echo -ne "\n"
 
 # tune displays, etc
 . $DOTFILES_HOME/scripts/displays.sh
-
-# bring in local configuration settings
-[[ -e "${DOTFILES_LOCAL}" ]] && source "${DOTFILES_LOCAL}"
-
-# include the bash secrets file
-[[ -e "${SECRETS_FILE}" ]] && source "${SECRETS_FILE}"
 
 # include the nix configuratin
 [[ -e "${NIX_SETUP}" ]] && source "${NIX_SETUP}"
