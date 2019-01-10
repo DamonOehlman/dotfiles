@@ -40,8 +40,8 @@ ssh-add 2> /dev/null
 # synaptic client changes
 hash synclient 2> /dev/null && synclient > /dev/null 2>&1 && synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
 
-# general prompt configuration
 . $DOTFILES_HOME/scripts/_prompt.sh
+. $DOTFILES_HOME/scripts/visual-tweaks/ls.sh
 
 # init aliases
 . $DOTFILES_HOME/scripts/_aliases.sh

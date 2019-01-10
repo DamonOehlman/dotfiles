@@ -27,7 +27,7 @@ TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_win.json
 default: vscode mintty alacritty
 	@echo "sync complete"
 else
-default: configfiles macapps bashrc editors localbin private_settings code_settings i3 alacritty
+default: configfiles macapps bashrc editors localbin code_settings i3 alacritty
 	@echo "sync complete"
 endif
 
@@ -46,9 +46,6 @@ configfiles:
 	@mkdir -p ~/.config
 	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
 	@ln -sf $(DOTFILES_HOME)/config/termite ~/.config/
-
-tools: dotfiles.private
-	@cat $(DOTFILES_HOME)/config/.mertrc $(DOTFILES_HOME)/private/.mertrc > ~/.mertrc
 
 synapse:
 	@rm -rf ~/.config/synapse
@@ -100,26 +97,6 @@ endif
 ~/.local/share/fonts/FiraCode-Regular.ttf:
 	@./scripts/install-firacode.sh
 
-dotfiles.private:
-	@echo "cloning private configuration repo"
-	@rm -rf $(DOTFILES_HOME)/private
-	@git clone -q git@github.com:$(GITHUB_USERNAME)/dotfiles.private.git private
-
-pull_private:
-	@echo "fetching latest private configuration"
-	@cd private/
-	@git pull -q origin master
-	@cd ..
-
-private_settings: dotfiles.private pull_private
-ifeq ($(UNAME),Darwin)
-	@echo "running private configuration tasks"
-	@private/mac_defaults.sh
-endif
-
-clean:
-	@rm -rf $(DOTFILES_HOME)/private
-
 code_settings:
 	@ln -sf $(DOTFILES_HOME)/config/.editorconfig ~/code/.editorconfig
 
@@ -133,6 +110,9 @@ ifeq ($(IS_WINDOWS),1)
 else
 	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
 endif
+
+tmux:
+	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
 
 # WINDOWS THINGS
 

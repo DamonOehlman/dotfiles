@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-COMMAND_FAILED_EMOJI="🙈"
-BRANCH_EMOJI="🌱"
+COMMAND_FAILED_EMOJI=""
+BRANCH_EMOJI=""
 
 # Taken from http://www.opinionatedprogrammer.com/2011/01/colorful-bash-prompt-reflecting-git-status/
 function _git_prompt() {
