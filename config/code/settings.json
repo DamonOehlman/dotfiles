@@ -1,6 +1,7 @@
 {
   "editor.fontFamily": "Fira Code",
   "editor.fontSize": 10,
+  "editor.letterSpacing": 0.2,
   "editor.fontLigatures": true,
   "editor.lineHeight": 18,
   "editor.tabSize": 2,
@@ -17,9 +18,6 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.eol": "\n",
-  "files.associations": {
-    ".bithoundrc": "json"
-  },
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
