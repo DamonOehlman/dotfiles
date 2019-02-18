@@ -42,15 +42,6 @@
   "typescript.format.enable": false,
   "typescript.validate.enable": true,
   "javascript.validate.enable": false,
-  "tslint.run": "onSave",
-  "tslint.packageManager": "yarn",
-  "tslint.autoFixOnSave": [
-    "ordered-imports",
-    "object-literal-shorthand",
-    "trailing-comma",
-    "arrow-parens",
-    "quotemark",
-  ],
   // eslint
   "eslint.run": "onSave",
   // prettier
