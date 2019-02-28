@@ -248,8 +248,8 @@ live_config_reload: true
 # You can set `shell.program` to the path of your favorite shell, e.g. `cmd`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 shell:
-  program: wsl.exe
-  args: ["tmux"]
+  program: ubuntu.exe
+  args: ["run", "tmux"]
 
 # Windows 10 ConPTY backend
 #
