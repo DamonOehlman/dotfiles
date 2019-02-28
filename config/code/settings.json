@@ -8,7 +8,7 @@
   "editor.detectIndentation": false,
   "editor.renderWhitespace": "boundary",
   "editor.dragAndDrop": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.rulers": [
     80,
     120
@@ -25,7 +25,7 @@
   },
   "search.quickOpen.includeHistory": false,
   "search.location": "panel",
-  "terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\bash.exe",
+  "terminal.integrated.shell.windows": "{{& path.home }}/AppData/Local/Microsoft/WindowsApps/ubuntu.EXE",
   "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 11,
   "workbench.editor.tabCloseButton": "off",

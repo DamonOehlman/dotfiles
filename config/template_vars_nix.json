@@ -6,6 +6,7 @@
     "home": "~/dotfiles"
   },
   "path": {
+    "home": "~",
     "tools": "~/bin"
   }
 }
