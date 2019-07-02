@@ -18,7 +18,7 @@ ifeq ($(IS_WINDOWS),1)
 	PATH_VSCODE=$(APPDATA)/Code/User
 else ifeq ($(UNAME),Darwin)
 	PATH_VSCODE=~/Library/Application\ Support/Code/User
-else ifeq ($(UNAME),Linux)
+else ifneq (,$(findstring Linux,$(UNAME)))
 	PATH_VSCODE=~/.config/Code\ -\ OSS/User
 endif
 
