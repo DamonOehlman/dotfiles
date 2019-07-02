@@ -1,0 +1,12 @@
+super + @space
+  dmenu_run
+
+super + Return
+  alacritty
+
+super + {Left,Right,Up,Down}
+  bspc node -f {west,east,north,south}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'

@@ -111,6 +111,10 @@ else
 	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
 endif
 
+bspwm:
+	@ln -sf $(DOTFILES_HOME)/config/bspwm ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/sxhkd ~/.config/
+
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
 
