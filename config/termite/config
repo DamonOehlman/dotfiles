@@ -1,5 +1,5 @@
 [options]
-font = Bitstream Vera Sans Mono 11
+font = Fira Code 10
 #allow_bold = true
 #audible_bell = false
 #clickable_url = true
@@ -42,15 +42,7 @@ scrollback_lines = 10000
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-
-#foreground = #dcdccc
-#foreground_bold = #ffffff
-#background = #3f3f3f
-
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+background = rgba(0, 0, 0, 0.9)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f

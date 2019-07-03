@@ -111,6 +111,9 @@ else
 	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
 endif
 
+gtk3:
+	@ln -sf $(DOTFILES_HOME)/config/gtk-3.0 ~/.config/
+
 bspwm:
 	@ln -sf $(DOTFILES_HOME)/config/bspwm ~/.config/
 	@ln -sf $(DOTFILES_HOME)/config/sxhkd ~/.config/

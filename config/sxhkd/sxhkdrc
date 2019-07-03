@@ -2,7 +2,7 @@ super + @space
   dmenu_run
 
 super + Return
-  alacritty
+  termite
 
 ctrl + shift + q
   bspc node -c

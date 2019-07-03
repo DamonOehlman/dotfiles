@@ -72,10 +72,10 @@ echo -ne "\n"
 # pushd $DOTFILES_HOME > /dev/null; npm install; popd > /dev/null;
 
 # tune editors
-. $DOTFILES_HOME/scripts/editors/intellij.sh
+# . $DOTFILES_HOME/scripts/editors/intellij.sh
 
 # tune displays, etc
-. $DOTFILES_HOME/scripts/displays.sh
+# . $DOTFILES_HOME/scripts/displays.sh
 
 # include the nix configuratin
 [[ -e "${NIX_SETUP}" ]] && source "${NIX_SETUP}"
