@@ -4,6 +4,12 @@ super + @space
 super + Return
   alacritty
 
+ctrl + shift + q
+  bspc node -c
+
+super + shift + q
+  bspc node -c
+
 super + {Left,Right,Up,Down}
   bspc node -f {west,east,north,south}
 
