@@ -19,7 +19,7 @@ ifeq ($(IS_WINDOWS),1)
 else ifeq ($(UNAME),Darwin)
 	PATH_VSCODE=~/Library/Application\ Support/Code/User
 else ifneq (,$(findstring Linux,$(UNAME)))
-	PATH_VSCODE=~/.config/Code\ -\ OSS/User
+	PATH_VSCODE=$(HOME)/.config/Code - OSS/User
 endif
 
 ifeq ($(IS_WINDOWS),1)
@@ -61,9 +61,13 @@ localbin:
 	@mkdir -p ~/bin
 	@ln -sf $(DOTFILES_HOME)/bin/* ~/bin/
 
-editors: vscode
-	@ln -sf $(DOTFILES_HOME)/.vimrc ~/.vimrc
+editors: vscode vim
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
+
+vim:
+	@ln -sf $(DOTFILES_HOME)/config/vim/.vimrc ~/.vimrc
+	@mkdir -p ~/.vim/
+	@ln -sf $(DOTFILES_HOME)/config/vim/ftplugin ~/.vim/
 
 sublime:
 ifeq ($(IS_WINDOWS),1)
@@ -117,6 +121,7 @@ gtk3:
 bspwm:
 	@ln -sf $(DOTFILES_HOME)/config/bspwm ~/.config/
 	@ln -sf $(DOTFILES_HOME)/config/sxhkd ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/yabar ~/.config/
 
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
