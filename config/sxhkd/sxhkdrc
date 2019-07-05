@@ -1,5 +1,5 @@
 super + @space
-  dmenu_run
+  rofi -show combi
 
 super + Return
   termite

@@ -122,6 +122,7 @@ bspwm:
 	@ln -sf $(DOTFILES_HOME)/config/bspwm ~/.config/
 	@ln -sf $(DOTFILES_HOME)/config/sxhkd ~/.config/
 	@ln -sf $(DOTFILES_HOME)/config/yabar ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/rofi ~/.config/
 
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
