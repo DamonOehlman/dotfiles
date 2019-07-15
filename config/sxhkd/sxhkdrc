@@ -1,18 +1,29 @@
+super + shift + Return
+  bspc desktop -l monocle
+
+super + shift + BackSpace
+  bspc desktop -l tiled
+
+{super,ctrl + shift} + q
+  bspc node -c
+
+super + {Left,Right,Up,Down}
+  bspc node -f {west,east,north,south}
+
+super + {bracketleft,bracketright}
+  bspc node -f {prev,next}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# application open hotkeys
+
 super + @space
   rofi -show combi
 
 super + Return
   termite
 
-ctrl + shift + q
-  bspc node -c
-
-super + shift + q
-  bspc node -c
-
-super + {Left,Right,Up,Down}
-  bspc node -f {west,east,north,south}
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-  bspc {desktop -f,node -d} '^{1-9,10}'
+super + o ; {e,w}
+  {code,firefox}
