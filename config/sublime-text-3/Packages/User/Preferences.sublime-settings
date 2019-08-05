@@ -9,5 +9,8 @@
   "highlight_line": true,
   "line_padding_top": 3,
   "line_padding_bottom": 3,
-  "open_files_in_new_window": false
+  "open_files_in_new_window": false,
+  "use_tab_stops": false,
+  "tab_size": 2,
+  "ensure_newline_at_eof_on_save": true,
 }
