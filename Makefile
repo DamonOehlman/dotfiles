@@ -3,11 +3,11 @@ GITHUB_USERNAME=DamonOehlman
 WINDOWS_USERNAME=Damon
 UNAME := $(shell uname -a)
 YARN_BIN := $(shell yarn bin)
-UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f3 -d'-')
+UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f2 -d'-')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
 TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_nix.json
 
-ifeq (Microsoft,$(UNAME_WSL_KERNEL_MICROSOFT))
+ifeq (microsoft,$(UNAME_WSL_KERNEL_MICROSOFT))
 	IS_WINDOWS=1
 	APPDATA=/mnt/c/Users/$(WINDOWS_USERNAME)/AppData/Roaming
 else ifneq (,$(UNAME_MSYS))
