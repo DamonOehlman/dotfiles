@@ -1,7 +1,7 @@
 DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
 WINDOWS_USERNAME=Damon
-UNAME := $(shell uname -a)
+UNAME := $(shell uname -a | cut -f1 -d' ')
 YARN_BIN := $(shell yarn bin)
 UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f2 -d'-')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
@@ -42,8 +42,10 @@ endif
 bashrc:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
 
-configfiles:
-	@mkdir -p ~/.config
+configpath:
+	@mkdir -p $(HOME)/.config
+
+configfiles: configpath
 	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
 	@ln -sf $(DOTFILES_HOME)/config/termite ~/.config/
 
@@ -84,6 +86,7 @@ endif
 
 fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf ~/.local/share/fonts/FiraCode-Regular.ttf
 ifeq ($(UNAME),Darwin)
+	@echo "installing macos fonts"
 	@mkdir -p ~/Library/Fonts
 	@cp -f ~/.local/share/fonts/* ~/Library/Fonts/
 endif
@@ -103,12 +106,12 @@ code_settings:
 node_modules:
 	yarn install
 
-alacritty:
+alacritty: node_modules configpath
 ifeq ($(IS_WINDOWS),1)
 	@mkdir -p $(APPDATA)/alacritty
-	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.windows.yml $(APPDATA)/alacritty/alacritty.yml
+	@"$(YARN_BIN)/mustache" $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/alacritty/alacritty.yml > $(APPDATA)/alacritty/alacritty.yml
 else
-	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
+	@"$(YARN_BIN)/mustache" $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/alacritty/alacritty.yml > $(HOME)/.config/alacritty.yml
 endif
 
 tmux:

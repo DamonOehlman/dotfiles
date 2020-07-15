@@ -8,5 +8,9 @@
   "path": {
     "home": "~",
     "tools": "~/bin"
+  },
+  "alacritty": {
+    "start": "/bin/bash",
+    "args": "[--login]"
   }
 }

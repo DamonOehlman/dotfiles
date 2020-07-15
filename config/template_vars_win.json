@@ -8,5 +8,9 @@
   "path": {
     "home": "C:/Users/damon",
     "tools": "C:/tools"
+  },
+  "alacritty": {
+    "start": "wsl.exe",
+    "args": "[]"
   }
 }
