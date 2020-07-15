@@ -18,8 +18,8 @@ ifeq ($(IS_WINDOWS),1)
 	PATH_VSCODE=$(APPDATA)/Code/User
 else ifeq ($(UNAME),Darwin)
 	PATH_VSCODE=~/Library/Application\ Support/Code/User
-else ifeq ($(UNAME),Linux)
-	PATH_VSCODE=~/.config/Code\ -\ OSS/User
+else ifneq (,$(findstring Linux,$(UNAME)))
+	PATH_VSCODE=$(HOME)/.config/Code - OSS/User
 endif
 
 ifeq ($(IS_WINDOWS),1)
@@ -61,14 +61,18 @@ localbin:
 	@mkdir -p ~/bin
 	@ln -sf $(DOTFILES_HOME)/bin/* ~/bin/
 
-editors: vscode
-	@ln -sf $(DOTFILES_HOME)/.vimrc ~/.vimrc
+editors: vscode vim
 	@DOTFILES_HOME=$(DOTFILES_HOME) ./scripts/editors/intellij.sh
+
+vim:
+	@ln -sf $(DOTFILES_HOME)/config/vim/.vimrc ~/.vimrc
+	@mkdir -p ~/.vim/
+	@ln -sf $(DOTFILES_HOME)/config/vim/ftplugin ~/.vim/
 
 sublime:
 ifeq ($(IS_WINDOWS),1)
 	@cp $(DOTFILES_HOME)/config/sublime-text-3/Packages/User/* $(APPDATA)/Sublime\ Text\ 3/Packages/User/
-else ifeq ($(UNAME),Darwin)
+else
 	@rm -rf ~/.config/sublime-text-3/Packages/User
 	@mkdir -p ~/.config/sublime-text-3/Packages
 	@ln -s $(DOTFILES_HOME)/config/sublime-text-3/Packages/User ~/.config/sublime-text-3/Packages/User
@@ -110,6 +114,15 @@ ifeq ($(IS_WINDOWS),1)
 else
 	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
 endif
+
+gtk3:
+	@ln -sf $(DOTFILES_HOME)/config/gtk-3.0 ~/.config/
+
+bspwm:
+	@ln -sf $(DOTFILES_HOME)/config/bspwm ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/sxhkd ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/yabar ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/rofi ~/.config/
 
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh

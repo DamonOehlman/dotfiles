@@ -8,7 +8,7 @@ NIX_SETUP=$HOME/.nix-profile/etc/profile.d/nix.sh
 
 ## TOOL PATHS
 PATH="$PATH:~/packer"; # packer
-PATH="~/bin:$PATH";
+PATH="~/bin:~/.local/bin:$PATH";
 AWS_HOME="/opt/aws";
 
 ## LANG VERSIONS
@@ -64,6 +64,7 @@ echo -ne "${YELLOW}langs:\t${NC}"
 . $DOTFILES_HOME/scripts/lang/ocaml.sh
 . $DOTFILES_HOME/scripts/lang/rust.sh
 . $DOTFILES_HOME/scripts/lang/elixir.sh
+. $DOTFILES_HOME/scripts/lang/deno.sh
 # . $DOTFILES_HOME/scripts/altjs.sh
 # . $DOTFILES_HOME/scripts/tools.sh
 echo -ne "\n"
@@ -72,10 +73,10 @@ echo -ne "\n"
 # pushd $DOTFILES_HOME > /dev/null; npm install; popd > /dev/null;
 
 # tune editors
-. $DOTFILES_HOME/scripts/editors/intellij.sh
+# . $DOTFILES_HOME/scripts/editors/intellij.sh
 
 # tune displays, etc
-. $DOTFILES_HOME/scripts/displays.sh
+# . $DOTFILES_HOME/scripts/displays.sh
 
 # include the nix configuratin
 [[ -e "${NIX_SETUP}" ]] && source "${NIX_SETUP}"
