@@ -12,3 +12,5 @@ hash node && tool_available "node" "node --version | cut -c2-"
 
 # make sure we have yarn
 hash yarn 2> /dev/null || npm install -g yarn
+
+export PATH="$PATH:$(yarn global bin)"
