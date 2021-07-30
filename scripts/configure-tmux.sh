@@ -17,7 +17,7 @@ link_tmux_configuration() {
 }
 
 install_or_update_plugins() {
-  "${TPM_PATH}"/scripts/install_plugins.sh
+  "${TPM_PATH}"/bin/install_plugins
 }
 
 main() {
