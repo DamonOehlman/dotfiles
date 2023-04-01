@@ -4,6 +4,12 @@ super + shift + Return
 super + shift + BackSpace
   bspc desktop -l tiled
 
+alt + Tab
+  bspc desktop -f last
+
+super + Tab
+  bspc desktop -f last
+
 {super,ctrl + shift} + q
   bspc node -c
 

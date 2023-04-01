@@ -28,10 +28,8 @@ bspc config gapless_monocle      false
 bspc config paddingless_monocole false
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a jetbrains-studio desktop='^2' state=floating border=off follow=on
-bspc rule -a Firefox desktop='^2'
-bspc rule -a code-oss desktop='^1'
+bspc rule -a firefox desktop='^3'
+bspc rule -a Code desktop='^2'
 bspc rule -a Sublime_text desktop='^1'
 bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
