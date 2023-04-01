@@ -8,7 +8,7 @@ NIX_SETUP=$HOME/.nix-profile/etc/profile.d/nix.sh
 
 ## TOOL PATHS
 PATH="$PATH:~/packer"; # packer
-PATH="~/bin:~/.local/bin:$PATH";
+export PATH="~/bin:~/.local/bin:$PATH";
 AWS_HOME="/opt/aws";
 
 ## LANG VERSIONS

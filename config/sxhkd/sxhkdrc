@@ -4,8 +4,18 @@ super + shift + Return
 super + shift + BackSpace
   bspc desktop -l tiled
 
+alt + Tab
+  bspc desktop -f last
+
+super + Tab
+  bspc desktop -f last
+
 {super,ctrl + shift} + q
   bspc node -c
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
 
 super + {Left,Right,Up,Down}
   bspc node -f {west,east,north,south}
@@ -17,13 +27,45 @@ super + {bracketleft,bracketright}
 super + {_,shift + }{1-9,0}
   bspc {desktop -f,node -d} '^{1-9,10}'
 
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+  bspc node -v {-21 0,0 20,0 -20,20 0}
+
 # application open hotkeys
 
-super + @space
-  rofi -show combi
+super + space
+  rofi -show-icons -show run
 
 super + Return
-  termite
+  alacritty
 
 super + o ; {e,w}
   {code,firefox}
+
+# fn keys, etc
+
+XF86AudioMute
+  amixer -q -D pulse sset Master toggle
+
+# volume control
+XF86Audio{Raise,Lower}Volume
+	amixer -q -D pulse sset Master 5%{+,-}
+
+# brightness control
+XF86MonBrightnessUp
+  brightnessctl -d intel_backlight set +5%
+
+XF86MonBrightnessDown
+  brightnessctl -d intel_backlight set 5%-
