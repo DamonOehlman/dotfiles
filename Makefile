@@ -46,6 +46,7 @@ configfiles:
 	@mkdir -p ~/.config
 	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
 	@ln -sf $(DOTFILES_HOME)/config/termite ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/polybar ~/.config/
 
 synapse:
 	@rm -rf ~/.config/synapse
