@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+DOCKER_IMAGE=ghcr.io/swiftwasm/carton
+GID=$(id -g)
+PROJECT_NAME=$(pwd | rev | cut -f1 -d'/' | rev)
+
+docker run -it \
+    -v $(pwd):"/mnt/$PROJECT_NAME" \
+    --user $UID:$GID \
+    --workdir="/mnt/$PROJECT_NAME" \
+    --volume="/home/$USER:/home/$USER:rw" \
+    --volume="/etc/group:/etc/group:ro" \
+    --volume="/etc/passwd:/etc/passwd:ro" \
+    --volume="/etc/shadow:/etc/shadow:ro" \
+    -p 8080:8080 \
+    "$DOCKER_IMAGE" carton $@
