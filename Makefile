@@ -111,9 +111,9 @@ node_modules:
 alacritty:
 ifeq ($(IS_WINDOWS),1)
 	@mkdir -p $(APPDATA)/alacritty
-	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.windows.yml $(APPDATA)/alacritty/alacritty.yml
+	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.toml $(APPDATA)/alacritty/alacritty.toml
 else
-	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.yml ~/.config/alacritty.yml
+	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.toml ~/.config/alacritty.toml
 endif
 
 gtk3:
