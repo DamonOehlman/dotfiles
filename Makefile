@@ -55,7 +55,7 @@ synapse:
 vscode: node_modules
 	@echo "updating vscode settings in: $(PATH_VSCODE)"
 	@mkdir -p "$(PATH_VSCODE)"
-	@"$(YARN_BIN)/mustache" $(TEMPLATE_VARS) $(DOTFILES_HOME)/config/code/settings.json > "$(PATH_VSCODE)/settings.json"
+	@ln -fs $(DOTFILES_HOME)/config/code/settings.json "$(PATH_VSCODE)"
 	@ln -sf $(DOTFILES_HOME)/config/code/keybindings.json "$(PATH_VSCODE)"
 
 localbin:

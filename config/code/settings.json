@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Source Code Pro, monospace, 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'",
+  "editor.fontFamily": "'Source Code Pro', monospace, 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'",
   "editor.fontSize": 11,
   "editor.letterSpacing": 0.6,
   "editor.fontLigatures": true,
@@ -25,7 +25,6 @@
   },
   "search.quickOpen.includeHistory": false,
   "search.location": "panel",
-  "terminal.integrated.shell.windows": "{{& path.home }}/AppData/Local/Microsoft/WindowsApps/ubuntu.EXE",
   "terminal.integrated.fontFamily": "Source Code Pro",
   "terminal.integrated.fontSize": 11,
   "workbench.editor.tabCloseButton": "off",
@@ -34,11 +33,9 @@
   "workbench.iconTheme": "vs-seti",
   "window.menuBarVisibility": "hidden",
   "window.newWindowDimensions": "maximized",
-  "git.path": "{{& git.path}}/bin/git.exe",
   // extensions
   "extensions.autoUpdate": true,
   // typescript
-  "typescript.tsdk": "{{& dotfiles.home }}/node_modules/typescript/lib",
   "typescript.format.enable": false,
   "typescript.validate.enable": true,
   "javascript.validate.enable": false,
@@ -71,8 +68,6 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true
   },
-  // flow
-  "flowide.pathToFlow": "{{& path.tools }}/flow.exe",
   // workbench
   "workbench.colorCustomization": {}
 }
