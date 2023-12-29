@@ -128,8 +128,11 @@ bspwm:
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
 
-sway:
+sway: waybar
 	@ln -sf $(DOTFILES_HOME)/config/sway ~/.config/
+
+waybar:
+	@ln -sf $(DOTFILES_HOME)/config/waybar ~/.config/
 
 # WINDOWS THINGS
 
