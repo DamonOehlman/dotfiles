@@ -2,6 +2,7 @@
 .idea/
 .DS_Store
 private/
+deps/
 .xmonad/.xmonad
 config/taffybar/taffybar
 node_modules/

@@ -1,0 +1,3 @@
+[time]
+command=date +%T
+interval=5
