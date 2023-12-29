@@ -23,19 +23,19 @@ background = "0x282828"
 foreground = "0xeeeeee"
 
 [font.bold]
-family = "Source Code Code"
+family = "Source Code Pro"
 style = "Bold"
 
 [font.bold_italic]
-family = "Source Code Code"
+family = "Source Code Pro"
 style = "Bold Italic"
 
 [font.italic]
-family = "Source Code Code"
+family = "Source Code Pro"
 style = "Italic"
 
 [font.normal]
-family = "Source Code Code"
+family = "Source Code Pro"
 
 [shell]
 args = ["--login", "-c", "tmux"]
