@@ -128,13 +128,8 @@ bspwm:
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
 
-sway: deps/i3blocks-contrib
+sway:
 	@ln -sf $(DOTFILES_HOME)/config/sway ~/.config/
-	@ln -sf $(DOTFILES_HOME)/config/i3blocks ~/.config/
-
-deps/i3blocks-contrib:
-	@mkdir -p $(DOTFILES_HOME)/deps
-	@git clone https://github.com/vivien/i3blocks-contrib.git $(DOTFILES_HOME)/deps/i3blocks-contrib
 
 # WINDOWS THINGS
 
