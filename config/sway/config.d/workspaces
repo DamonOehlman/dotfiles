@@ -31,4 +31,5 @@ bindsym $mod+Shift+8 move container to workspace $ws8, workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9, workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0, workspace $ws0
 
-assign [class="^code-oss$"] $ws4
+assign [class="^Firefox$"] $ws3
+assign [class="^Visual Studio Code$"] $ws4
