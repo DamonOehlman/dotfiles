@@ -1,7 +1,7 @@
 {
-  "editor.fontFamily": "'Source Code Pro', monospace, 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'",
+  "editor.fontFamily": "'DejaVuSansM Nerd Font', 'Source Code Pro', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'",
   "editor.fontSize": 11,
-  "editor.letterSpacing": 0.6,
+  "editor.letterSpacing": 0.7,
   "editor.fontLigatures": true,
   "editor.lineHeight": 18,
   "editor.tabSize": 2,
@@ -24,7 +24,6 @@
     "**/target": true
   },
   "search.quickOpen.includeHistory": false,
-  "search.location": "panel",
   "terminal.integrated.fontFamily": "Source Code Pro",
   "terminal.integrated.fontSize": 11,
   "workbench.editor.tabCloseButton": "off",
@@ -60,7 +59,7 @@
   "[elixir]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.wordBasedSuggestions": false,
+    "editor.wordBasedSuggestions": "off",
     "editor.formatOnType": false,
     "editor.formatOnSave": true,
     "editor.acceptSuggestionOnEnter": "off",
@@ -69,5 +68,6 @@
     "files.insertFinalNewline": true
   },
   // workbench
-  "workbench.colorCustomization": {}
+  "workbench.colorCustomization": {},
+  "workbench.editor.tabActionCloseVisibility": false
 }
