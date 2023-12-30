@@ -17,7 +17,6 @@ bindsym $mod+Shift+r exec $menu
 
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exit
 
 # focus
 bindsym $mod+Left focus left
