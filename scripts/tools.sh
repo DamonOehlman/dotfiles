@@ -21,9 +21,6 @@ installTool() {
   tool_available "${tool}" "${get_version}"
 }
 
-hash mert 2> /dev/null || npm install -g mert
-tool_available mert "mert --version"
-
 hash webpack 2> /dev/null || yarn global add webpack
 tool_available webpack "webpack --version"
 
