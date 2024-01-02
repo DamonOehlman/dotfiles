@@ -7,15 +7,11 @@ DOTFILES_HOME=$HOME/dotfiles
 NIX_SETUP=$HOME/.nix-profile/etc/profile.d/nix.sh
 
 ## TOOL PATHS
-PATH="$PATH:~/packer"; # packer
 export PATH="~/bin:~/.local/bin:$PATH";
 AWS_HOME="/opt/aws";
 
 ## LANG VERSIONS
 PYTHON_VERSION="3.6.5"
-
-# include local config preferences
-[[ -e "${HOME}/.myconfigrc" ]] && . "${HOME}/.myconfigrc"
 
 # chrome sandbox
 export CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
@@ -34,9 +30,6 @@ unset GNOME_KEYRING_CONTROL
 eval $(ssh-agent) > /dev/null
 ssh-add 2> /dev/null
 
-# synaptic client changes
-hash synclient 2> /dev/null && synclient > /dev/null 2>&1 && synclient TapButton1=0 TapButton2=0 RTCornerButton=0 RBCornerButton=0 ClickFinger1=0 ClickFinger2=0
-
 . $DOTFILES_HOME/scripts/_prompt.sh
 . $DOTFILES_HOME/scripts/visual-tweaks/ls.sh
 
@@ -45,7 +38,6 @@ hash synclient 2> /dev/null && synclient > /dev/null 2>&1 && synclient TapButton
 
 # bash scripting helpers
 if [[ $UNAME -ne 'Darwin' ]]; then
-	. $DOTFILES_HOME/scripts/roxterm.sh
 	. $DOTFILES_HOME/scripts/screencasting.sh
 fi
 
