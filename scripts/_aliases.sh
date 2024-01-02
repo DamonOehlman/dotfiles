@@ -31,9 +31,3 @@ alias mast="git checkout master"
 
 # wallpaper switcher
 alias wallpaper_next="nitrogen --set-zoom-fill ~/Pictures/wallpaper/\$(ls ~/Pictures/wallpaper/ |sort -R |tail -1)"
-
-# update .bithoundrc to match my default
-alias bithound="curl -s https://gist.githubusercontent.com/DamonOehlman/df7dfcf648fd91268ec0/raw/8ea910d278dc3aee3c8e69d5800b0fbb731c936e/.bithoundrc > .bithoundrc"
-
-# an alias to change the colorscheme of the current roxterm terminal
-alias scheme="roxterm_tweak SetColourScheme"
