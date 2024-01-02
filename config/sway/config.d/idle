@@ -1,0 +1,8 @@
+set $lock ~/bin/lock.sh
+
+# Idle configuration
+exec swayidle \
+    timeout 300 'exec $lock' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'exec $lock'

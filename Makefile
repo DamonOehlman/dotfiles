@@ -27,7 +27,7 @@ TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_win.json
 default: vscode mintty alacritty
 	@echo "sync complete"
 else
-default: configfiles macapps bashrc editors localbin code_settings i3 alacritty
+default: configfiles macapps bashrc editors localbin code_settings i3 alacritty sway
 	@echo "sync complete"
 endif
 
@@ -87,19 +87,15 @@ ifeq ($(UNAME),Darwin)
 	@$(DOTFILES_HOME)/scripts/mac-defaults.sh
 endif
 
-fonts: ~/.local/share/fonts/SourceCodePro-Regular.otf ~/.local/share/fonts/FiraCode-Regular.ttf
+fonts: ~/.local/share/fonts/ttf/FiraCode-Regular.ttf
 ifeq ($(UNAME),Darwin)
 	@mkdir -p ~/Library/Fonts
 	@cp -f ~/.local/share/fonts/* ~/Library/Fonts/
+else ifneq (,$(findstring Linux,$(UNAME)))
+	@echo "installed fonts"
 endif
 
-~/.local/share/fonts/SourceCodePro-Regular.otf:
-	wget https://github.com/adobe-fonts/source-code-pro/archive/1.017R.tar.gz -O /tmp/sourcecodepro.tar.gz
-	tar xf /tmp/sourcecodepro.tar.gz --directory /tmp
-	mkdir -p ~/.local/share/fonts
-	cp /tmp/source-code-pro*/OTF/* ~/.local/share/fonts
-
-~/.local/share/fonts/FiraCode-Regular.ttf:
+~/.local/share/fonts/ttf/FiraCode-Regular.ttf:
 	@./scripts/install-firacode.sh
 
 code_settings:
@@ -127,6 +123,12 @@ bspwm:
 
 tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
+
+sway: waybar
+	@ln -sf $(DOTFILES_HOME)/config/sway ~/.config/
+
+waybar:
+	@ln -sf $(DOTFILES_HOME)/config/waybar ~/.config/
 
 # WINDOWS THINGS
 

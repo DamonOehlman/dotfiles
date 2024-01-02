@@ -1,0 +1,41 @@
+set $mod Mod4
+set $term alacritty
+set $menu fuzzel
+set $background ~/.images/ir-black.png
+
+default_border pixel 1
+hide_edge_borders smart
+
+smart_gaps on
+gaps inner 5
+
+output * bg $background fill
+
+# shortcuts
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+r exec $menu
+
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+
+# focus
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+# multimedia
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+bindsym --locked XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
+
+# brightness
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+# include system specific configurations
+include ~/.config/sway/config.d/*
+include ~/.config/sway/config.d/hosts/$(hostname)/*
