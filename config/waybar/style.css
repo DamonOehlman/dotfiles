@@ -148,10 +148,13 @@ window#waybar {
 
 #network {
   color: #a3be8c;
+  border-style: none;
+  /* border-bottom: none; */
 }
 
 #network.disconnected {
   color: #bf616a;
+  border-style: solid;
 }
 
 #pulseaudio {
@@ -189,6 +192,10 @@ window#waybar {
 
 #mode {
   margin-bottom: 3px;
+}
+
+#keyboard-state {
+  border-bottom: none;
 }
 
 #custom-keyboard-layout {
