@@ -27,26 +27,18 @@ TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_win.json
 default: vscode mintty alacritty
 	@echo "sync complete"
 else
-default: configfiles macapps bashrc editors localbin code_settings i3 alacritty sway
+default: configfiles macapps bashrc editors localbin code_settings alacritty sway
 	@echo "sync complete"
 endif
 
 windows: bashrc editors localbin code_settings sublime alacritty
 	@echo "windows sync complete"
 
-i3:
-ifeq ($(UNAME),Linux)
-	@ln -sf $(DOTFILES_HOME)/.i3 ~/
-endif
-
 bashrc:
 	@ln -sf $(DOTFILES_HOME)/.bashrc-custom ~/.bashrc-custom
 
 configfiles:
 	@mkdir -p ~/.config
-	@ln -sf $(DOTFILES_HOME)/config/.Xresources ~/.Xresources
-	@ln -sf $(DOTFILES_HOME)/config/termite ~/.config/
-	@ln -sf $(DOTFILES_HOME)/config/polybar ~/.config/
 
 synapse:
 	@rm -rf ~/.config/synapse
@@ -111,9 +103,6 @@ ifeq ($(IS_WINDOWS),1)
 else
 	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.toml ~/.config/alacritty.toml
 endif
-
-gtk3:
-	@ln -sf $(DOTFILES_HOME)/config/gtk-3.0 ~/.config/
 
 bspwm:
 	@ln -sf $(DOTFILES_HOME)/config/bspwm ~/.config/
