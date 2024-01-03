@@ -1,0 +1,35 @@
+# space focus navigation
+cmd - 1 : yabai -m space --focus 1
+cmd - 2 : yabai -m space --focus 2
+cmd - 3 : yabai -m space --focus 3
+cmd - 4 : yabai -m space --focus 4
+cmd - 5 : yabai -m space --focus 5
+cmd - 6 : yabai -m space --focus 6
+cmd - 7 : yabai -m space --focus 7
+cmd - 8 : yabai -m space --focus 8
+cmd - 9 : yabai -m space --focus 9
+cmd + shift - left : yabai -m space --focus prev
+cmd + shift - right : yabai -m space --focus next
+
+# space move
+cmd + shift - 1 : yabai -m window --space 1 --focus
+cmd + shift - 2 : yabai -m window --space 2 --focus
+cmd + shift - 3 : yabai -m window --space 3 --focus
+cmd + shift - 4 : yabai -m window --space 4 --focus
+cmd + shift - 5 : yabai -m window --space 5 --focus
+cmd + shift - 6 : yabai -m window --space 6 --focus
+cmd + shift - 7 : yabai -m window --space 7 --focus
+cmd + shift - 8 : yabai -m window --space 8 --focus
+cmd + shift - 9 : yabai -m window --space 9 --focus
+
+# add an on_enter command to the default mode
+:: default : yabai -m config top_padding 6
+
+# defines a new mode 'test' with an on_enter command, that captures keypresses
+:: test @ : yabai -m config top_padding 40
+
+# from 'default' mode, activate mode 'test'
+cmd - x ; test
+
+# from 'test' mode, activate mode 'default'
+test < cmd - x ; default

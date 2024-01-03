@@ -4,6 +4,7 @@ WINDOWS_USERNAME=Damon
 UNAME := $(shell uname -a)
 YARN_BIN := $(shell yarn bin)
 UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f2 -d'-')
+UNAME_DARWIN := $(shell uname -a | cut -f1 -d' ')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
 TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_nix.json
 
@@ -12,6 +13,10 @@ ifeq (microsoft,$(UNAME_WSL_KERNEL_MICROSOFT))
 	APPDATA=/mnt/c/Users/$(WINDOWS_USERNAME)/AppData/Roaming
 else ifneq (,$(UNAME_MSYS))
 	IS_WINDOWS=1
+endif
+
+ifeq (Darwin,$(UNAME_DARWIN))
+	IS_MAC=1
 endif
 
 ifeq ($(IS_WINDOWS),1)
@@ -68,15 +73,15 @@ else
 endif
 
 macapps:
-ifeq ($(UNAME),Darwin)
-	@ln -sf $(DOTFILES_HOME)/Library/Preferences/*.plist ~/Library/Preferences
-	@ln -sf $(DOTFILES_HOME)/config/chunkwmrc ~/.chunkwmrc
-	@ln -sf $(DOTFILES_HOME)/config/.khdrc ~/.khdrc
-	@$(DOTFILES_HOME)/scripts/mac-defaults.sh
+ifeq ($(IS_MAC),1)
+	echo "configuring mac apps"
+	@ln -sf $(DOTFILES_HOME)/config/yabai ~/.config
+	@ln -sf $(DOTFILES_HOME)/config/skhd ~/.config
+	# @$(DOTFILES_HOME)/scripts/mac-defaults.sh
 endif
 
 fonts: ~/.local/share/fonts/ttf/FiraCode-Regular.ttf
-ifeq ($(UNAME),Darwin)
+ifeq ($(IS_MAC),1)
 	@mkdir -p ~/Library/Fonts
 	@cp -f ~/.local/share/fonts/* ~/Library/Fonts/
 else ifneq (,$(findstring Linux,$(UNAME)))
