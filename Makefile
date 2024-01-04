@@ -27,7 +27,7 @@ TEMPLATE_VARS=$(DOTFILES_HOME)/config/template_vars_win.json
 default: vscode mintty alacritty
 	@echo "sync complete"
 else
-default: configfiles macapps bashrc editors localbin code_settings alacritty sway
+default: configfiles wayland_config macapps bashrc editors localbin code_settings alacritty sway
 	@echo "sync complete"
 endif
 
@@ -39,6 +39,9 @@ bashrc:
 
 configfiles:
 	@mkdir -p ~/.config
+
+wayland_config:
+	@ln -sf $(DOTFILES_HOME)/config/electron25-flags.conf ~/.config/
 
 vscode: node_modules
 	@echo "updating vscode settings in: $(PATH_VSCODE)"
