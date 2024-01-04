@@ -38,6 +38,10 @@ bindsym $mod+Shift+Right move workspace to output right
 bindsym $mod+Shift+Up move workspace to output up
 bindsym $mod+Shift+Down move workspace to output down
 
+# xwayland apps
 assign [class="^Code$"] $ws2
+assign [class="^discord$"] $ws9
+
+# native wayland apps
 assign [app_id="firefox"] $ws3
 assign [app_id="Slack"] $ws8
