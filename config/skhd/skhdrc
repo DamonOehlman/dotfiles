@@ -29,7 +29,7 @@ cmd + shift - 9 : yabai -m window --space 9 --focus
 :: test @ : yabai -m config top_padding 40
 
 # from 'default' mode, activate mode 'test'
-cmd - x ; test
+cmd + shift + ctrl - x ; test
 
 # from 'test' mode, activate mode 'default'
-test < cmd - x ; default
+test < cmd + shift + ctrl - x ; default
