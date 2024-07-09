@@ -1,3 +1,5 @@
+shell = { program = "/bin/zsh" }
+
 [colors.bright]
 black = "0x4c4c4c"
 blue = "0xb3deef"
@@ -23,20 +25,20 @@ background = "0x282828"
 foreground = "0xeeeeee"
 
 [font.bold]
-family = "Source Code Pro"
+family = "Fira Code"
 style = "Bold"
 
 [font.bold_italic]
-family = "Source Code Pro"
+family = "Fira Code"
 style = "Bold Italic"
 
 [font.italic]
-family = "Source Code Pro"
+family = "Fira Code"
 style = "Italic"
 
 [font.normal]
-family = "Source Code Pro"
+family = "Fira Code"
 
-[shell]
-args = ["--login", "-c", "tmux"]
-program = "/bin/bash"
+# [shell]
+# args = ["--login", "-c", "tmux"]
+# program = "/bin/zsh"
