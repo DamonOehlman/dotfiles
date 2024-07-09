@@ -105,7 +105,7 @@ ifeq ($(IS_WINDOWS),1)
 	@mkdir -p $(APPDATA)/alacritty
 	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.toml $(APPDATA)/alacritty/alacritty.toml
 else
-	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.toml ~/.config/alacritty.toml
+	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.toml ~/.alacritty.toml
 endif
 
 tmux:
