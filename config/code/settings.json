@@ -69,5 +69,17 @@
   },
   // workbench
   "workbench.colorCustomization": {},
-  "workbench.editor.tabActionCloseVisibility": false
+  "workbench.editor.tabActionCloseVisibility": false,
+  // esp-idf
+  "idf.espIdfPath": "/home/damo/esp/v5.1.2/esp-idf",
+  "idf.toolsPath": "/home/damo/.espressif",
+  "idf.pythonBinPath": "/home/damo/venv/main/bin/python",
+  "idf.customExtraPaths": "/home/damo/.espressif/tools/xtensa-esp-elf-gdb/12.1_20221002/xtensa-esp-elf-gdb/bin:/home/damo/.espressif/tools/riscv32-esp-elf-gdb/12.1_20221002/riscv32-esp-elf-gdb/bin:/home/damo/.espressif/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin:/home/damo/.espressif/tools/xtensa-esp32s2-elf/esp-12.2.0_20230208/xtensa-esp32s2-elf/bin:/home/damo/.espressif/tools/xtensa-esp32s3-elf/esp-12.2.0_20230208/xtensa-esp32s3-elf/bin:/home/damo/.espressif/tools/riscv32-esp-elf/esp-12.2.0_20230208/riscv32-esp-elf/bin:/home/damo/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/home/damo/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/bin:/home/damo/.espressif/tools/esp-rom-elfs/20230320",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "/home/damo/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/share/openocd/scripts",
+    "ESP_ROM_ELF_DIR": "/home/damo/.espressif/tools/esp-rom-elfs/20230320/"
+  },
+  "idf.gitPath": "/usr/bin/git",
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "bounded"
 }

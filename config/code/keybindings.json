@@ -97,11 +97,11 @@
     "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+alt+right",
+    "key": "shift+meta+]",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "ctrl+alt+left",
+    "key": "shift+meta+[",
     "command": "workbench.action.previousEditor"
   },
   {
@@ -168,5 +168,9 @@
   {
     "key": "ctrl+alt+\\",
     "command": "chat.treeView.channels.slack.focus"
+  },
+  {
+    "key": "meta+w",
+    "command": "workbench.action.closeActiveEditor"
   }
 ]

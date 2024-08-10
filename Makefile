@@ -132,7 +132,7 @@ zsh-themes: ~/.oh-my-zsh ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 ~/.oh-my-zsh/custom/themes/powerlevel10k:
 	@git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-	@ln -sf $(DOTFILES_HOME)/config/.p10k.zsh ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/.p10k.zsh ~/
 
 # WINDOWS THINGS
 

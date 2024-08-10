@@ -3,10 +3,10 @@ set $term alacritty
 set $menu fuzzel
 set $background ~/.images/ir-black.png
 set $display_laptop eDP-1
-set $display_external DP-1
+set $display_external HDMI-A-2
 
-# for running on 4K screen
-output $display_external scale 2
+output $display_external pos 0 0 res 2560x1440 scale 1
+output $display_laptop pos 2560 0 res 1366x768
 
 default_border pixel 1
 hide_edge_borders smart
