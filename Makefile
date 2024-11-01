@@ -80,7 +80,9 @@ macapps:
 ifeq ($(IS_MAC),1)
 	echo "configuring mac apps"
 	@ln -sf $(DOTFILES_HOME)/config/yabai ~/.config
+	@ln -sf $(DOTFILES_HOME)/config/.aerospace.toml ~/
 	@ln -sf $(DOTFILES_HOME)/config/skhd ~/.config
+	@ln -sf $(DOTFILES_HOME)/config/sketchybar/sketchybarrc ~/.config/sketchybar
 	# @$(DOTFILES_HOME)/scripts/mac-defaults.sh
 endif
 
