@@ -37,7 +37,7 @@ default: configfiles wayland_config macapps zshrc bashrc editors localbin code_s
 	@echo "sync complete"
 endif
 
-windows: bashrc editors localbin code_settings sublime alacritty
+windows: zshrc bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
 
 bashrc:
@@ -108,7 +108,7 @@ node_modules:
 alacritty:
 ifeq ($(IS_WINDOWS),1)
 	@mkdir -p $(APPDATA)/alacritty
-	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.toml $(APPDATA)/alacritty/alacritty.toml
+	@cp $(DOTFILES_HOME)/config/alacritty/alacritty.windows.toml $(APPDATA)/alacritty/alacritty.toml
 else
 	@ln -sf $(DOTFILES_HOME)/config/alacritty/alacritty.toml ~/.alacritty.toml
 endif
