@@ -38,5 +38,5 @@ style = "Italic"
 family = "Fira Code"
 
 [shell]
-args = ["--login", "-c", "tmux"]
-program = "/bin/zsh"
+args = ["-d", "Ubuntu", "--cd", "~", "-e", "tmux"]
+program = "wsl.exe"

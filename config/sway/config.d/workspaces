@@ -9,7 +9,7 @@ set $ws8 8
 set $ws9 9
 set $ws0 0
 
-workspace $ws2 output $display_laptop
+workspace $ws0 output $display_laptop
 
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -45,3 +45,5 @@ assign [class="^discord$"] $ws9
 # native wayland apps
 assign [app_id="firefox"] $ws3
 assign [app_id="Slack"] $ws8
+
+for_window [app_id="qalculate-gtk"] floating enable
