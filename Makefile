@@ -119,9 +119,11 @@ tmux:
 	@DOTFILES_HOME=$(DOTFILES_HOME) $(DOTFILES_HOME)/scripts/configure-tmux.sh
 
 sway: waybar
+	@rm -rf ~/.config/sway
 	@ln -sf $(DOTFILES_HOME)/config/sway ~/.config/
 
 waybar:
+	@rm -rf ~/.config/waybar
 	@ln -sf $(DOTFILES_HOME)/config/waybar ~/.config/
 
 zshrc:

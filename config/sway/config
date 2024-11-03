@@ -1,48 +1,36 @@
-set $mod Mod4
-set $term alacritty
-set $menu fuzzel
-set $background ~/.images/ir-black.png
-set $display_laptop eDP-1
-set $display_external HDMI-A-2
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
 
-output $display_external pos 0 0 res 2560x1440 scale 1
-output $display_laptop pos 2560 0 res 1366x768
+# Styles
+set $theme /usr/share/themes/yaru-sway
 
-default_border pixel 1
-hide_edge_borders smart
+# theme variables
+include $theme/variables
 
-smart_gaps on
-gaps inner 5
+# Global variables
+include /etc/sway/variables
 
-output * bg $background fill
+# User variables
+include $HOME/.config/sway/variables.d/*.conf
 
-# shortcuts
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+r exec $menu
+include /etc/sway/outputs/*.conf
+include /etc/sway/inputs/*.conf
 
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+c reload
+# include modes
+include /etc/sway/modes/*.conf
 
-# focus
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
-bindsym $mod+Up focus up
-bindsym $mod+Down focus down
+# Additional configs
+include /etc/sway/config.d/*.conf
 
-# multimedia
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-bindsym --locked XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
-bindsym --locked XF86AudioPlay exec playerctl play-pause
-bindsym --locked XF86AudioNext exec playerctl next
-bindsym --locked XF86AudioPrev exec playerctl previous
+# User config
+include $HOME/.config/sway/config.d/*.conf
 
-# brightness
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-
-# optionally disable the internal display
-bindsym $mod+F7 output $display_laptop toggle
+# Include nwg-displays config's (if exists)
+include ~/.config/sway/outputs
+include ~/.config/sway/workspaces
 
 # include system specific configurations
 include ~/.config/sway/config.d/*

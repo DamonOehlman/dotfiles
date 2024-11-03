@@ -1,203 +1,241 @@
-/* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
- * =========================================================================== */
+@keyframes blink-warning {
+    70% {
+        color: @wm_icon_bg;
+    }
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
+    to {
+        color: @wm_icon_bg;
+        background-color: @warning_color;
+    }
+}
 
+@keyframes blink-critical {
+    70% {
+        color: @wm_icon_bg;
+    }
 
-/*
-Polar Night
-nord0  #2e3440
-nord1  #3b4252
-nord2  #434c5e
-nord3  #4c566a
-Snow Storm
-nord4  #d8dee9
-nord5  #e5e9f0
-nord6  #eceff4
-Frost
-nord7  #8fbcbb
-nord8  #88c0d0
-nord9  #81a1c1
-nord10 #5e81ac
-Aurora
-nord11 #bf616a
-nord12 #d08770
-nord13 #ebcb8b
-nord14 #a3be8c
-nord15 #b48ead
-*/
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
+    to {
+        color: @wm_icon_bg;
+        background-color: @error_color;
+    }
+}
 
 /* Reset all styles */
-
 * {
-  color: #eceff4;
-  border: 0;
-  border-radius: 0;
-  padding: 0 0;
-  font-family: UbuntuMono;
-  font-size: 12px;
-  margin-right: 5px;
-  margin-left: 5px;
-  padding-bottom: 1px;
+    border: none;
+    border-radius: 4;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
-window#waybar {
-  background: rgba (0, 0, 0, 0.55);
-}
-
-#workspaces button {
-  padding: 2px 0px;
-  border-bottom: 2px;
-  color: #eceff4;
-  border-color: #d8dee9;
-  border-style: solid;
-  margin-top: 2px;
-}
-
-#workspaces button.focused {
-  border-color: #81a1c1;
-}
-
-#mode {
-  color: #ebcb8b;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#idle_inhibitor,
-#temperature,
-#custom-keyboard-layout,
-#backlight,
-#network,
-#pulseaudio,
-#mode,
-#tray,
-#window,
-#custom-launcher,
-#keyboard-state,
-#custom-power,
-#custom-pacman {
-  padding: 0 3px;
-  border-bottom: 2px;
-  border-style: solid;
-}
-
-/* -----------------------------------------------------------------------------
-* Module styles
-* -------------------------------------------------------------------------- */
-
-
-#clock {
-  color: #a3be8c;
-}
-
-#backlight {
-  color: #ebcb8b;
-}
-
-#battery {
-  color: rgba(216, 222, 233, 1);
-  border-bottom: none;
-}
-
-#battery.charging {
-  color: #81a1c1;
-}
-
-@keyframes blink {
-  to {
-    color: #4c566a;
-    background-color: #eceff4;
-  }
-}
-
-#battery.critical:not(.charging) {
-  background: #bf616a;
-  color: #eceff4;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#cpu {
-  color: #a3be8c;
-}
-
-#memory {
-  color: #d3869b;
-}
-
-#network.disabled {
-  color: #bf616a;
-}
-
-#network {
-  color: #a3be8c;
-  border-style: none;
-  /* border-bottom: none; */
-}
-
-#network.disconnected {
-  color: #bf616a;
-  border-style: solid;
-}
-
-#pulseaudio {
-  color: #b48ead;
-}
-
-#pulseaudio.muted {
-  color: #3b4252;
-}
-
-#temperature {
-  color: #8fbcbb;
-}
-
-#temperature.critical {
-  color: #bf616a;
-}
-
-#idle_inhibitor {
-  color: #ebcb8b;
-}
-
-#tray {}
-
-#custom-launcher,
-#custom-power {
-  border-style: hidden;
-  margin-top: 2px;
+/* The whole bar */
+#waybar {
+    background: @theme_bg_color;
+    color: @theme_fg_color;
+    font-family: "Ubuntu", "Font Awesome 6 Free", "Font Awesome";
+    font-size: 14px;
 }
 
 #window {
-  border-style: hidden;
-  margin-top: 1px;
+    margin-left: 10px;
+}
+
+window#waybar {
+    margin-left: 10px;
+    border-radius: 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    /* To compensate for the top border and still have vertical centering */
+    padding: 0 0.5em;
+    margin: 4px 3px;
+    color: @wm_icon_bg;
+}
+
+#workspaces button.focused {
+    border-color: @theme_selected_bg_color;
+    color: @wm_icon_bg;
+    background-color: @theme_selected_bg_color;
+}
+
+#workspaces button.urgent {
+    border-color: @error_color;
+    color: @error_color;
 }
 
 #mode {
-  margin-bottom: 3px;
+    background: @background_color;
 }
 
-#keyboard-state {
-  border-bottom: none;
+#clock,
+#custom-help,
+#custom-playerctl,
+#custom-power,
+#custom-weather,
+#custom-wlsunset,
+#custom-clipboard,
+#custom-menu,
+#custom-dnd,
+#battery,
+#cpu,
+#language,
+#memory,
+#network,
+#bluetooth,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 4px 3px;
 }
 
-#custom-keyboard-layout {
-  color: #d08770;
+#clock {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-weather {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-wlsunset {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-playerctl {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-help {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-power {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-clipboard {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-menu {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-dnd {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#battery.warning {
+    color: @warning_color;
+}
+
+#battery.critical {
+    color: @error_color;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#language {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#memory {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#custom-gpu-usage {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#network {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#bluetooth {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#bluetooth.disabled {
+    background: @theme_bg_color;
+    color: @wm_icon_bg;
+}
+
+#network.disconnected {
+    background: @theme_bg_color;
+    color: @wm_icon_bg
+}
+
+#pulseaudio {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
+}
+
+#pulseaudio.muted {
+    background: @theme_bg_color;
+    color: @wm_icon_bg;
+}
+
+#custom-wf-recorder {
+    color: @error_color;
+    padding-right: 10px;
+}
+
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#idle_inhibitor {
+    background: @theme_selected_bg_color;
+}
+
+#idle_inhibitor.activated {
+    background: @theme_selected_bg_color;
+    color: @theme_selected_fg_color;
 }
