@@ -1,7 +1,7 @@
 {
-  "editor.fontFamily": "'Source Code Pro', 'Font Awesome 6 Free', 'DejaVuSansM Nerd Font', 'Noto Sans', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'",
-  "editor.fontSize": 11,
-  "editor.letterSpacing": 0.7,
+  "editor.fontFamily": "'Fira Code', 'Font Awesome 6 Free', 'DejaVuSansM Nerd Font', 'Noto Sans', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji'",
+  "editor.fontSize": 12,
+  "editor.letterSpacing": 1.2,
   "editor.fontLigatures": true,
   "editor.lineHeight": 18,
   "editor.tabSize": 2,
@@ -26,7 +26,6 @@
   "search.quickOpen.includeHistory": false,
   "terminal.integrated.fontFamily": "Source Code Pro",
   "terminal.integrated.fontSize": 11,
-  "workbench.editor.tabCloseButton": "off",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tips.enabled": false,
   "workbench.iconTheme": "vs-seti",
@@ -81,5 +80,6 @@
   },
   "idf.gitPath": "/usr/bin/git",
   "editor.wordWrapColumn": 120,
-  "editor.wordWrap": "bounded"
+  "editor.wordWrap": "bounded",
+  "makefile.configureOnOpen": true
 }
