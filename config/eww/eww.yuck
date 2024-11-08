@@ -1,0 +1,64 @@
+(defwindow bar0 :monitor 0
+  :geometry (geometry :x "0%" :y "10px"
+    :width "100%"
+  :anchor "center top")
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  (box :class "root"
+    :valign "center"
+    :halign "center"
+    :orientation "horizontal"
+    (workspaces)
+  ))
+
+
+; ╺╸state╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+
+(defpoll time_poll :interval "1s" "date +%H:%M")
+(defpoll date_poll :interval "1m" "date +%d/%m")
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/modules/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/modules/get-active-workspace")
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/modules/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly true
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box :class "workspace-entry ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}" :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}" )
+          )
+        )
+      )
+    )
+  )
+)
+
+; ╺╸workspaces╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+
+(defwidget battery []
+  (box :class "battery"
+    :orientation "horizontal"
+    :space-evenly true
+    :halign "center"
+    :valign "end"
+    :width 20
+    (label :text "󰁹 ${EWW_BATTERY["BAT0"].capacity}" :halign "center" :xalign 0.5 :justify "right")))
+
+(defwidget date []
+  (box :class "date"
+    :orientation "horizontal"
+    :space-evenly true
+    :valign "center"
+    :halign "end"
+    :width 20
+    (label :text date_poll)))
+
+(defwidget time []
+  (box :class "time"
+    :orientation "horizontal"
+    :space-evenly true
+    :valign "end"
+    :halign "center"
+    :width 20
+    (label :text time_poll)))

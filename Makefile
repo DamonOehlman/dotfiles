@@ -141,6 +141,9 @@ waybar_hypr:
 	@rm -rf ~/.config/waybar
 	@ln -sf $(DOTFILES_HOME)/config/waybar/hypr ~/.config/waybar
 
+eww:
+	@ln -sf $(DOTFILES_HOME)/config/eww ~/.config/
+
 zshrc:
 	@ln -sf $(DOTFILES_HOME)/.zshrc ~/
 

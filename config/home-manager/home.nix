@@ -12,6 +12,7 @@
     builtins.elem (lib.getName pkg) [
       # Add additional package names here
       "vscode"
+      "android-studio-stable"
     ];
 
   home.username = "damo";
@@ -26,13 +27,17 @@
     pkgs.hyprlock
     pkgs.hypridle
     pkgs.fuzzel
+    pkgs.eww
     # cli things
     pkgs.gnupg
     pkgs.pinentry.curses
     pkgs.pass
     pkgs.gnumake
     pkgs.graphviz
+    pkgs.xdg-utils
     pkgs.brightnessctl
+    pkgs.jq
+    pkgs.socat
     # fonts
     pkgs.font-awesome
     pkgs.fira-code
@@ -41,6 +46,9 @@
       ppkgs.json5
       ppkgs.requests
     ]))
+
+    # the expensive stuff (space wise)
+    pkgs.android-studio
   ];
 
   fonts.fontconfig.enable = true;
