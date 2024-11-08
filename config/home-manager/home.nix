@@ -8,6 +8,7 @@
     pkgs.gnupg
     pkgs.pinentry.curses
     pkgs.pass
+    pkgs.home-manager
    ];
 
    programs.zsh = {
