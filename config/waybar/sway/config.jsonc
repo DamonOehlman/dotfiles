@@ -18,17 +18,17 @@
         "battery",
         "network",
         "bluetooth",
-        "pulseaudio",
+        // "pulseaudio",
         "clock",
         "custom/power",
         "tray"
     ],
-    
+
     "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true
     },
-    
+
     "sway/language": {
         "format": " {}",
         "min-length": 5,
@@ -53,12 +53,12 @@
         "on-click": "exec nwg-drawer",
         "tooltip": false
     },
-    
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>",
         "tooltip": false
     },
-    
+
     "sway/window": {
         "format": "{}",
         "max-length": 50,
@@ -95,12 +95,12 @@
        "on-scroll-up": "swaymsg exec \\$volume_up",
        "on-scroll-down": "swaymsg exec \\$volume_down"
     },
-    
+
     "battery": {
         "format": "{icon} {capacity}%",
         "format-icons": ["", "", "", "", ""]
     },
-    
+
     "network": {
        "format-wifi": " ({signalStrength}%)",
        "format-ethernet": "",
@@ -122,7 +122,7 @@
         "on-click-right": "rfkill toggle bluetooth",
         "tooltip-format": "{}"
     },
-    
+
     "clock": {
         "format": "{:%e %b %H:%M}",
         "tooltip": true,
@@ -130,7 +130,7 @@
         "interval": 5,
         "on-click": "swaymsg exec \\$calendar"
     },
-    
+
     "cpu": {
         "interval": 5,
         "format": " {usage}%",
@@ -140,7 +140,7 @@
           },
     "on-click": "swaymsg exec \\$term_float htop"
     },
-    
+
     "memory": {
         "interval": 30,
         "format": " {}%",
@@ -149,9 +149,9 @@
           "critical": 90
         },
     "on-click": "swaymsg exec \\$term_float htop"
-    
+
     },
-    
+
     "custom/wf-recorder": {
          "interval": "once",
          "return-type": "json",
@@ -197,7 +197,7 @@
         "exec": "printf '{\"alt\":\"%s\",\"tooltip\":\"Notification mode: %s\"}' $(makoctl mode | grep -q 'do-not-disturb' && echo dnd || echo default) $(makoctl mode | tail -1)",
         "signal": 11
     },
-    
+
     "custom/weather": {
         "icon-size": 42,
         "format": "{icon} {}",
@@ -249,7 +249,7 @@
         "on-click": "/usr/share/sway/scripts/help.sh --toggle",
         "tooltip": "false"
     },
-    
+
     "tray": {
         "icon-size": 21,
         "spacing": 10

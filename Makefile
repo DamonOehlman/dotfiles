@@ -2,7 +2,7 @@ DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
 WINDOWS_USERNAME=Damon
 UNAME := $(shell uname -a)
-YARN_BIN := $(shell yarn bin)
+# YARN_BIN := $(shell yarn bin)
 UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f2 -d'-')
 UNAME_DARWIN := $(shell uname -a | cut -f1 -d' ')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
@@ -37,6 +37,12 @@ default: configfiles wayland_config macapps zshrc bashrc editors localbin code_s
 	@echo "sync complete"
 endif
 
+nixos: home-manager hyprland zed waybar_hypr vscode
+
+nixos_system:
+	@sudo cp system/etc/nixos/configuration.nix /etc/nixos/
+	@sudo nixos-rebuild switch
+
 windows: zshrc bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
 
@@ -49,7 +55,16 @@ configfiles:
 wayland_config:
 	@ln -sf $(DOTFILES_HOME)/config/electron25-flags.conf ~/.config/
 
-vscode: node_modules
+home-manager:
+	@ln -sf $(DOTFILES_HOME)/config/home-manager ~/.config/
+
+hyprland:
+	@ln -sf $(DOTFILES_HOME)/config/hypr ~/.config/
+
+zed:
+	@ln -sf $(DOTFILES_HOME)/config/zed ~/.config/
+
+vscode:
 	@echo "updating vscode settings in: $(PATH_VSCODE)"
 	@mkdir -p "$(PATH_VSCODE)"
 	@ln -fs $(DOTFILES_HOME)/config/code/settings.json "$(PATH_VSCODE)"
@@ -124,7 +139,14 @@ sway: waybar
 
 waybar:
 	@rm -rf ~/.config/waybar
-	@ln -sf $(DOTFILES_HOME)/config/waybar ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/waybar/sway ~/.config/waybar
+
+waybar_hypr:
+	@rm -rf ~/.config/waybar
+	@ln -sf $(DOTFILES_HOME)/config/waybar/hypr ~/.config/waybar
+
+eww:
+	@ln -sf $(DOTFILES_HOME)/config/eww ~/.config/
 
 zshrc:
 	@ln -sf $(DOTFILES_HOME)/.zshrc ~/
@@ -142,4 +164,3 @@ zsh-themes: ~/.oh-my-zsh ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 mintty:
 	@cp $(DOTFILES_HOME)/config/.minttyrc ~/.minttyrc
-
