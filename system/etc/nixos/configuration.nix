@@ -11,8 +11,11 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
+    # hardware configuration detected by nix
     ./hardware-configuration.nix
+    # local system configuration files, this is where things like hostname go
+    ./local-system.nix
+    # other bits and pieces
     <home-manager/nixos>
   ];
 
@@ -27,9 +30,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "djo-gmktec"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
