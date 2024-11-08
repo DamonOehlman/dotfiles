@@ -32,22 +32,32 @@ $background: #383c4a;
   font-family: Fira Code;
 }
 
-// window {
-//   // background-color: $crust;
-//   // background-color: $base;
-// }
+window {
+  // background-color: $crust;
+  // background-color: $base;
+  background: rgba(30, 30, 30, 0.4);
+  border-radius: 20px;
+}
 
 .workspaces-widget {
-  border-radius: 20px;
-  background-color: $background;
+  // border-radius: 20px;
+  // background-color: $background;
 }
 
 .workspace-entry {
   padding: 4px;
-}
 
-.workspace-entry.occupied {
-  color: $red;
+  // &:first-child {
+  //   margin-left: 8px;
+  // }
+
+  // &:last-child {
+  //   margin-right: 8px;
+  // }
+
+  &.occupied {
+    color: $red;
+  }
 }
 
 label.workspace-entry.current {
