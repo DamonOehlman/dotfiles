@@ -9,6 +9,9 @@
   ...
 }:
 
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
   imports = [
     # hardware configuration detected by nix
@@ -16,7 +19,7 @@
     # local system configuration files, this is where things like hostname go
     ./local-system.nix
     # other bits and pieces
-    <home-manager/nixos>
+    (import "${home-manager}/nixos")
   ];
 
   nix.settings.experimental-features = [
