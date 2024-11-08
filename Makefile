@@ -39,6 +39,10 @@ endif
 
 nixos: home-manager hyprland zed waybar_hypr vscode
 
+nixos_system:
+	@sudo cp system/etc/nixos/configuration.nix /etc/nixos/
+	@sudo nixos-rebuild switch
+
 windows: zshrc bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
 

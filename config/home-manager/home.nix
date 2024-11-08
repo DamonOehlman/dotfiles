@@ -38,6 +38,9 @@
     pkgs.brightnessctl
     pkgs.jq
     pkgs.socat
+    # gui things
+    pkgs.firefox
+    pkgs.dolphin
     # fonts
     pkgs.font-awesome
     pkgs.fira-code
