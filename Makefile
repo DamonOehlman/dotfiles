@@ -37,7 +37,7 @@ default: configfiles wayland_config macapps zshrc bashrc editors localbin code_s
 	@echo "sync complete"
 endif
 
-nixos: home-manager hyprland zed waybar_hypr
+nixos: home-manager hyprland zed waybar_hypr vscode
 
 windows: zshrc bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
@@ -60,7 +60,7 @@ hyprland:
 zed:
 	@ln -sf $(DOTFILES_HOME)/config/zed ~/.config/
 
-vscode: node_modules
+vscode:
 	@echo "updating vscode settings in: $(PATH_VSCODE)"
 	@mkdir -p "$(PATH_VSCODE)"
 	@ln -fs $(DOTFILES_HOME)/config/code/settings.json "$(PATH_VSCODE)"
