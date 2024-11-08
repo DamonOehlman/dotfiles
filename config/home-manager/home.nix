@@ -23,12 +23,16 @@
     pkgs.nixfmt-rfc-style
     # hyprland things
     pkgs.waybar
+    pkgs.hyprlock
+    pkgs.hypridle
+    pkgs.fuzzel
     # cli things
     pkgs.gnupg
     pkgs.pinentry.curses
     pkgs.pass
     pkgs.gnumake
     pkgs.graphviz
+    pkgs.brightnessctl
     # fonts
     pkgs.font-awesome
     pkgs.fira-code
