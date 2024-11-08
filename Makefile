@@ -37,7 +37,7 @@ default: configfiles wayland_config macapps zshrc bashrc editors localbin code_s
 	@echo "sync complete"
 endif
 
-nixos: home-manager hyprland zed
+nixos: home-manager hyprland zed waybar_hypr
 
 windows: zshrc bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
@@ -135,7 +135,11 @@ sway: waybar
 
 waybar:
 	@rm -rf ~/.config/waybar
-	@ln -sf $(DOTFILES_HOME)/config/waybar ~/.config/
+	@ln -sf $(DOTFILES_HOME)/config/waybar/sway ~/.config/waybar
+
+waybar_hypr:
+	@rm -rf ~/.config/waybar
+	@ln -sf $(DOTFILES_HOME)/config/waybar/hypr ~/.config/waybar
 
 zshrc:
 	@ln -sf $(DOTFILES_HOME)/.zshrc ~/

@@ -9,6 +9,11 @@
     pkgs.pinentry.curses
     pkgs.pass
     pkgs.home-manager
+    pkgs.waybar
+    pkgs.gnumake
+    (pkgs.python3.withPackages (ppkgs: [
+        ppkgs.json5 ppkgs.requests
+    ]))
    ];
 
    programs.zsh = {
