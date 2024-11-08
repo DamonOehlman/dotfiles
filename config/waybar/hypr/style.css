@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Liberation Mono;
+    font-family: Fira Code;
     min-height: 20px;
 }
 
@@ -58,24 +58,6 @@ window#waybar.hidden {
 }
 
 #keyboard-state {
-    margin-right: 8px;
-    padding-right: 16px;
-    border-radius: 0px 10px 10px 0px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-pacman {
-    padding-left: 16px;
-    padding-right: 8px;
-    border-radius: 10px 0px 0px 10px;
-    transition: none;
-    color: #ffffff;
-    background: #383c4a;
-}
-
-#custom-mail {
     margin-right: 8px;
     padding-right: 16px;
     border-radius: 0px 10px 10px 0px;

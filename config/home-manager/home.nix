@@ -11,10 +11,14 @@
     pkgs.home-manager
     pkgs.waybar
     pkgs.gnumake
+    pkgs.font-awesome
+    pkgs.fira-code
     (pkgs.python3.withPackages (ppkgs: [
         ppkgs.json5 ppkgs.requests
     ]))
    ];
+
+   fonts.fontconfig.enable = true;
 
    programs.zsh = {
         enable = true;
