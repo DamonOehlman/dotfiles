@@ -2,7 +2,7 @@ DOTFILES_HOME=~/dotfiles
 GITHUB_USERNAME=DamonOehlman
 WINDOWS_USERNAME=Damon
 UNAME := $(shell uname -a)
-YARN_BIN := $(shell yarn bin)
+# YARN_BIN := $(shell yarn bin)
 UNAME_WSL_KERNEL_MICROSOFT := $(shell uname -r | cut -f2 -d'-')
 UNAME_DARWIN := $(shell uname -a | cut -f1 -d' ')
 UNAME_MSYS=$(filter MINGW64_NT-10.0 MSYS2_NT-10.0,$(UNAME))
@@ -37,6 +37,8 @@ default: configfiles wayland_config macapps zshrc bashrc editors localbin code_s
 	@echo "sync complete"
 endif
 
+nixos: home-manager hyprland zed
+
 windows: zshrc bashrc editors localbin code_settings alacritty
 	@echo "windows sync complete"
 
@@ -48,6 +50,15 @@ configfiles:
 
 wayland_config:
 	@ln -sf $(DOTFILES_HOME)/config/electron25-flags.conf ~/.config/
+
+home-manager:
+	@ln -sf $(DOTFILES_HOME)/config/home-manager ~/.config/
+
+hyprland:
+	@ln -sf $(DOTFILES_HOME)/config/hypr ~/.config/
+
+zed:
+	@ln -sf $(DOTFILES_HOME)/config/zed ~/.config/
 
 vscode: node_modules
 	@echo "updating vscode settings in: $(PATH_VSCODE)"
@@ -142,4 +153,3 @@ zsh-themes: ~/.oh-my-zsh ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 mintty:
 	@cp $(DOTFILES_HOME)/config/.minttyrc ~/.minttyrc
-
