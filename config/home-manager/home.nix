@@ -13,6 +13,9 @@
       # Add additional package names here
       "vscode"
       "android-studio-stable"
+      "opera"
+      "microsoft-edge-stable"
+      "slack"
     ];
 
   home.username = "damo";
@@ -38,9 +41,11 @@
     pkgs.brightnessctl
     pkgs.jq
     pkgs.socat
+    pkgs.wl-clipboard
     # gui things
-    pkgs.firefox
+    pkgs.microsoft-edge
     pkgs.dolphin
+    pkgs.slack
     # fonts
     pkgs.font-awesome
     pkgs.fira-code
@@ -53,6 +58,7 @@
     # the expensive stuff (space wise)
     pkgs.android-studio
   ];
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.fontconfig.enable = true;
 
