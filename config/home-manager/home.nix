@@ -6,7 +6,6 @@
 }:
 
 {
-
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
@@ -16,6 +15,7 @@
       "opera"
       "microsoft-edge-stable"
       "slack"
+      "discord"
     ];
 
   home.username = "damo";
@@ -46,6 +46,8 @@
     pkgs.microsoft-edge
     pkgs.dolphin
     pkgs.slack
+    pkgs.discord
+    pkgs.pavucontrol
     # fonts
     pkgs.font-awesome
     pkgs.fira-code

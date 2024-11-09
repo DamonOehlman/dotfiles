@@ -17,10 +17,11 @@ in
     # hardware configuration detected by nix
     ./hardware-configuration.nix
     # local system configuration files, this is where things like hostname go
-    ./local-system.nix
     # other bits and pieces
     (import "${home-manager}/nixos")
   ];
+
+  networking.hostName = "djo-gmktec";
 
   nix.settings.experimental-features = [
     "nix-command"
