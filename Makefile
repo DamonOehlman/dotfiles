@@ -37,7 +37,7 @@ default: configfiles wayland_config macapps zshrc bashrc editors localbin code_s
 	@echo "sync complete"
 endif
 
-nixos: home-manager hyprland zed waybar_hypr vscode
+nixos: home-manager hyprland zed waybar_hypr vscode eww kitty
 
 nixos_system:
 	@sudo cp system/etc/nixos/configuration.nix /etc/nixos/
@@ -122,6 +122,10 @@ code_settings:
 node_modules:
 	yarn install
 
+kitty:
+	@rm -rf ~/.config/kitty
+	@ln -sf $(DOTFILES_HOME)/config/kitty ~/.config
+
 alacritty:
 ifeq ($(IS_WINDOWS),1)
 	@mkdir -p $(APPDATA)/alacritty
@@ -136,6 +140,10 @@ tmux:
 sway: waybar
 	@rm -rf ~/.config/sway
 	@ln -sf $(DOTFILES_HOME)/config/sway ~/.config/
+
+gbar:
+	@rm -rf ~/.config/gBar
+	@ln -sf $(DOTFILES_HOME)/config/gBar ~/.config/
 
 waybar:
 	@rm -rf ~/.config/waybar

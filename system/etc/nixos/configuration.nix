@@ -17,17 +17,27 @@ in
     # hardware configuration detected by nix
     ./hardware-configuration.nix
     # local system configuration files, this is where things like hostname go
-    ./local-system.nix
     # other bits and pieces
     (import "${home-manager}/nixos")
   ];
+
+  networking.hostName = "djo-gmktec";
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  hardware.pulseaudio.enable = true;
+  sound.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
