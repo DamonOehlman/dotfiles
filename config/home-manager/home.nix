@@ -91,6 +91,10 @@
     userEmail = "damon.oehlman@gmail.com";
   };
 
+  programs.git.extraConfig = {
+    init.defaultBranch = "main";
+  };
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
